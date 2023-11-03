@@ -7,7 +7,6 @@ import pandas as pd
 from lib.constants import PANDAS_STR_NA_VALUES_CUSTOMIZED
 from lib.unit import Unit
 from lib.units_analyzer import UnitsAnalyzer
-from lib.normalizer import Normalizer
 
 
 def read_rec20(path):
