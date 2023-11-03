@@ -6712,7 +6712,7 @@
         "description": "A unit of accumulated energy of a thousand watts over a period of one hour.",
         "symbol": "kW\u00b7h/h",
         "conversionFactor": null,
-        "parsedSymbol": "kilowatt",
+        "parsedSymbol": "kilowatt_hour / hour",
         "categories": "LEVEL_3_INFORMATIVE"
     },
     {

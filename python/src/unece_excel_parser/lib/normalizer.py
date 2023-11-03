@@ -11,6 +11,8 @@ class Normalizer:
         "10^[(Power in dBm-30)/10] W"  # DBM
     ]
 
+    unit_transformations = {"'": "arcsec", "\"": "arcmin", "kW·h/h": "kWh/h"}
+
     @staticmethod
     def is_empty(text: any) -> bool:
         return text is None or str(text) == "nan" or str(text).strip() == ""
@@ -37,6 +39,9 @@ class Normalizer:
         if conversion_factor is None:
             return ""
 
+        if conversion_factor in Normalizer.unit_transformations:
+            return Normalizer.unit_transformations[conversion_factor]
+
         if conversion_factor.strip() in Normalizer.blacklisted_factors:
             return None
 
@@ -46,12 +51,6 @@ class Normalizer:
         # workaround: setting locale does not work for some reason, unable to set this in pandas because numbers are returned as text
         conversion_factor = re.sub(r'(\d+),(\d+)', r'\1.\2',
                                    conversion_factor)
-
-        if conversion_factor == "'":
-            return "arcsec"
-
-        if conversion_factor == "\"":
-            return "arcmin"
 
         return (conversion_factor
                 .replace("×", "*")
@@ -64,6 +63,4 @@ class Normalizer:
                 .replace("m3", "m^3")
                 .replace("m2", "m^2")
                 .replace("10-", "10^-")
-                # ------------------------------
-                .replace("milli-inch", "milliinch")
                 )
