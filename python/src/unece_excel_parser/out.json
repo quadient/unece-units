@@ -26981,7 +26981,7 @@
         "description": "Use liquid pint (common code PTL)",
         "symbol": "pt (US)",
         "conversionFactor": {
-            "factor": 29.270400000000002,
+            "factor": 0.00047317600000000007,
             "parsedSymbol": "meter ** 3",
             "commonCodeReferences": [
                 "MTQ"
@@ -27013,7 +27013,7 @@
         "description": null,
         "symbol": "pt (UK)",
         "conversionFactor": {
-            "factor": 34.130500000000005,
+            "factor": 0.000568261,
             "parsedSymbol": "meter ** 3",
             "commonCodeReferences": [
                 "MTQ"
@@ -27029,7 +27029,7 @@
         "description": null,
         "symbol": "liq pt (US)",
         "conversionFactor": {
-            "factor": 292.706,
+            "factor": 0.0004731765,
             "parsedSymbol": "meter ** 3",
             "commonCodeReferences": [
                 "MTQ"

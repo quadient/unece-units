@@ -45,7 +45,7 @@ class Normalizer:
         if conversion_factor.strip() in Normalizer.blacklisted_factors:
             return None
 
-        conversion_factor = re.sub(r'(\d)\s(\d)', r'\1\2', conversion_factor)  # remove spaces between numbers
+        conversion_factor = re.sub(r'([\d,.])\s(\d)', r'\1\2', conversion_factor)  # remove spaces between numbers
         conversion_factor = re.sub(r'(?<![a-zA-Z·])x', r'*', conversion_factor)  # replace x -> *
 
         # workaround: setting locale does not work for some reason, unable to set this in pandas because numbers are returned as text
