@@ -13,7 +13,7 @@ class Normalizer:
 
     @staticmethod
     def is_empty(text: any) -> bool:
-        return text is None or str(text) == "nan" or str(text).strip() == ""
+        return text is None or str(text) == "nan" or str(text) == ""
 
     @staticmethod
     def normalize_value(value) -> str | None:
