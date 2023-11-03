@@ -8,23 +8,19 @@ from lib.pint_registry import PintRegistryManager
 
 
 class ConversionFactor:
-    def __init__(self, factor: float | None, unit_reference: str | None):
+    def __init__(self, factor: float | None, unit_reference_parsed_symbol: str | None):
         self.factor = factor
-        self.parsedSymbol = unit_reference
-        self.commonCodeReference = None
+        self.parsedSymbol = unit_reference_parsed_symbol
+        self.commonCodeReferences: [str] = []
 
-    def set_reference(self, unit_reference: str):
-        if self.parsedSymbol == "dimensionless":
-            self.commonCodeReference = None
-            return
-
-        self.commonCodeReference = unit_reference
+    def set_references(self, source_common_code, unit_common_code_target_references: [str]):
+        self.commonCodeReferences = [x for x in unit_common_code_target_references if x != source_common_code]
 
     def to_dict(self):
         return {
             "factor": self.factor,
             "parsedSymbol": self.parsedSymbol,
-            "commonCodeReference": self.commonCodeReference,
+            "commonCodeReferences": self.commonCodeReferences if self.commonCodeReferences else None,
         }
 
     @staticmethod
