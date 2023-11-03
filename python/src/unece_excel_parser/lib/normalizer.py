@@ -47,10 +47,18 @@ class Normalizer:
         conversion_factor = re.sub(r'(\d+),(\d+)', r'\1.\2',
                                    conversion_factor)
 
+        if conversion_factor == "'":
+            return "arcsec"
+
+        if conversion_factor == "\"":
+            return "arcmin"
+
         return (conversion_factor
+                .replace("×", "*")
                 .replace("·x", "*")
                 .replace("(approx)", "")
                 .replace("·", "*")
+                .replace("‧", ".")
                 .replace("Ω", "Ω")
                 .replace("º", "°")
                 .replace("m3", "m^3")

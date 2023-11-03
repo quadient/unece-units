@@ -3,11 +3,13 @@
 Units library supporting UNECE rec. 20 and rec. 21 standards
 
 # Development
-- `cd python`
-- create virtual environment `python -m venv venv`
-- activate virtual environment, for example on windows run `.\venv\Scripts\Activate.ps1`
-- (optional) set python interpreter in dev IDE to point to python.exe in venv folder
-- run `pip install -e src/unece_excel_parser` to install dependencies & fix imports
+- developed on python `3.12.0`
+- in the project root folder:
+  - `cd python`
+  - create virtual environment `python -m venv venv`
+  - activate virtual environment, for example on windows run `.\venv\Scripts\Activate.ps1`
+  - run `pip install -e src/unece_excel_parser` to install dependencies & fix imports
+  - (optional) set python interpreter in dev IDE to point to python.exe in venv folder
 
 # References
 

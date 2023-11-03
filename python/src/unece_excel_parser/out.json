@@ -7482,7 +7482,7 @@
             "parsedSymbol": "radian",
             "commonCodeReference": "C81"
         },
-        "parsedSymbol": null,
+        "parsedSymbol": "arcsecond",
         "categories": "LEVEL_1_NORMATIVE"
     },
     {
@@ -7496,7 +7496,7 @@
             "parsedSymbol": "radian",
             "commonCodeReference": "C81"
         },
-        "parsedSymbol": null,
+        "parsedSymbol": "arcminute",
         "categories": "LEVEL_1_NORMATIVE"
     },
     {
@@ -13491,10 +13491,10 @@
         "symbol": "N\u00b7m\u00b7W\u207b\u2070\u2027\u2075",
         "conversionFactor": {
             "factor": 1.0,
-            "parsedSymbol": "kilogram * meter ** 2 / second ** 2",
+            "parsedSymbol": "kilogram * meter ** 2 / second ** 2 / watt ** 0.5",
             "commonCodeReference": null
         },
-        "parsedSymbol": "meter * newton",
+        "parsedSymbol": "meter * newton / watt ** 0.5",
         "categories": "LEVEL_2_NORMATIVE_EQUIVALENT"
     },
     {
