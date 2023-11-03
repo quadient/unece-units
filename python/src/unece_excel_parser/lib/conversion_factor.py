@@ -40,10 +40,7 @@ class ConversionFactor:
             if isinstance(parsed, (int, float)):
                 return ConversionFactor(parsed, None)
 
-            # TODO[j.semerak]: Check incompatibility using pint?
-            # if source_unit is not None and not source_unit.is_compatible_with(parsed):
-            #     print(
-            #         f"Warning! Conversion factor {conversion_factor} is not compatible with source unit {source_unit}.")
+            # Note: possibly check incompatibility of conversion using pint here?
 
         except errors.OffsetUnitCalculusError as e:
             print(f"Unable to parse offset unit {conversion_factor}. Unit will be not convertible.")
