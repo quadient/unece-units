@@ -20824,7 +20824,7 @@
         "commonCode": "L94",
         "name": "tonforce (US short)",
         "description": null,
-        "symbol": "ton.shforce",
+      "symbol": "ton.sh-force",
         "conversionFactor": {
             "factor": 8896.443,
             "parsedSymbol": "newton",
@@ -21852,7 +21852,7 @@
         "commonCode": "M49",
         "name": "chain (based on U.S. survey foot)",
         "description": "Unit of the length according the Anglo-American system of units.",
-        "symbol": "ch (US survey) ",
+      "symbol": "ch (US survey)",
         "conversionFactor": {
             "factor": 20.116839999999996,
             "parsedSymbol": "meter",
@@ -21900,7 +21900,7 @@
         "commonCode": "M51",
         "name": "foot (U.S. survey)",
         "description": "Unit commonly used in the United States for ordnance survey._x000D_",
-        "symbol": "ft (US survey) ",
+      "symbol": "ft (US survey)",
         "conversionFactor": {
             "factor": 0.30480060000000003,
             "parsedSymbol": "meter",
@@ -21916,7 +21916,7 @@
         "commonCode": "M52",
         "name": "mile (based on U.S. survey foot)",
         "description": "Unit commonly used in the United States for ordnance survey.",
-        "symbol": "mi (US survey) ",
+      "symbol": "mi (US survey)",
         "conversionFactor": {
             "factor": 1609.347,
             "parsedSymbol": "meter",
@@ -22143,7 +22143,7 @@
         "commonCode": "M67",
         "name": "acrefoot (based on U.S. survey foot)",
         "description": "Unit of the volume, which is used in the United States to measure/gauge the capacity of reservoirs.",
-        "symbol": "acreft (US survey)",
+      "symbol": "acre-ft (US survey)",
         "conversionFactor": {
             "factor": 1233.489,
             "parsedSymbol": "meter ** 3",
@@ -23957,7 +23957,7 @@
         "commonCode": "N52",
         "name": "British thermal unit (thermochemical) per square foot minute",
         "description": "Unit of the surface heat flux according to the Imperial system of units.",
-        "symbol": "Btuth/(ft\u00b2\u00b7min) ",
+      "symbol": "Btuth/(ft\u00b2\u00b7min)",
         "conversionFactor": {
             "factor": 189.1489,
             "parsedSymbol": "watt / meter ** 2",
@@ -24181,7 +24181,7 @@
         "commonCode": "N66",
         "name": "British thermal unit (39 \u00baF)",
         "description": "Unit of heat energy according to the Imperial system of units in a reference temperature of 39 \u00b0F.",
-        "symbol": "Btu (39 \u00baF) ",
+      "symbol": "Btu (39 \u00baF)",
         "conversionFactor": {
             "factor": 1059.6699999999998,
             "parsedSymbol": "joule",
@@ -24213,7 +24213,7 @@
         "commonCode": "N68",
         "name": "British thermal unit (60 \u00baF)",
         "description": "Unit of head energy according to the Imperial system of units at a reference temperature of 60 \u00b0F.",
-        "symbol": "Btu (60 \u00baF) ",
+      "symbol": "Btu (60 \u00baF)",
         "conversionFactor": {
             "factor": 1054.68,
             "parsedSymbol": "joule",
@@ -24355,7 +24355,7 @@
         "commonCode": "N77",
         "name": "British thermal unit (thermochemical) per second square foot degree Fahrenheit",
         "description": "Unit of the heat transition coefficient according to the imperial system of units.",
-        "symbol": "Btuth/(s\u00b7ft\u00b2\u00b7\u00baF) ",
+      "symbol": "Btuth/(s\u00b7ft\u00b2\u00b7\u00baF)",
         "conversionFactor": {
             "factor": 20428.079999999998,
             "parsedSymbol": "watt / kelvin / meter ** 2",
@@ -25122,7 +25122,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "ODG",
         "name": "ODS Grams",
-        "description": "A unit of measure calculated by multiplying the mass of the substance in grams and the ozone-depleting potential for the substance.\n",
+      "description": "A unit of measure calculated by multiplying the mass of the substance in grams and the ozone-depleting potential for the substance.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -25523,7 +25523,7 @@
         "commonCode": "P23",
         "name": "ohm circularmil per foot",
         "description": "Unit of resistivity.",
-        "symbol": "\u03a9\u00b7cmil/ft ",
+      "symbol": "\u03a9\u00b7cmil/ft",
         "conversionFactor": {
             "factor": 1.662426e-09,
             "parsedSymbol": "meter * ohm",
@@ -26013,7 +26013,7 @@
         "commonCode": "P53",
         "name": "unit pole",
         "description": "CGS (Centimetre-Gram-Second system) unit for magnetic flux of a magnetic pole (according to the interaction of identical poles of 1 dyn at a distance of a cm).",
-        "symbol": "unit pole ",
+      "symbol": "unit pole",
         "conversionFactor": {
             "factor": 1.256637e-07,
             "parsedSymbol": "weber",
@@ -26643,7 +26643,7 @@
         "commonCode": "P91",
         "name": "perm (0 \u00baC)",
         "description": "Traditional unit for the ability of a material to allow the transition of the steam, defined at a temperature of 0 \u00b0C as steam transmittance, where the mass of one grain steam penetrates an area of one foot squared at a pressure from one inch mercury per hour.",
-        "symbol": "perm (0 \u00baC) ",
+      "symbol": "perm (0 \u00baC)",
         "conversionFactor": {
             "factor": 5.72135e-11,
             "parsedSymbol": "kilogram / meter ** 2 / pascal / second",
@@ -26659,7 +26659,7 @@
         "commonCode": "P92",
         "name": "perm (23 \u00baC)",
         "description": "Traditional unit for the ability of a material to allow the transition of the steam, defined at a temperature of 23 \u00b0C as steam transmittance at which the mass of one grain of steam penetrates an area of one square foot at a pressure of one inch mercury per hour.",
-        "symbol": "perm (23 \u00baC) ",
+      "symbol": "perm (23 \u00baC)",
         "conversionFactor": {
             "factor": 5.74525e-11,
             "parsedSymbol": "kilogram / meter ** 2 / pascal / second",
@@ -28682,7 +28682,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "TKM",
         "name": "tonne kilometre",
-        "description": "A unit of information typically used for billing purposes, expressed as the number of tonnes (metric tons) moved over a distance of one kilometre. ",
+      "description": "A unit of information typically used for billing purposes, expressed as the number of tonnes (metric tons) moved over a distance of one kilometre.",
         "symbol": "t\u00b7km",
         "conversionFactor": {
             "factor": 1000000,
@@ -29705,7 +29705,7 @@
         "commonCode": "MTZ",
         "name": "millihertz",
         "description": "A unit of frequency equal to 0.001 cycle per second",
-        "symbol": "mHz\u00a0",
+      "symbol": "mHz",
         "conversionFactor": {
             "factor": 0.001,
             "parsedSymbol": "hertz",
@@ -29836,7 +29836,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "X44",
         "name": "Bag, polybag",
-        "description": "A type of plastic bag, typically used to wrap promotional pieces, publications, product samples, and/or catalogues. ",
+      "description": "A type of plastic bag, typically used to wrap promotional pieces, publications, product samples, and/or catalogues.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -29925,7 +29925,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "X5L",
-        "name": "Bag, textile ",
+      "name": "Bag, textile",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -29935,7 +29935,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "X5M",
-        "name": "Bag, paper ",
+      "name": "Bag, paper",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30006,7 +30006,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "X8C",
         "name": "Bundle, wooden",
-        "description": "Loose or unpacked pieces of wood tied or wrapped together. ",
+      "description": "Loose or unpacked pieces of wood tied or wrapped together.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -30025,7 +30025,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAB",
-        "name": "Receptacle, fibre ",
+      "name": "Receptacle, fibre",
         "description": "Containment vessel made of fibre used for retaining substances or articles.",
         "symbol": null,
         "conversionFactor": null,
@@ -30035,7 +30035,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAC",
-        "name": "Receptacle, paper ",
+      "name": "Receptacle, paper",
         "description": "Containment vessel made of paper for retaining substances or articles.",
         "symbol": null,
         "conversionFactor": null,
@@ -30045,7 +30045,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAD",
-        "name": "Receptacle, wooden ",
+      "name": "Receptacle, wooden",
         "description": "Containment vessel made of wood for retaining substances or articles.",
         "symbol": null,
         "conversionFactor": null,
@@ -30065,7 +30065,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAF",
-        "name": "Pallet, modular, collars 80cms * 60cms ",
+      "name": "Pallet, modular, collars 80cms * 60cms",
         "description": "Standard sized pallet of dimensions 80 centimeters by 60 centimeters (cms).",
         "symbol": null,
         "conversionFactor": null,
@@ -30075,7 +30075,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAG",
-        "name": "Pallet, shrinkwrapped ",
+      "name": "Pallet, shrinkwrapped",
         "description": "Pallet load secured with transparent plastic film that has been wrapped around and then shrunk tightly.",
         "symbol": null,
         "conversionFactor": null,
@@ -30085,7 +30085,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAH",
-        "name": "Pallet, 100cms * 110cms ",
+      "name": "Pallet, 100cms * 110cms",
         "description": "Standard sized pallet of dimensions 100centimeters by 110 centimeters (cms).",
         "symbol": null,
         "conversionFactor": null,
@@ -30125,7 +30125,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAM",
-        "name": "Ampoule, nonprotected ",
+      "name": "Ampoule, nonprotected",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30135,7 +30135,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAP",
-        "name": "Ampoule, protected ",
+      "name": "Ampoule, protected",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30145,7 +30145,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XAT",
-        "name": "Atomizer ",
+      "name": "Atomizer",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30175,7 +30175,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBA",
-        "name": "Barrel ",
+      "name": "Barrel",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30185,7 +30185,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBB",
-        "name": "Bobbin ",
+      "name": "Bobbin",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30195,7 +30195,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBC",
-        "name": "Bottlecrate / bottlerack ",
+      "name": "Bottlecrate / bottlerack",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30215,7 +30215,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBE",
-        "name": "Bundle ",
+      "name": "Bundle",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30225,7 +30225,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBF",
-        "name": "Balloon, nonprotected ",
+      "name": "Balloon, nonprotected",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30265,7 +30265,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBJ",
-        "name": "Bucket ",
+      "name": "Bucket",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30275,7 +30275,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBK",
-        "name": "Basket ",
+      "name": "Basket",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30285,7 +30285,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBL",
-        "name": "Bale, compressed ",
+      "name": "Bale, compressed",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30305,7 +30305,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBN",
-        "name": "Bale, noncompressed ",
+      "name": "Bale, noncompressed",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30315,7 +30315,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBO",
-        "name": "Bottle, nonprotected, cylindrical ",
+      "name": "Bottle, nonprotected, cylindrical",
         "description": "A narrow-necked cylindrical shaped vessel without external protective packing material.",
         "symbol": null,
         "conversionFactor": null,
@@ -30325,7 +30325,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBP",
-        "name": "Balloon, protected ",
+      "name": "Balloon, protected",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30355,7 +30355,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBS",
-        "name": "Bottle, nonprotected, bulbous ",
+      "name": "Bottle, nonprotected, bulbous",
         "description": "A narrow-necked bulb shaped vessel without external protective packing material.",
         "symbol": null,
         "conversionFactor": null,
@@ -30365,7 +30365,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBT",
-        "name": "Bolt ",
+      "name": "Bolt",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30375,7 +30375,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBU",
-        "name": "Butt ",
+      "name": "Butt",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30415,7 +30415,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XBY",
-        "name": "Board, in bundle/bunch/truss ",
+      "name": "Board, in bundle/bunch/truss",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30435,7 +30435,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCA",
-        "name": "Can, rectangular ",
+      "name": "Can, rectangular",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30465,7 +30465,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCD",
-        "name": "Can, with handle and spout ",
+      "name": "Can, with handle and spout",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30485,7 +30485,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCF",
-        "name": "Coffer ",
+      "name": "Coffer",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30495,7 +30495,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCG",
-        "name": "Cage ",
+      "name": "Cage",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30515,7 +30515,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCI",
-        "name": "Canister ",
+      "name": "Canister",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30525,7 +30525,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCJ",
-        "name": "Coffin ",
+      "name": "Coffin",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30535,7 +30535,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCK",
-        "name": "Cask ",
+      "name": "Cask",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30545,7 +30545,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCL",
-        "name": "Coil ",
+      "name": "Coil",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30615,7 +30615,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCS",
-        "name": "Case ",
+      "name": "Case",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30625,7 +30625,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCT",
-        "name": "Carton ",
+      "name": "Carton",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30655,7 +30655,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCW",
-        "name": "Cage, roll ",
+      "name": "Cage, roll",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30665,7 +30665,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCX",
-        "name": "Can, cylindrical ",
+      "name": "Can, cylindrical",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30675,7 +30675,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCY",
-        "name": "Cylinder ",
+      "name": "Cylinder",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30685,7 +30685,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XCZ",
-        "name": "Canvas ",
+      "name": "Canvas",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30695,7 +30695,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XDA",
-        "name": "Crate, multiple layer, plastic ",
+      "name": "Crate, multiple layer, plastic",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30715,7 +30715,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XDC",
-        "name": "Crate, multiple layer, cardboard ",
+      "name": "Crate, multiple layer, cardboard",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30745,7 +30745,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XDI",
-        "name": "Drum, iron ",
+      "name": "Drum, iron",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30765,7 +30765,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XDK",
-        "name": "Crate, bulk, cardboard ",
+      "name": "Crate, bulk, cardboard",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30775,7 +30775,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XDL",
-        "name": "Crate, bulk, plastic ",
+      "name": "Crate, bulk, plastic",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30815,7 +30815,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XDR",
-        "name": "Drum ",
+      "name": "Drum",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30835,7 +30835,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XDT",
-        "name": "Tray, one layer no cover, wooden ",
+      "name": "Tray, one layer no cover, wooden",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30885,7 +30885,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XDY",
-        "name": "Tray, two layers no cover, cardboard ",
+      "name": "Tray, two layers no cover, cardboard",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30895,7 +30895,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XEC",
-        "name": "Bag, plastic ",
+      "name": "Bag, plastic",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30905,7 +30905,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XED",
-        "name": "Case, with pallet base ",
+      "name": "Case, with pallet base",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30915,7 +30915,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XEE",
-        "name": "Case, with pallet base, wooden ",
+      "name": "Case, with pallet base, wooden",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30955,7 +30955,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XEI",
-        "name": "Case, isothermic ",
+      "name": "Case, isothermic",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30965,7 +30965,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XEN",
-        "name": "Envelope ",
+      "name": "Envelope",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -30985,7 +30985,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XFC",
-        "name": "Crate, fruit ",
+      "name": "Crate, fruit",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31015,7 +31015,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XFI",
-        "name": "Firkin ",
+      "name": "Firkin",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31035,7 +31035,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XFO",
-        "name": "Footlocker ",
+      "name": "Footlocker",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31045,7 +31045,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XFP",
-        "name": "Filmpack ",
+      "name": "Filmpack",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31105,7 +31105,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XGI",
-        "name": "Girder ",
+      "name": "Girder",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31125,7 +31125,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XGR",
-        "name": "Receptacle, glass ",
+      "name": "Receptacle, glass",
         "description": "Containment vessel made of glass for retaining substances or articles.",
         "symbol": null,
         "conversionFactor": null,
@@ -31146,7 +31146,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "XGY",
         "name": "Bag, gunny",
-        "description": "A sack made of gunny or burlap, used for transporting coarse commodities, such as grains, potatoes, and other agricultural products. ",
+      "description": "A sack made of gunny or burlap, used for transporting coarse commodities, such as grains, potatoes, and other agricultural products.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -31155,7 +31155,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XGZ",
-        "name": "Girders, in bundle/bunch/truss ",
+      "name": "Girders, in bundle/bunch/truss",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31165,7 +31165,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XHA",
-        "name": "Basket, with handle, plastic ",
+      "name": "Basket, with handle, plastic",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31185,7 +31185,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XHC",
-        "name": "Basket, with handle, cardboard ",
+      "name": "Basket, with handle, cardboard",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31195,7 +31195,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XHG",
-        "name": "Hogshead ",
+      "name": "Hogshead",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31215,7 +31215,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XHR",
-        "name": "Hamper ",
+      "name": "Hamper",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31225,7 +31225,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XIA",
-        "name": "Package, display, wooden ",
+      "name": "Package, display, wooden",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31275,7 +31275,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XIF",
-        "name": "Package, flow ",
+      "name": "Package, flow",
         "description": "A flexible tubular package or skin, possibly transparent, often used for containment of foodstuffs (e.g. salami sausage).",
         "symbol": null,
         "conversionFactor": null,
@@ -31305,8 +31305,8 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XIK",
-        "name": "Package, cardboard, with bottle gripholes ",
-        "description": "Packaging material made out of cardboard that facilitates the separation of individual glass or plastic bottles.    ",
+      "name": "Package, cardboard, with bottle gripholes",
+      "description": "Packaging material made out of cardboard that facilitates the separation of individual glass or plastic bottles.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -31346,7 +31346,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "XJB",
         "name": "Bag, jumbo",
-        "description": "A flexible containment bag, widely used for storage, transportation and handling of powder, flake or granular materials. Typically constructed from woven polypropylene (PP) fabric in the form of cubic bags. ",
+      "description": "A flexible containment bag, widely used for storage, transportation and handling of powder, flake or granular materials. Typically constructed from woven polypropylene (PP) fabric in the form of cubic bags.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -31525,7 +31525,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XMR",
-        "name": "Receptacle, metal ",
+      "name": "Receptacle, metal",
         "description": "Containment vessel made of metal for retaining substances or articles.",
         "symbol": null,
         "conversionFactor": null,
@@ -31535,7 +31535,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XMS",
-        "name": "Sack, multiwall ",
+      "name": "Sack, multiwall",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31555,7 +31555,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XMW",
-        "name": "Receptacle, plastic wrapped ",
+      "name": "Receptacle, plastic wrapped",
         "description": "Containment vessel wrapped with plastic for retaining substances or articles.",
         "symbol": null,
         "conversionFactor": null,
@@ -31565,7 +31565,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XMX",
-        "name": "Matchbox ",
+      "name": "Matchbox",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31585,7 +31585,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XNE",
-        "name": "Unpacked or unpackaged ",
+      "name": "Unpacked or unpackaged",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31615,7 +31615,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XNS",
-        "name": "Nest ",
+      "name": "Nest",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31635,7 +31635,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XNU",
-        "name": "Net, tube, plastic ",
+      "name": "Net, tube, plastic",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31645,7 +31645,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XNV",
-        "name": "Net, tube, textile ",
+      "name": "Net, tube, textile",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -31706,7 +31706,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "XOF",
         "name": "Platform, unspecified weight or dimension",
-        "description": "A pallet equivalent shipping platform of unknown dimensions or unknown weight. ",
+      "description": "A pallet equivalent shipping platform of unknown dimensions or unknown weight.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -31995,7 +31995,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XP1",
-        "name": "CHEP pallet 60 cm x 80 cm ",
+      "name": "CHEP pallet 60 cm x 80 cm",
         "description": "Commonwealth Handling Equipment Pool (CHEP) standard pallet of dimensions 60 centimeters x 80 centimeters.",
         "symbol": null,
         "conversionFactor": null,
@@ -32035,7 +32035,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPA",
-        "name": "Packet ",
+      "name": "Packet",
         "description": "Small package.",
         "symbol": null,
         "conversionFactor": null,
@@ -32055,7 +32055,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPC",
-        "name": "Parcel ",
+      "name": "Parcel",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32065,7 +32065,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPD",
-        "name": "Pallet, modular, collars 80cms * 100cms ",
+      "name": "Pallet, modular, collars 80cms * 100cms",
         "description": "Standard sized pallet of dimensions 80 centimeters by 100 centimeters (cms).",
         "symbol": null,
         "conversionFactor": null,
@@ -32075,7 +32075,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPE",
-        "name": "Pallet, modular, collars 80cms * 120cms ",
+      "name": "Pallet, modular, collars 80cms * 120cms",
         "description": "Standard sized pallet of dimensions 80 centimeters by 120 centimeters (cms).",
         "symbol": null,
         "conversionFactor": null,
@@ -32085,7 +32085,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPF",
-        "name": "Pen ",
+      "name": "Pen",
         "description": "A small open top enclosure for retaining animals.",
         "symbol": null,
         "conversionFactor": null,
@@ -32115,7 +32115,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPI",
-        "name": "Pipe ",
+      "name": "Pipe",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32145,7 +32145,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPL",
-        "name": "Pail ",
+      "name": "Pail",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32176,7 +32176,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "XPP",
         "name": "Piece",
-        "description": "A loose or unpacked article. ",
+      "description": "A loose or unpacked article.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -32185,7 +32185,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPR",
-        "name": "Receptacle, plastic ",
+      "name": "Receptacle, plastic",
         "description": "Containment vessel made of plastic for retaining substances or articles.",
         "symbol": null,
         "conversionFactor": null,
@@ -32205,7 +32205,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPU",
-        "name": "Tray ",
+      "name": "Tray",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32215,7 +32215,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPV",
-        "name": "Pipes, in bundle/bunch/truss ",
+      "name": "Pipes, in bundle/bunch/truss",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32225,7 +32225,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XPX",
-        "name": "Pallet ",
+      "name": "Pallet",
         "description": "Platform or open-ended box, usually made of wood, on which goods are retained for ease of mechanical handling during transport and storage.",
         "symbol": null,
         "conversionFactor": null,
@@ -32325,7 +32325,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XQJ",
-        "name": "Barrel, wooden, removable head ",
+      "name": "Barrel, wooden, removable head",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32395,7 +32395,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XQR",
-        "name": "Box, plastic, expanded ",
+      "name": "Box, plastic, expanded",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32425,7 +32425,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XRG",
-        "name": "Ring ",
+      "name": "Ring",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32445,7 +32445,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XRK",
-        "name": "Rack ",
+      "name": "Rack",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32455,7 +32455,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XRL",
-        "name": "Reel ",
+      "name": "Reel",
         "description": "Cylindrical rotatory device with a rim at each end on which materials are wound.",
         "symbol": null,
         "conversionFactor": null,
@@ -32465,7 +32465,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XRO",
-        "name": "Roll ",
+      "name": "Roll",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32475,7 +32475,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XRT",
-        "name": "Rednet ",
+      "name": "Rednet",
         "description": "Containment material made of red mesh netting for retaining articles (e.g. trees).",
         "symbol": null,
         "conversionFactor": null,
@@ -32495,7 +32495,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSA",
-        "name": "Sack ",
+      "name": "Sack",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32515,7 +32515,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSC",
-        "name": "Crate, shallow ",
+      "name": "Crate, shallow",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32545,7 +32545,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSH",
-        "name": "Sachet ",
+      "name": "Sachet",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32555,7 +32555,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSI",
-        "name": "Skid ",
+      "name": "Skid",
         "description": "A low movable platform or pallet to facilitate the handling and transport of goods.",
         "symbol": null,
         "conversionFactor": null,
@@ -32565,7 +32565,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSK",
-        "name": "Case, skeleton ",
+      "name": "Case, skeleton",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32575,7 +32575,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSL",
-        "name": "Slipsheet ",
+      "name": "Slipsheet",
         "description": "Hard plastic sheeting primarily used as the base on which to stack goods to optimise the space within a container. May be used as an alternative to a palletized packaging.",
         "symbol": null,
         "conversionFactor": null,
@@ -32585,7 +32585,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSM",
-        "name": "Sheetmetal ",
+      "name": "Sheetmetal",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32595,7 +32595,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSO",
-        "name": "Spool ",
+      "name": "Spool",
         "description": "A packaging container used in the transport of such items as wire, cable, tape and yarn.",
         "symbol": null,
         "conversionFactor": null,
@@ -32635,7 +32635,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSU",
-        "name": "Suitcase ",
+      "name": "Suitcase",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32655,7 +32655,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XSW",
-        "name": "Shrinkwrapped  ",
+      "name": "Shrinkwrapped",
         "description": "Goods retained in a transparent plastic film that has been wrapped around and then shrunk tightly on to the goods.",
         "symbol": null,
         "conversionFactor": null,
@@ -32696,7 +32696,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "XT1",
         "name": "Tablet",
-        "description": "A loose or unpacked article in the form of a bar, block or piece. ",
+      "description": "A loose or unpacked article in the form of a bar, block or piece.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -32835,7 +32835,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XTU",
-        "name": "Tube ",
+      "name": "Tube",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32845,7 +32845,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XTV",
-        "name": "Tube, with nozzle ",
+      "name": "Tube, with nozzle",
         "description": "A tube made of plastic, metal or cardboard fitted with a nozzle, containing a liquid or semi-liquid product, e.g. silicon.",
         "symbol": null,
         "conversionFactor": null,
@@ -32856,7 +32856,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "XTW",
         "name": "Pallet, triwall",
-        "description": "A lightweight pallet made from heavy duty corrugated board.  ",
+      "description": "A lightweight pallet made from heavy duty corrugated board.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -32875,7 +32875,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XTZ",
-        "name": "Tubes, in bundle/bunch/truss ",
+      "name": "Tubes, in bundle/bunch/truss",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32885,7 +32885,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XUC",
-        "name": "Uncaged ",
+      "name": "Uncaged",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32925,7 +32925,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XVI",
-        "name": "Vial ",
+      "name": "Vial",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32935,8 +32935,8 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XVK",
-        "name": "Vanpack ",
-        "description": "A type of wooden crate. ",
+      "name": "Vanpack",
+      "description": "A type of wooden crate.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -32945,7 +32945,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XVL",
-        "name": "Bulk, liquid ",
+      "name": "Bulk, liquid",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32955,7 +32955,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XVO",
-        "name": "Bulk, solid, large particles (\u201cnodules\u201d) ",
+      "name": "Bulk, solid, large particles (\u201cnodules\u201d)",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32975,7 +32975,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XVQ",
-        "name": "Bulk, liquefied gas (at abnormal temperature/pressure) ",
+      "name": "Bulk, liquefied gas (at abnormal temperature/pressure)",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -32995,7 +32995,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XVR",
-        "name": "Bulk, solid, granular particles (\u201cgrains\u201d) ",
+      "name": "Bulk, solid, granular particles (\u201cgrains\u201d)",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33006,7 +33006,7 @@
         "state": "NOT_DEFINED",
         "commonCode": "XVS",
         "name": "Bulk, scrap metal",
-        "description": "Loose or unpacked scrap metal transported in bulk form. ",
+      "description": "Loose or unpacked scrap metal transported in bulk form.",
         "symbol": null,
         "conversionFactor": null,
         "parsedSymbol": null,
@@ -33035,7 +33035,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWB",
-        "name": "Wickerbottle ",
+      "name": "Wickerbottle",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33045,7 +33045,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWC",
-        "name": "Intermediate bulk container, steel ",
+      "name": "Intermediate bulk container, steel",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33055,7 +33055,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWD",
-        "name": "Intermediate bulk container, aluminium ",
+      "name": "Intermediate bulk container, aluminium",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33065,7 +33065,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWF",
-        "name": "Intermediate bulk container, metal ",
+      "name": "Intermediate bulk container, metal",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33095,7 +33095,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWJ",
-        "name": "Intermediate bulk container, metal, pressure 10 kpa ",
+      "name": "Intermediate bulk container, metal, pressure 10 kpa",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33105,7 +33105,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWK",
-        "name": "Intermediate bulk container, steel, liquid ",
+      "name": "Intermediate bulk container, steel, liquid",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33115,7 +33115,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWL",
-        "name": "Intermediate bulk container, aluminium, liquid ",
+      "name": "Intermediate bulk container, aluminium, liquid",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33125,7 +33125,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWM",
-        "name": "Intermediate bulk container, metal, liquid ",
+      "name": "Intermediate bulk container, metal, liquid",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33135,7 +33135,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWN",
-        "name": "Intermediate bulk container, woven plastic, without coat/liner ",
+      "name": "Intermediate bulk container, woven plastic, without coat/liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33145,7 +33145,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWP",
-        "name": "Intermediate bulk container, woven plastic, coated ",
+      "name": "Intermediate bulk container, woven plastic, coated",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33155,7 +33155,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWQ",
-        "name": "Intermediate bulk container, woven plastic, with liner ",
+      "name": "Intermediate bulk container, woven plastic, with liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33165,7 +33165,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWR",
-        "name": "Intermediate bulk container, woven plastic, coated and liner ",
+      "name": "Intermediate bulk container, woven plastic, coated and liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33185,7 +33185,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWT",
-        "name": "Intermediate bulk container, textile with out coat/liner ",
+      "name": "Intermediate bulk container, textile with out coat/liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33205,7 +33205,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWV",
-        "name": "Intermediate bulk container, textile, coated ",
+      "name": "Intermediate bulk container, textile, coated",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33215,7 +33215,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWW",
-        "name": "Intermediate bulk container, textile, with liner ",
+      "name": "Intermediate bulk container, textile, with liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33225,7 +33225,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWX",
-        "name": "Intermediate bulk container, textile, coated and liner ",
+      "name": "Intermediate bulk container, textile, coated and liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33235,7 +33235,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XWY",
-        "name": "Intermediate bulk container, plywood, with inner liner ",
+      "name": "Intermediate bulk container, plywood, with inner liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33255,7 +33255,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XXA",
-        "name": "Bag, woven plastic, without inner coat/liner ",
+      "name": "Bag, woven plastic, without inner coat/liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33265,7 +33265,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XXB",
-        "name": "Bag, woven plastic, sift proof ",
+      "name": "Bag, woven plastic, sift proof",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33285,7 +33285,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XXD",
-        "name": "Bag, plastics film ",
+      "name": "Bag, plastics film",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33295,7 +33295,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XXF",
-        "name": "Bag, textile, without inner coat/liner ",
+      "name": "Bag, textile, without inner coat/liner",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33305,7 +33305,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XXG",
-        "name": "Bag, textile, sift proof ",
+      "name": "Bag, textile, sift proof",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33325,7 +33325,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XXJ",
-        "name": "Bag, paper, multiwall ",
+      "name": "Bag, paper, multiwall",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33405,7 +33405,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XYH",
-        "name": "Composite packaging, plastic receptacle in plywood box ",
+      "name": "Composite packaging, plastic receptacle in plywood box",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33535,7 +33535,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XYX",
-        "name": "Composite packaging, glass receptacle in fibreboard box ",
+      "name": "Composite packaging, glass receptacle in fibreboard box",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33565,7 +33565,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XZA",
-        "name": "Intermediate bulk container, paper, multiwall ",
+      "name": "Intermediate bulk container, paper, multiwall",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33575,7 +33575,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XZB",
-        "name": "Bag, large ",
+      "name": "Bag, large",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33635,7 +33635,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XZJ",
-        "name": "Intermediate bulk container, rigid plastic, with structural equipment, liquids ",
+      "name": "Intermediate bulk container, rigid plastic, with structural equipment, liquids",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33675,7 +33675,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XZN",
-        "name": "Intermediate bulk container, composite, rigid plastic, pressurised ",
+      "name": "Intermediate bulk container, composite, rigid plastic, pressurised",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33705,7 +33705,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XZR",
-        "name": "Intermediate bulk container, composite, flexible plastic, liquids ",
+      "name": "Intermediate bulk container, composite, flexible plastic, liquids",
         "description": null,
         "symbol": null,
         "conversionFactor": null,
@@ -33785,7 +33785,7 @@
     {
         "state": "NOT_DEFINED",
         "commonCode": "XZZ",
-        "name": "Mutually defined ",
+      "name": "Mutually defined",
         "description": null,
         "symbol": null,
         "conversionFactor": null,

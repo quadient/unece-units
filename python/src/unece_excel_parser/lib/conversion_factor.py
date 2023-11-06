@@ -12,6 +12,11 @@ class ConversionFactor:
         self.parsedSymbol = unit_reference_parsed_symbol
         self.commonCodeReferences: [str] = []
 
+    def __eq__(self, other):
+        if isinstance(other, ConversionFactor):
+            return self.factor == other.factor and self.parsedSymbol == other.parsedSymbol and self.commonCodeReferences == other.commonCodeReferences
+        return False
+
     def set_references(self, source_common_code: str, unit_common_code_target_references: [str]):
         self.commonCodeReferences = [x for x in unit_common_code_target_references if x != source_common_code]
 
