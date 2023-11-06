@@ -1,51 +1,64 @@
-﻿from lib.unit import Unit
+﻿from collections import namedtuple
+from typing import Dict
+
+from lib.constants import DIMENSIONLESS
+from lib.unit import Unit
+
+SymbolInfo = namedtuple('SymbolInfo', ['common_code', 'parsed_symbol'])
 
 
 class UnitsAnalyzer:
     def __init__(self):
-        self.symbols_by_common_code: {str: str} = {}
-        self.unit_common_codes_by_parsed_symbol: {str: [str]} = {}
-        self.duplicated_symbols: [str] = []
-        self.unlinked_conversion_factors: [[str, str]] = []
-        self.referenced_unit_common_codes: set[str] = set()
+        self._processed_symbols_info: Dict[str, list[SymbolInfo]] = {}
+        self._unit_common_codes_by_parsed_symbol: Dict[str, list[str]] = {}
+        self._duplicated_symbols: [str] = []
+        self._unlinked_parsed_symbols_info: list[SymbolInfo] = []
+        self._referenced_unit_common_codes: set[str] = set()
 
     def add_unit(self, unit: Unit):
         if unit.symbol is not None:
-            if unit.symbol in self.symbols_by_common_code:
-                self.duplicated_symbols.append(unit.symbol)
+            if unit.symbol in self._processed_symbols_info:
+                self._duplicated_symbols.append(unit.symbol)
 
-            self.symbols_by_common_code.setdefault(unit.symbol, []).append([unit.commonCode, unit.parsedSymbol])
+            self._processed_symbols_info.setdefault(unit.symbol, []).append(
+                SymbolInfo(unit.common_code, unit.parsed_symbol))
 
-        if unit.parsedSymbol is not None:
-            self.unit_common_codes_by_parsed_symbol.setdefault(unit.parsedSymbol, []).append(unit.commonCode)
+        if unit.parsed_symbol is not None:
+            self._unit_common_codes_by_parsed_symbol.setdefault(unit.parsed_symbol, []).append(unit.common_code)
 
     def link_conversion_factors(self, units: [Unit]):
         for unit in units:
-            if unit.conversionFactor is not None and unit.conversionFactor.parsedSymbol is not None:
-                if unit.conversionFactor.parsedSymbol in self.unit_common_codes_by_parsed_symbol:
-                    unit.conversionFactor.set_references(unit.commonCode,
-                                                         self.unit_common_codes_by_parsed_symbol[
-                                                             unit.conversionFactor.parsedSymbol])
+            if unit.conversion_factor is None:
+                continue
 
-                    if unit.conversionFactor.commonCodeReferences is not None:
-                        for commonCode in unit.conversionFactor.commonCodeReferences:
-                            self.referenced_unit_common_codes.add(commonCode)
-                else:
-                    self.unlinked_conversion_factors.append([unit.commonCode, unit.conversionFactor.parsedSymbol])
+            if unit.conversion_factor.parsed_symbol is None or unit.conversion_factor.parsed_symbol == DIMENSIONLESS:
+                continue
+
+            if unit.conversion_factor.parsed_symbol in self._unit_common_codes_by_parsed_symbol:
+                symbol_common_codes = self._unit_common_codes_by_parsed_symbol[unit.conversion_factor.parsed_symbol]
+                unit.conversion_factor.set_references(unit.common_code, symbol_common_codes)
+
+                for commonCode in unit.conversion_factor.common_code_references:
+                    self._referenced_unit_common_codes.add(commonCode)
+            else:
+                self._unlinked_parsed_symbols_info.append(
+                    SymbolInfo(unit.common_code, unit.conversion_factor.parsed_symbol))
 
     def print_summary(self):
-        print(f"Found {len(self.duplicated_symbols)} duplicated symbols.")
+        print(f"Found {len(self._duplicated_symbols)} duplicated symbols.")
         print(f"Duplicated symbols below are used in an conversion factor and could possibly misbehave:")
 
-        for unitSymbol in self.duplicated_symbols:
-            symbol_units = self.symbols_by_common_code[unitSymbol]
+        for unit_symbol in self._duplicated_symbols:
+            symbol_units = self._processed_symbols_info[unit_symbol]
 
-            for symbolUnitPair in symbol_units:
-                if symbolUnitPair[0] in self.referenced_unit_common_codes:
+            for symbol_unit_pair in symbol_units:
+                if symbol_unit_pair.common_code in self._referenced_unit_common_codes:
                     print(
-                        f" - Symbol '{unitSymbol}' is used for multiple common codes: {symbol_units}. Unit '{symbolUnitPair}' is referenced by a conversion factor.")
+                        f" - Symbol '{unit_symbol}' is used for multiple common codes: {symbol_units}")
+                    break
 
-        print(f"Found {len(self.unlinked_conversion_factors)} conversion factors that are missing linked unit target.")
+        print(f"Unable to link {len(self._unlinked_parsed_symbols_info)} parsed symbols.")
 
-        for conversionFactor in self.unlinked_conversion_factors:
-            print(f"Conversion factor for '{conversionFactor[0]}' references unknown unit: '{conversionFactor[1]}'")
+        for symbol_info in self._unlinked_parsed_symbols_info:
+            print(
+                f"Unit with commonCode '{symbol_info.common_code}' references unknown parsed symbol: '{symbol_info.parsed_symbol}'")

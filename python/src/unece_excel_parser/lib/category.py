@@ -35,5 +35,5 @@ class Category(Flag):
 
         return None if all_categories == Category(0) else all_categories
 
-    def has_flag(self, flag: 'Category'):
+    def has_flag(self, flag: 'Category') -> bool:
         return self & flag == flag

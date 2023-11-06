@@ -3,7 +3,6 @@
 
 class Normalizer:
     blacklisted_factors = [
-        # TODO[j.semerak]: Define them as pint units?
         "use pair",  # NPR
         "-log10(mol/l)",  # Q30
         "mg KOH/g",  # TAN
@@ -22,7 +21,7 @@ class Normalizer:
         if Normalizer.is_empty(value):
             return None
 
-        return str(value)
+        return str(value).strip()
 
     @staticmethod
     def normalize_unit_name(name) -> str | None:
@@ -34,25 +33,25 @@ class Normalizer:
         return normalized_name.replace("-", "")
 
     @staticmethod
-    def normalize_unit(conversion_factor: str) -> str | None:
-        conversion_factor = Normalizer.normalize_value(conversion_factor)
-        if conversion_factor is None:
-            return ""
-
-        if conversion_factor in Normalizer.unit_transformations:
-            return Normalizer.unit_transformations[conversion_factor]
-
-        if conversion_factor.strip() in Normalizer.blacklisted_factors:
+    def normalize_unit(unit_expression: str) -> str | None:
+        unit_expression = Normalizer.normalize_value(unit_expression)
+        if unit_expression is None:
             return None
 
-        conversion_factor = re.sub(r'([\d,.])\s(\d)', r'\1\2', conversion_factor)  # remove spaces between numbers
-        conversion_factor = re.sub(r'(?<![a-zA-Z·])x', r'*', conversion_factor)  # replace x -> *
+        if unit_expression in Normalizer.unit_transformations:
+            return Normalizer.unit_transformations[unit_expression]
+
+        if unit_expression in Normalizer.blacklisted_factors:
+            return None
+
+        unit_expression = re.sub(r'([\d,.])\s(\d)', r'\1\2', unit_expression)  # remove spaces between numbers
+        unit_expression = re.sub(r'(?<![a-zA-Z·])x', r'*', unit_expression)  # replace x -> *
 
         # workaround: setting locale does not work for some reason, unable to set this in pandas because numbers are returned as text
-        conversion_factor = re.sub(r'(\d+),(\d+)', r'\1.\2',
-                                   conversion_factor)
+        unit_expression = re.sub(r'(\d+),(\d+)', r'\1.\2',
+                                 unit_expression)
 
-        return (conversion_factor
+        return (unit_expression
                 .replace("×", "*")
                 .replace("·x", "*")
                 .replace("(approx)", "")
@@ -63,4 +62,5 @@ class Normalizer:
                 .replace("m3", "m^3")
                 .replace("m2", "m^2")
                 .replace("10-", "10^-")
+                .replace("10⁻8", "10^-8")
                 )

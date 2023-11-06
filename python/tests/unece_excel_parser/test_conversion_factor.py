@@ -1,5 +1,6 @@
 import pytest
 
+from lib.constants import DIMENSIONLESS
 from lib.conversion_factor import ConversionFactor
 
 
@@ -18,10 +19,10 @@ def test_parse_given_empty_value_returns_none(text_input: str | None):
 @pytest.mark.parametrize(
     "text_input,expected",
     [
-        ("1", ConversionFactor(1, None)),
-        ("1.5", ConversionFactor(1.5, None)),
-        ("1,5", ConversionFactor(1.5, None)),
-        ("10^6", ConversionFactor(1000000, None)),
+        ("1", ConversionFactor(1, DIMENSIONLESS)),
+        ("1.5", ConversionFactor(1.5, DIMENSIONLESS)),
+        ("1,5", ConversionFactor(1.5, DIMENSIONLESS)),
+        ("10^6", ConversionFactor(1000000, DIMENSIONLESS)),
         ("1m", ConversionFactor(1, "meter")),
         ("rad/s", ConversionFactor(1, "radian / second")),
         ("1m/s", ConversionFactor(1, "meter / second")),
@@ -56,14 +57,14 @@ def test_to_dict_contains_all_public_properties():
 def test_set_references_does_set_proper_common_code_references_except_itself():
     conversion_factor = ConversionFactor(1, None)
     conversion_factor.set_references("a", ["a", "b", "c"])
-    assert conversion_factor.commonCodeReferences == ["b", "c"]
+    assert conversion_factor.common_code_references == ["b", "c"]
 
 
 def test_set_references_does_overwrite_all_previous_references():
     conversion_factor = ConversionFactor(1, None)
     conversion_factor.set_references("a", ["a", "b", "c"])
     conversion_factor.set_references("a", ["a", "b"])
-    assert conversion_factor.commonCodeReferences == ["b"]
+    assert conversion_factor.common_code_references == ["b"]
 
 
 @pytest.mark.parametrize(

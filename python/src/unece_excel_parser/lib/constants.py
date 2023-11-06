@@ -19,3 +19,5 @@
     b'null',
     # b'NA' removed because of clash with milligram per kilogram (NA), otherwise it is default from pandas
 ]
+
+DIMENSIONLESS = "dimensionless"

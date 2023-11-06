@@ -18,3 +18,17 @@ class State(Enum):
     MARKED_AS_DELETED = 'X'
     # Reinstated. Units previously marked as deleted and reinstated
     REINSTATED = '='
+
+    @staticmethod
+    def parse(state_string: str) -> 'State':
+        if state_string in states_dictionary:
+            return states_dictionary[state_string]
+
+        raise ValueError(f"Invalid state {state_string}.")
+
+
+states_dictionary = dict([(State.ADDED.value, State.ADDED), (State.CHANGED_NAME.value, State.CHANGED_NAME),
+                          (State.CHANGED_CHARACTERISTICS.value, State.CHANGED_CHARACTERISTICS),
+                          (State.DEPRECATED.value, State.DEPRECATED),
+                          (State.MARKED_AS_DELETED.value, State.MARKED_AS_DELETED),
+                          (State.REINSTATED.value, State.REINSTATED)])
