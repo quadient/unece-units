@@ -1,5 +1,7 @@
-﻿from lib.normalizer import Normalizer
-import pytest
+﻿import pytest
+
+from lib.normalizer import Normalizer
+
 
 @pytest.mark.parametrize(
     "text_input,expected",
