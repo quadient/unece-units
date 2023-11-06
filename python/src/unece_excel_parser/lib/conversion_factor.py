@@ -1,6 +1,5 @@
 ﻿from typing import Optional
 
-import pint
 from pint import errors
 
 from lib.normalizer import Normalizer
@@ -13,7 +12,7 @@ class ConversionFactor:
         self.parsedSymbol = unit_reference_parsed_symbol
         self.commonCodeReferences: [str] = []
 
-    def set_references(self, source_common_code, unit_common_code_target_references: [str]):
+    def set_references(self, source_common_code: str, unit_common_code_target_references: [str]):
         self.commonCodeReferences = [x for x in unit_common_code_target_references if x != source_common_code]
 
     def to_dict(self):

@@ -44,13 +44,13 @@ class Category(Flag):
     LEVEL_3_INFORMATIVE = auto()
 
     @staticmethod
-    def parse_categories(input_string) -> Optional['Category']:
-        if not input_string:
+    def parse_categories(category: str) -> Optional['Category']:
+        if not category:
             return None
 
         all_categories = Category(0)
 
-        for level in input_string.split('\n'):
+        for level in category.split('\n'):
             level = level.replace(',', '.').replace('"', '').strip()
 
             if level.startswith("1"):

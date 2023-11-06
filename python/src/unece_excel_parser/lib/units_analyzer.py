@@ -1,6 +1,4 @@
-﻿from lib.category import Category
-from lib.state import State
-from lib.unit import Unit
+﻿from lib.unit import Unit
 
 
 class UnitsAnalyzer:
@@ -11,7 +9,7 @@ class UnitsAnalyzer:
         self.unlinked_conversion_factors: [[str, str]] = []
         self.referenced_unit_common_codes: set[str] = set()
 
-    def add_unit(self, unit):
+    def add_unit(self, unit: Unit):
         if unit.symbol is not None:
             if unit.symbol in self.symbols_by_common_code:
                 self.duplicated_symbols.append(unit.symbol)
@@ -21,7 +19,7 @@ class UnitsAnalyzer:
         if unit.parsedSymbol is not None:
             self.unit_common_codes_by_parsed_symbol.setdefault(unit.parsedSymbol, []).append(unit.commonCode)
 
-    def link_conversion_factors(self, units):
+    def link_conversion_factors(self, units: [Unit]):
         for unit in units:
             if unit.conversionFactor is not None and unit.conversionFactor.parsedSymbol is not None:
                 if unit.conversionFactor.parsedSymbol in self.unit_common_codes_by_parsed_symbol:
@@ -38,6 +36,7 @@ class UnitsAnalyzer:
     def print_summary(self):
         print(f"Found {len(self.duplicated_symbols)} duplicated symbols.")
         print(f"Duplicated symbols below are used in an conversion factor and could possibly misbehave:")
+
         for unitSymbol in self.duplicated_symbols:
             symbol_units = self.symbols_by_common_code[unitSymbol]
 

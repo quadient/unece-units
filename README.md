@@ -11,6 +11,11 @@ Units library supporting UNECE rec. 20 and rec. 21 standards
   - run `pip install -e src/unece_excel_parser` to install dependencies & fix imports
   - (optional) set python interpreter in dev IDE to point to python.exe in venv folder
 
+## Run
+From `python/src/unece_excel_parser` folder run:
+
+`python .\unece_excel_parser.py -rec20 files/rec20_Rev17e-2021.xlsx -rec21 files/rec21_Rev12e_Annex-V-VI_2021.xls`
+
 # References
 
 UNECE standards are located on https://unece.org/trade/uncefact/cl-recommendations. Basic description of the UNECE

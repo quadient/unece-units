@@ -47,7 +47,7 @@ class Unit:
                     ConversionFactor.parse(conversion_factor))
 
     @staticmethod
-    def __parse_state(state_string) -> State:
+    def __parse_state(state_string: str) -> State:
         state_string = Normalizer.normalize_value(state_string)
 
         if state_string is None or not isinstance(state_string, str):
@@ -67,7 +67,7 @@ class Unit:
         raise ValueError(f"Invalid state {state_string}.")
 
     @staticmethod
-    def __parse_unit_reference(symbol: str) -> pint.Unit | None:
+    def __parse_unit_reference(symbol: str) -> str | None:
         if symbol is None:
             return None
 

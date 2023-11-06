@@ -18,7 +18,7 @@ class Normalizer:
         return text is None or str(text) == "nan" or str(text).strip() == ""
 
     @staticmethod
-    def normalize_value(value) -> str | None:
+    def normalize_value(value: str) -> str | None:
         if Normalizer.is_empty(value):
             return None
 
@@ -34,7 +34,7 @@ class Normalizer:
         return normalized_name.replace("-", "")
 
     @staticmethod
-    def normalize_unit(conversion_factor) -> str | None:
+    def normalize_unit(conversion_factor: str) -> str | None:
         conversion_factor = Normalizer.normalize_value(conversion_factor)
         if conversion_factor is None:
             return ""

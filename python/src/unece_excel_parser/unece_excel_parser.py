@@ -9,7 +9,7 @@ from lib.unit import Unit
 from lib.units_analyzer import UnitsAnalyzer
 
 
-def read_rec20(path):
+def read_rec20(path: str):
     units_rec20 = []
     analyzer = UnitsAnalyzer()
 
@@ -28,7 +28,7 @@ def read_rec20(path):
     return units_rec20
 
 
-def read_rec21(path):
+def read_rec21(path: str):
     units_rec21 = []
 
     df = pd.read_excel(path, sheet_name='Annex V and VI', na_values=PANDAS_STR_NA_VALUES_CUSTOMIZED,
