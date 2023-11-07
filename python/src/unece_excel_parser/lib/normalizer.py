@@ -45,12 +45,14 @@ class Normalizer:
             return None
 
         unit_expression = re.sub(r'([\d,.])\s(\d)', r'\1\2', unit_expression)  # remove spaces between numbers
-        unit_expression = re.sub(r'(?<![a-zA-Z·])x', r'*', unit_expression)  # replace x -> *
+        unit_expression = re.sub(r'(?<![a-zA-Z·])x', r'*',
+                                 unit_expression)  # replace x -> * if not preceded by a letter or ·
 
         # workaround: setting locale does not work for some reason, unable to set this in pandas because numbers are returned as text
         unit_expression = re.sub(r'(\d+),(\d+)', r'\1.\2',
                                  unit_expression)
 
+        # these replacements are made based on the specific errors in the rec20 excel file
         return (unit_expression
                 .replace("×", "*")
                 .replace("·x", "*")
@@ -62,5 +64,5 @@ class Normalizer:
                 .replace("m3", "m^3")
                 .replace("m2", "m^2")
                 .replace("10-", "10^-")
-                .replace("10⁻8", "10^-8")
+                .replace("10⁻8", "10^-8")  # 1 specific case
                 )

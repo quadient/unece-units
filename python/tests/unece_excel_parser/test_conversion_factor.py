@@ -1,5 +1,5 @@
 import pytest
-
+from inflection import camelize
 from lib.constants import DIMENSIONLESS
 from lib.conversion_factor import ConversionFactor
 
@@ -50,7 +50,8 @@ def test_to_dict_does_match_property_names():
 
 def test_to_dict_contains_all_public_properties():
     obj = ConversionFactor(1, None)
-    properties = [a for a in dir(obj) if not a.startswith('__') and not callable(getattr(obj, a))]
+    properties = [camelize(a, False) for a in dir(obj) if not a.startswith('__') and not callable(getattr(obj, a))]
+
     assert all([a in ConversionFactor(1, None).to_dict() for a in properties])
 
 

@@ -25,7 +25,8 @@ addopts = [
 
 [project.optional-dependencies]
 dev = [
-    "pytest==7.4.3"
+    "pytest==7.4.3",
+    "inflection==0.5.1"
 ]
 
 
