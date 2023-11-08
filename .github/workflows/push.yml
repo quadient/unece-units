@@ -1,7 +1,9 @@
-name: Pull actions
+name: Push actions
 
 on:
-  pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
   python-tests:

@@ -1,20 +1,22 @@
-﻿from pint import UnitRegistry
+﻿from typing import Optional
+
+from pint import UnitRegistry
 
 
 class PintRegistryManager:
-    _instance = None
+    _instance: Optional['PintRegistryManager'] = None
 
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
-            cls._instance.registry = PintRegistryManager.create_registry()
+            cls._instance.registry = PintRegistryManager.__create_registry()
         return cls._instance
 
     def get_registry(self) -> UnitRegistry:
         return self.registry
 
     @staticmethod
-    def create_registry() -> UnitRegistry:
+    def __create_registry() -> UnitRegistry:
         registry = UnitRegistry()
         registry.define("E = 1 erlang = E")
         registry.define("R = 1 roentgen = R")

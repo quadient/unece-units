@@ -7,20 +7,26 @@ name = "unece_excel_parser"
 version = "0.0.1"
 description = "UNECE units from Excel parser."
 authors = [
-  { name = "Jakub Semerak", email = "j.semerak@quadient.com" },
+    { name = "Jakub Semerak", email = "j.semerak@quadient.com" },
 ]
 license = "MIT"
 requires-python = ">=3.9"
 dependencies = [
-  "pandas==2.1.1",
-  "openpyxl==3.1.2",
-  "pint==0.22",
-  "xlrd==2.0.1",
+    "pandas==2.1.1",
+    "openpyxl==3.1.2",
+    "pint==0.22",
+    "xlrd==2.0.1"
 ]
 
 [tool.pytest.ini_options]
 addopts = [
     "--import-mode=importlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.4.3",
+    "inflection==0.5.1"
 ]
 
 
