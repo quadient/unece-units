@@ -11,14 +11,20 @@ class UnitsAnalyzer:
     def __init__(self):
         self._processed_symbols_info: Dict[str, list[SymbolInfo]] = {}
         self._unit_common_codes_by_parsed_symbol: Dict[str, list[str]] = {}
-        self._duplicated_symbols: [str] = []
+        self._duplicated_symbols: set[str] = set()
+        self._processed_common_codes: set[str] = set()
         self._unlinked_parsed_symbols_info: list[SymbolInfo] = []
         self._referenced_unit_common_codes: set[str] = set()
 
     def add_unit(self, unit: Unit):
+        if unit.common_code in self._processed_common_codes:
+            raise ValueError(f"Duplicated commonCode '{unit.common_code}'.")
+
+        self._processed_common_codes.add(unit.common_code)
+
         if unit.symbol is not None:
             if unit.symbol in self._processed_symbols_info:
-                self._duplicated_symbols.append(unit.symbol)
+                self._duplicated_symbols.add(unit.symbol)
 
             self._processed_symbols_info.setdefault(unit.symbol, []).append(
                 SymbolInfo(unit.common_code, unit.parsed_symbol))

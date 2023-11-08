@@ -49,28 +49,37 @@ def read_rec21(path: str) -> [Unit]:
     return units_rec21
 
 
+def run_unece_excel_parser(rec20: str, rec21: str, output: str) -> bool:
+    if not os.path.exists(rec20):
+        print(f"The file does not exists on path '{rec20}'.")
+        return False
+
+    if rec21 is not None and not os.path.exists(rec21):
+        print(f"The file does not exists on path '{rec21}'.")
+        return False
+
+    print(f"Reading rec 20 file '{rec20}'")
+    units = read_rec20(rec20)
+
+    if rec21 is not None:
+        print(f"Reading rec. 21 file '{rec21}'")
+        units.extend(read_rec21(rec21))
+
+    with open(output, "w") as json_file:
+        json.dump([unit.to_dict() for unit in units], json_file, indent=2)
+
+    return True
+
+
 if __name__ == '__main__':
     parser: argparse.ArgumentParser = argparse.ArgumentParser()
     parser.add_argument('-rec20', dest='rec20', required=True,
                         help="path to the xlsx file with Codes for Units of Measure Used in International Trade (rec. 20)")
     parser.add_argument('-rec21', dest='rec21', required=False,
                         help="path to the xlsx file with Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names) (rec. 21)")
+    parser.add_argument('-o', dest='output', required=False, help="path to the output file",
+                        default="parsedUneceUnits.json")
     args: argparse.Namespace = parser.parse_args()
 
-    if not os.path.exists(args.rec20):
-        print(f"The file does not exists on path '{args.rec20}'.")
+    if not run_unece_excel_parser(args.rec20, args.rec21, args.output):
         exit(1)
-
-    if args.rec21 is not None and not os.path.exists(args.rec21):
-        print(f"The file does not exists on path '{args.rec21}'.")
-        exit(1)
-
-    print(f"Reading rec 20 file '{args.rec20}'")
-    units = read_rec20(args.rec20)
-
-    if args.rec21 is not None:
-        print(f"Reading rec. 21 file '{args.rec21}'")
-        units.extend(read_rec21(args.rec21))
-
-    with open("parsedUneceUnits.json", "w") as json_file:
-        json.dump([unit.to_dict() for unit in units], json_file, indent=2)

@@ -1,9 +1,11 @@
 ﻿from enum import Enum
 
+from lib.normalizer import Normalizer
+
 
 # src: https://unece.org/sites/default/files/2023-10/Rec20_Rev6e_2009.pdf
 class State(Enum):
-    NOT_DEFINED = None
+    ACTIVE = None
     # Added. New unit added in this release of the code list
     ADDED = '+'
     # Changed name. Changes to the unit name in this release of the code list
@@ -20,7 +22,14 @@ class State(Enum):
     REINSTATED = '='
 
     @staticmethod
-    def parse(state_string: str) -> 'State':
+    def parse(state_string: str | None) -> 'State':
+        state_string = Normalizer.normalize_value(state_string)
+
+        if state_string is None:
+            return State.ACTIVE
+        elif len(state_string) != 1:
+            raise ValueError(f"Invalid input: Only one character allowed in a state value but received: {state_string}")
+
         if state_string in states_dictionary:
             return states_dictionary[state_string]
 

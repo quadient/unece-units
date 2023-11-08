@@ -31,6 +31,11 @@ class Unit:
             "categories": self.categories.name if self.categories is not None else None,
         }
 
+    def __eq__(self, other):
+        if isinstance(other, Unit):
+            return self.state == other.state and self.common_code == other.common_code and self.name == other.name and self.description == other.description and self.categories == other.categories and self.symbol == other.symbol and self.parsed_symbol == other.parsed_symbol and self.conversion_factor == other.conversion_factor
+        return False
+
     def __repr__(self):
         return str(self.to_dict())
 
@@ -41,26 +46,12 @@ class Unit:
 
         symbol = Normalizer.normalize_value(symbol)
 
-        return Unit(Unit.__parse_state(state), Normalizer.normalize_value(common_code),
+        return Unit(State.parse(state), Normalizer.normalize_value(common_code),
                     Normalizer.normalize_unit_name(name),
                     Normalizer.normalize_value(description),
                     Category.parse_categories(Normalizer.normalize_value(category)),
                     symbol, Unit.__parse_unit_reference(symbol),
                     ConversionFactor.parse(conversion_factor))
-
-    @staticmethod
-    def __parse_state(state_string: str) -> State:
-        state_string = Normalizer.normalize_value(state_string)
-
-        if state_string is None:
-            return State.NOT_DEFINED
-
-        if len(state_string) == 0:
-            return State.NOT_DEFINED
-        elif len(state_string) != 1:
-            raise ValueError(f"Invalid input: Only one character allowed in a state value but received: {state_string}")
-
-        return State.parse(state_string)
 
     @staticmethod
     def __parse_unit_reference(symbol: str) -> str | None:
