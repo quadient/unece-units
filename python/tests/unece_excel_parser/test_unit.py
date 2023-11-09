@@ -1,10 +1,10 @@
 import pytest
 from inflection import camelize
-
-from constants import *
 from lib.category import Category
 from lib.conversion_factor import ConversionFactor
 from lib.state import State
+
+from constants import *
 
 
 @pytest.mark.parametrize(
@@ -75,3 +75,8 @@ def test_to_dict_contains_all_public_properties():
 def test_parse_unit_reference_does_parse_symbol_properly(text_input: str | None, expected_parsed_symbol: str | None):
     unit = Unit.parse(STATE, COMMON_CODE, NAME, DESCRIPTION, CATEGORY, text_input, CONVERSION_FACTOR)
     assert unit.parsed_symbol == expected_parsed_symbol
+
+
+def test_parse_unit_reference_does_replace_symbol_for_defined_common_codes():
+    unit = Unit.parse(STATE, "Q27", NAME, DESCRIPTION, CATEGORY, "N·m/m²", CONVERSION_FACTOR)
+    assert unit.parsed_symbol == "newton"

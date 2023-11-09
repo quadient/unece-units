@@ -26,5 +26,6 @@ class PintRegistryManager:
         registry.define('parts_per_billion_US = 1 ppb = ppb')
         registry.define("beats_per_minute = 1 BPM = BPM")
         registry.define("month = 1 mo = mo")
+        registry.define("Nm = newton * meter = N * m")
         registry.case_sensitive = True
         return registry

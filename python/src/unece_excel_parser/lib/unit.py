@@ -1,13 +1,16 @@
-﻿from pint import errors
-
-from lib.category import Category
+﻿from lib.category import Category
 from lib.conversion_factor import ConversionFactor
 from lib.normalizer import Normalizer
 from lib.pint_registry import PintRegistryManager
 from lib.state import State
+from pint import errors
 
 
 class Unit:
+    _symbol_corrections_by_common_code: dict[(str, str | None)] = {
+        "Q27": "(N * m) / m",
+    }
+
     def __init__(self, state: State, common_code: str, name: str, description: str, categories: Category, symbol: str,
                  parsed_symbol: str, conversion_factor: ConversionFactor):
         self.state = state
@@ -50,11 +53,14 @@ class Unit:
                     Normalizer.normalize_unit_name(name),
                     Normalizer.normalize_value(description),
                     Category.parse_categories(Normalizer.normalize_value(category)),
-                    symbol, Unit.__parse_unit_reference(symbol),
+                    symbol, Unit.__parse_unit_reference(symbol, common_code),
                     ConversionFactor.parse(conversion_factor))
 
     @staticmethod
-    def __parse_unit_reference(symbol: str) -> str | None:
+    def __parse_unit_reference(symbol: str, common_code: str) -> str | None:
+        if common_code in Unit._symbol_corrections_by_common_code:
+            symbol = Unit._symbol_corrections_by_common_code[common_code]
+
         if symbol is None:
             return None
 
