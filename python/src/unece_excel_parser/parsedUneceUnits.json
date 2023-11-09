@@ -1556,8 +1556,7 @@
       "factor": 1.0,
       "parsedSymbol": "newton / meter",
       "commonCodeReferences": [
-        "M34",
-        "Q27"
+        "M34"
       ]
     },
     "parsedSymbol": "newton / meter",
@@ -4010,7 +4009,8 @@
       "factor": 9.80665,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "force_kilogram",
@@ -4180,7 +4180,8 @@
       "factor": 1000,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "kilonewton",
@@ -4254,7 +4255,8 @@
       "factor": 9.80665,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": null,
@@ -4608,7 +4610,8 @@
       "factor": 1000000,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "meganewton",
@@ -4924,7 +4927,8 @@
       "factor": 1e-06,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "micronewton",
@@ -5560,7 +5564,8 @@
       "factor": 0.001,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "millinewton",
@@ -5587,8 +5592,7 @@
       "parsedSymbol": "newton / meter",
       "commonCodeReferences": [
         "4P",
-        "M34",
-        "Q27"
+        "M34"
       ]
     },
     "parsedSymbol": "millinewton / meter",
@@ -6491,7 +6495,8 @@
       "factor": 4.448222,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "force_pound",
@@ -9035,7 +9040,8 @@
       "factor": 1e-05,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "dyne",
@@ -9068,8 +9074,7 @@
       "parsedSymbol": "newton / meter",
       "commonCodeReferences": [
         "4P",
-        "M34",
-        "Q27"
+        "M34"
       ]
     },
     "parsedSymbol": "dyne / centimeter",
@@ -11588,7 +11593,7 @@
       "parsedSymbol": "kilogram * meter ** 2 / radian / second ** 2",
       "commonCodeReferences": null
     },
-    "parsedSymbol": "number_meter / degree",
+    "parsedSymbol": "Nm / degree",
     "categories": "LEVEL_1_NORMATIVE|LEVEL_1_NORMATIVE_COMMON"
   },
   {
@@ -19971,7 +19976,8 @@
       "factor": 0.2780139,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "force_ounce",
@@ -20829,7 +20835,8 @@
       "factor": 8896.443,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": null,
@@ -21453,8 +21460,7 @@
       "parsedSymbol": "newton / meter",
       "commonCodeReferences": [
         "4P",
-        "M34",
-        "Q27"
+        "M34"
       ]
     },
     "parsedSymbol": "newton / centimeter",
@@ -21604,8 +21610,7 @@
       "factor": 1.0,
       "parsedSymbol": "newton / meter",
       "commonCodeReferences": [
-        "4P",
-        "Q27"
+        "4P"
       ]
     },
     "parsedSymbol": "newton / meter",
@@ -22286,7 +22291,8 @@
       "factor": 4448.222000000001,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "kip",
@@ -22302,7 +22308,8 @@
       "factor": 0.138255,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": "poundal",
@@ -22332,7 +22339,8 @@
       "factor": 0.00980665,
       "parsedSymbol": "newton",
       "commonCodeReferences": [
-        "NEW"
+        "NEW",
+        "Q27"
       ]
     },
     "parsedSymbol": null,
@@ -23623,8 +23631,7 @@
       "parsedSymbol": "newton / meter",
       "commonCodeReferences": [
         "4P",
-        "M34",
-        "Q27"
+        "M34"
       ]
     },
     "parsedSymbol": "kilonewton / meter",
@@ -23641,8 +23648,7 @@
       "parsedSymbol": "newton / meter",
       "commonCodeReferences": [
         "4P",
-        "M34",
-        "Q27"
+        "M34"
       ]
     },
     "parsedSymbol": "poundal / inch",
@@ -23659,8 +23665,7 @@
       "parsedSymbol": "newton / meter",
       "commonCodeReferences": [
         "4P",
-        "M34",
-        "Q27"
+        "M34"
       ]
     },
     "parsedSymbol": "force_pound / yard",
@@ -27341,7 +27346,7 @@
         "M77"
       ]
     },
-    "parsedSymbol": "newton / meter",
+    "parsedSymbol": "newton",
     "categories": "LEVEL_3_INFORMATIVE"
   },
   {
