@@ -5,15 +5,24 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using UneceGenerator.Dtos;
-using UneceGenerator.Units;
+using UneceUnits;
 
 namespace UneceGenerator;
 
-public class Generator
+public static class Generator
 {
-    const string _allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private const string ClassNameAllowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    public static async Task Run(FileInfo fileInfo)
+    private static readonly HashSet<string> RestrictedClassNames = new()
+    {
+        "Unit",
+        "ConvertibleUnit",
+        "UnitValue",
+    };
+
+
+    public static async Task Run(FileInfo fileInfo, DirectoryInfo? outputDirectory = null,
+        bool deleteFolderContent = false)
     {
         var units = await JsonSerializer.DeserializeAsync<UnitDto[]>(fileInfo.OpenRead(), new JsonSerializerOptions()
                     {
@@ -22,14 +31,7 @@ public class Generator
                     throw new InvalidOperationException($"Failed to deserialize JSON on {fileInfo.FullName}.");
 
 
-        var outputPath = "out";
-
-        if (Directory.Exists(outputPath))
-        {
-            Directory.Delete(outputPath, true);
-        }
-
-        Directory.CreateDirectory(outputPath);
+        var targetDirectory = GetTargetDirectory(outputDirectory, deleteFolderContent);
 
         foreach (var unitJson in units)
         {
@@ -37,17 +39,47 @@ public class Generator
             var className = CreateClassName(unitJson.Name);
 
             AppendNamespace(builder);
+            AppendUsings(builder);
             AppendClass(className, unitJson, builder);
 
-            await using var targetFile = File.OpenWrite($"out/{className}.cs");
+            await using var targetFile = File.OpenWrite($"{targetDirectory.FullName}/{className}.Generated.cs");
             await targetFile.WriteAsync(Encoding.UTF8.GetBytes(ParseAndFormat(builder.ToString())));
         }
+    }
+
+    private static DirectoryInfo GetTargetDirectory(DirectoryInfo? directoryInfo, bool deleteFolderContent)
+    {
+        var targetDirectory = directoryInfo ?? new DirectoryInfo("out");
+
+
+        if (deleteFolderContent && targetDirectory.Exists)
+        {
+            targetDirectory.Delete(true);
+        }
+
+        if (!targetDirectory.Exists)
+        {
+            targetDirectory.Create();
+        }
+
+        return targetDirectory;
     }
 
     private static void AppendNamespace(StringBuilder builder)
     {
         builder.Append($"""
-                        namespace UneceGenerator.Units;
+                        // Auto-generated code
+                        #nullable enable
+
+                        namespace UneceUnits.Generated;
+
+                        """);
+    }
+
+    private static void AppendUsings(StringBuilder builder)
+    {
+        builder.Append($"""
+                        using UneceUnits;
 
                         """);
     }
@@ -77,18 +109,25 @@ public class Generator
 
     private static string CreateClassName(string unitName)
     {
-        // if unit name starts with other symbol than letter, prepend "Unit"
         if (!char.IsLetter(unitName[0]))
         {
             unitName = $"Unit{unitName}";
         }
-        
+
         unitName = unitName.Replace("/", " per ");
 
         var titleCase = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(unitName);
-        return string.Concat(titleCase.Where(c => !char.IsWhiteSpace(c) && _allowedChars.Contains(c)));
+        var className = string.Concat(titleCase.Where(c => !char.IsWhiteSpace(c) && ClassNameAllowedChars.Contains(c)));
+
+        while (RestrictedClassNames.Contains(className))
+        {
+            className += "Unece";
+        }
+
+        return className;
     }
-    
+
     static string ParseAndFormat(string code) =>
-        CSharpSyntaxTree.ParseText(SourceText.From(code, Encoding.UTF8)).GetRoot().NormalizeWhitespace().SyntaxTree.ToString();
+        CSharpSyntaxTree.ParseText(SourceText.From(code, Encoding.UTF8)).GetRoot().NormalizeWhitespace().SyntaxTree
+            .ToString();
 }
