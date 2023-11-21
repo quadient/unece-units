@@ -2,7 +2,7 @@ namespace UneceGenerator.Dtos;
 
 public class UnitDto
 {
-    public required string State { get; set; }
+    public required State State { get; set; }
     public required string CommonCode { get; set; }
     public required string Name { get; set; }
     public string? Description { get; set; }
