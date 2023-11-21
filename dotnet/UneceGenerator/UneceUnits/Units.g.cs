@@ -1,6 +1,6 @@
 // Auto-generated code
 #nullable enable
-namespace UneceUnits.Generated;
+namespace UneceUnits;
 using System.Diagnostics.CodeAnalysis;
 using UneceUnits;
 
@@ -14,6 +14,21 @@ public static class Units
         }
 
         return unit;
+    }
+
+    public static bool TryGetConvertibleByCommonCode(string commonCode, [NotNullWhen(returnValue: true)] out IConvertibleUnit? convertibleUnit)
+    {
+        if (TryGetByCommonCode(commonCode, out var unit))
+        {
+            if (unit is IConvertibleUnit typedUnit)
+            {
+                convertibleUnit = typedUnit;
+                return true;
+            }
+        }
+
+        convertibleUnit = null;
+        return false;
     }
 
     public static bool TryGetByCommonCode(string commonCode, [NotNullWhen(returnValue: true)] out IUnit? unit)
@@ -2185,21 +2200,7 @@ public static class Units
         };
         return unit != null;
     }
-
-    public static bool TryGetConvertibleByCommonCode(string commonCode, [NotNullWhen(returnValue: true)] out IConvertibleUnit? convertibleUnit)
-    {
-        if (TryGetByCommonCode(commonCode, out var unit))
-        {
-            if (unit is IConvertibleUnit typedUnit)
-            {
-                convertibleUnit = typedUnit;
-                return true;
-            }
-        }
-
-        convertibleUnit = null;
-        return false;
-    }
+#region Units
 
     public static IUnit Group = new Unit()
     {
@@ -17999,4 +18000,5 @@ public static class Units
         Symbol = null,
         CommonCode = "XZY",
     };
+#endregion
 }

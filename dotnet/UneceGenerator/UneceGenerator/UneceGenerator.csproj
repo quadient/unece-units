@@ -17,10 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Units\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\UneceUnits\UneceUnits.csproj" />
     </ItemGroup>
 

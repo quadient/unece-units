@@ -26,7 +26,6 @@ public static class Generator
         "UnitValue",
     };
 
-
     public static async Task Run(FileInfo fileInfo, DirectoryInfo? outputDirectory = null,
         bool deleteFolderContent = false)
     {
@@ -52,15 +51,15 @@ public static class Generator
         var unitsByPropertyName = units.GroupBy(o => CreatePropertyName(o)).ToList();
 
         AppendNamespace(builder);
-        AppendUsings(builder);
+        AppendUsing(builder);
 
         // language=C#
         builder.Append($$"""
                          public static class Units {
                          """);
         AppendGetByCommonCode(unitsByPropertyName, builder);
-        AppendTryGetByCommonCode(unitsByPropertyName, builder);
         AppendTryGetConvertibleByCommonCode(unitsByPropertyName, builder);
+        AppendTryGetByCommonCode(unitsByPropertyName, builder);
         AppendUnits(unitsByPropertyName, builder);
         builder.Append('}');
 
@@ -126,8 +125,6 @@ public static class Generator
                          {
                              unit = commonCode switch
                              {
-                                 
-                                 
                          """);
         foreach (var unitsGroup in unitsByPropertyName)
         {
@@ -153,12 +150,14 @@ public static class Generator
 
     private static async Task WriteFileAsync(DirectoryInfo targetDirectory, string fileName, StringBuilder builder)
     {
-        await using var targetFile = File.OpenWrite($"{targetDirectory.FullName}/{fileName}.Generated.cs");
+        await using var targetFile = File.OpenWrite($"{targetDirectory.FullName}/{fileName}.g.cs");
         await targetFile.WriteAsync(Encoding.UTF8.GetBytes(ParseAndFormat(builder.ToString())));
     }
 
     private static void AppendUnits(List<IGrouping<string, UnitDto>> unitsByPropertyName, StringBuilder builder)
     {
+        builder.AppendLine("#region Units");
+
         foreach (var unitsGroup in unitsByPropertyName)
         {
             var unitsInGroup = unitsGroup.ToList();
@@ -168,6 +167,8 @@ public static class Generator
                 AppendUnitStaticInstance(unit, builder, unitsInGroup.Count > 1);
             }
         }
+
+        builder.AppendLine("#endregion");
     }
 
     private static void AppendUnitStaticInstance(UnitDto unit, StringBuilder builder, bool hasConflicts)
@@ -195,12 +196,7 @@ public static class Generator
 
     private static string? GetNullableStringPropertyValue(string? text)
     {
-        if (string.IsNullOrEmpty(text))
-        {
-            return "null";
-        }
-
-        return $"\"{Escape(text)}\"";
+        return string.IsNullOrEmpty(text) ? "null" : $"\"{Escape(text)}\"";
     }
 
     private static DirectoryInfo GetTargetDirectory(DirectoryInfo? directoryInfo, bool deleteFolderContent)
@@ -228,7 +224,7 @@ public static class Generator
                         // Auto-generated code
                         #nullable enable
 
-                        namespace UneceUnits.Generated;
+                        namespace UneceUnits;
 
                         """);
     }
@@ -238,7 +234,7 @@ public static class Generator
         return value?.Replace("\"", "\\\"");
     }
 
-    private static void AppendUsings(StringBuilder builder)
+    private static void AppendUsing(StringBuilder builder)
     {
         // language=C#
         builder.Append($"""

@@ -20,7 +20,14 @@ public interface IUnit
 
 public interface IConvertibleUnit : IUnit
 {
+    /// <summary>
+    /// For example "meter" for "kilometer", "centimeter", ...
+    /// </summary>
     public string ConversionGroup { get; }
+    
+    /// <summary>
+    /// For example 1000 for "kilometer", 0.01 for "centimeter", ...
+    /// </summary>
     public decimal ConversionFactor { get; }
 }
 
