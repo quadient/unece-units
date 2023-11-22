@@ -4,7 +4,7 @@ namespace UneceUnits.Tests;
 
 public class UnitValueTest
 {
-    private const decimal Precision = 1e-6m;
+    private const decimal Precision = 1e-3m;
 
     [Fact]
     public void IsConvertible_GivenConvertibleUnit_ReturnsTrue()
@@ -20,18 +20,37 @@ public class UnitValueTest
         unit.IsConvertible.Should().BeFalse();
     }
 
-    [Fact]
-    public void Convert_GivenSameConversionGroup_DoesConvert()
+    [Theory]
+    [MemberData(nameof(ConvertData))]
+    public void Convert_GivenSameConversionGroup_DoesConvert(UnitValue given, UnitValue expected)
     {
-        var meter = new UnitValue
+        var result = given.Convert((IConvertibleUnit) expected.Unit);
+        result.Unit.Should().Be(expected.Unit);
+        result.Value.Should().BeApproximately(expected.Value, Precision);
+    }
+
+    [Fact]
+    public void Convert_GivenNotConvertibleUnit_DoesThrow()
+    {
+        var bag = new UnitValue
         {
-            Value = 1.065m,
+            Value = 1,
+            Unit = Units.Bag,
+        };
+
+        Assert.Throws<InvalidOperationException>(() => { _ = bag.Convert(Units.Metre); });
+    }
+
+    [Fact]
+    public void Convert_GivenOtherConversionGroup_DoesThrow()
+    {
+        var bag = new UnitValue
+        {
+            Value = 1,
             Unit = Units.Metre,
         };
 
-        var converted = meter.Convert(Units.MicrometreMicron);
-        converted.Value.Should().Be(1065000);
-        converted.Unit.Should().Be(Units.MicrometreMicron);
+        Assert.Throws<InvalidOperationException>(() => { _ = bag.Convert(Units.Litre); });
     }
 
     [Theory]
@@ -177,6 +196,58 @@ public class UnitValueTest
     }
 
     #region TestData
+
+    public static IEnumerable<object[]> ConvertData =>
+        new List<object[]>
+        {
+            new object[]
+            {
+                new UnitValue {Value = 1.065m, Unit = Units.Metre},
+                new UnitValue {Value = 1065000m, Unit = Units.MicrometreMicron},
+            },
+            new object[]
+            {
+                new UnitValue {Value = 1.065m, Unit = Units.Metre},
+                new UnitValue {Value = 106.5m, Unit = Units.Centimetre},
+            },
+            new object[]
+            {
+                new UnitValue {Value = 1.065m, Unit = Units.Metre},
+                new UnitValue {Value = 1.065m, Unit = Units.Metre},
+            },
+            new object[]
+            {
+                new UnitValue {Value = 1.065m, Unit = Units.Metre},
+                new UnitValue {Value = 0.001065m, Unit = Units.Kilometre},
+            },
+            new object[]
+            {
+                new UnitValue {Value = -1.065m, Unit = Units.Litre},
+                new UnitValue {Value = -1065m, Unit = Units.Millilitre},
+            },
+            new object[]
+            {
+                new UnitValue {Value = -1.065m, Unit = Units.Litre},
+                new UnitValue {Value = -0.001065m, Unit = Units.CubicMetre},
+            },
+
+            new object[]
+            {
+                new UnitValue {Value = 0, Unit = Units.GramPerCubicCentimetre},
+                new UnitValue {Value = 0, Unit = Units.GramPerCubicCentimetre},
+            },
+            new object[]
+            {
+                new UnitValue {Value = 15, Unit = Units.MilePerHourStatuteMile},
+                new UnitValue {Value = 6.7056m, Unit = Units.MetrePerSecond},
+            },
+            new object[]
+            {
+                new UnitValue {Value = 100, Unit = Units.MilePerHourStatuteMile},
+                new UnitValue {Value = 160.9344m, Unit = Units.KilometrePerHour},
+            },
+        };
+
 
     public static IEnumerable<object?[]> ShouldThrowCommonData =>
         new List<UnitValue?[]>

@@ -1,0 +1,32 @@
+# .github/workflows/dotnet-tests.yml
+name: .NET Tests
+
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        required: true
+        type: string
+      
+      dotnet-version:
+        required: true
+        type: string
+
+jobs:
+  dotnet-tests:
+    runs-on: "ubuntu-latest"
+    name: Run .NET tests
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+      - name: Build whole solution
+        working-directory: ${{ inputs.working-directory }}
+        run: |
+          dotnet build
+      - name: Test with dotnet test
+        working-directory: ${{ inputs.working-directory }}
+        run: |
+          dotnet test --no-restore
