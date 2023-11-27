@@ -105,10 +105,7 @@ public record UnitValue
         };
     }
 
-    public static UnitValue operator *(decimal a, UnitValue b)
-    {
-        return b with {Value = a * b.Value};
-    }
+    public static UnitValue operator *(decimal a, UnitValue b) => b * a;
 
     public static UnitValue operator *(UnitValue a, decimal value)
     {
@@ -154,7 +151,7 @@ public record UnitValue
             AssertSameUnit(a.Unit, b.Unit);
             return a.Value > b.Value;
         }
-        
+
         var convertibleA = a.GetConvertibleUnit();
         var convertibleB = b.GetConvertibleUnit();
 

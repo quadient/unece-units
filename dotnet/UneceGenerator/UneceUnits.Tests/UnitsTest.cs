@@ -1,9 +1,8 @@
 ﻿using FluentAssertions;
-using UneceUnits;
 
-namespace UneceUnits.Tests.Generated;
+namespace UneceUnits.Tests;
 
-public class UnitsGeneratedTest
+public class UnitsTest
 {
     [Fact]
     public void GetByCommonCode_GivenNonExistingCode_ShouldThrow()

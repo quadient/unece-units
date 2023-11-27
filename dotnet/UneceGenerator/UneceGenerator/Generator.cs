@@ -101,21 +101,6 @@ public static class Generator
                          """);
     }
 
-    private static void AppendGetConvertibleByCommonCode(List<IGrouping<string, UnitDto>> unitsByPropertyName,
-        StringBuilder builder)
-    {
-        // language=C#
-        builder.Append($$"""
-                         public static IConvertibleUnit GetByCommonCode(string commonCode)
-                         {
-                            if (!TryGetConvertibleByCommonCode(commonCode, out var unit)) {
-                                throw new ArgumentException($"Unit with common code '{commonCode}' does not exist.", nameof(commonCode));
-                            }
-                             return unit;
-                         }
-                         """);
-    }
-
     private static void AppendTryGetByCommonCode(List<IGrouping<string, UnitDto>> unitsByPropertyName,
         StringBuilder builder)
     {
@@ -175,6 +160,7 @@ public static class Generator
     {
         // language=C#
         builder.Append($$"""
+                         {{CreateDescription(unit.Description)}}
                          public static {{GetUnitInterface(unit)}} {{$"{CreatePropertyName(unit, hasConflicts)}"}} = new {{GetUnitClass(unit)}}() {
                              {{nameof(Unit.Name)}} = "{{Escape(unit.Name)}}",
                              {{nameof(Unit.Symbol)}} = {{GetNullableStringPropertyValue(unit.Symbol)}},
@@ -182,6 +168,17 @@ public static class Generator
                              {{(unit.IsConvertible ? GetConvertibleProperties(unit) : null)}}
                          };
                          """);
+    }
+
+    private static string? CreateDescription(string? unitDescription)
+    {
+        return string.IsNullOrWhiteSpace(unitDescription)
+            ? null
+            : $"""
+               /// <summary>
+               /// {unitDescription.Replace("\n", string.Empty)}
+               /// </summary>
+               """;
     }
 
     private static string GetUnitInterface(UnitDto unit)
@@ -277,10 +274,10 @@ public static class Generator
         return hasConflicts ? $"{className}{SanitizeInput(unit.CommonCode)}" : className;
     }
 
-    private static string SanitizeInput(string? titleCase) =>
-        titleCase == null
+    private static string SanitizeInput(string? input) =>
+        input == null
             ? string.Empty
-            : string.Concat(titleCase.Where(c => !char.IsWhiteSpace(c) && ClassNameAllowedChars.Contains(c)));
+            : string.Concat(input.Where(c => !char.IsWhiteSpace(c) && ClassNameAllowedChars.Contains(c)));
 
     static string ParseAndFormat(string code) =>
         CSharpSyntaxTree.ParseText(SourceText.From(code, Encoding.UTF8)).GetRoot().NormalizeWhitespace().SyntaxTree
