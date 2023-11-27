@@ -2,15 +2,16 @@
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using UneceGenerator.Dtos;
-using UneceUnits;
+using UneceUnits.Contract;
 
 namespace UneceGenerator;
 
-public static class Generator
+public static partial class Generator
 {
     private const string ClassNameAllowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
@@ -21,9 +22,11 @@ public static class Generator
 
     private static readonly HashSet<string> RestrictedClassNames = new()
     {
-        "Unit",
-        "ConvertibleUnit",
-        "UnitValue",
+        nameof(Unit),
+        nameof(ConvertibleUnit),
+        nameof(UnitValue),
+        nameof(IUnit),
+        nameof(IConvertibleUnit),
     };
 
     public static async Task Run(FileInfo fileInfo, DirectoryInfo? outputDirectory = null,
@@ -32,73 +35,92 @@ public static class Generator
         var serializerOptions = new JsonSerializerOptions
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            Converters = {new JsonStringEnumConverter(JsonNamingPolicy.SnakeCaseUpper)},
         };
+        serializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.SnakeCaseUpper));
 
-        var units = (await JsonSerializer.DeserializeAsync<UnitDto[]>(fileInfo.OpenRead(), serializerOptions) ??
-                     throw new InvalidOperationException($"Failed to deserialize JSON on {fileInfo.FullName}."))
+        var unitsByPropertyName =
+            (await JsonSerializer.DeserializeAsync<UnitDto[]>(fileInfo.OpenRead(), serializerOptions) ??
+             throw new InvalidOperationException($"Failed to deserialize JSON on {fileInfo.FullName}."))
             .Where(o => !ExcludedStates.Contains(o.State))
-            .ToArray();
+            .GroupBy(o => CreatePropertyName(o)).ToList();
 
         var targetDirectory = GetTargetDirectory(outputDirectory, deleteFolderContent);
 
-        await CreateUnitsClass(units, targetDirectory);
+        await GenerateUnitsClassWithMethods(unitsByPropertyName, targetDirectory);
+        await CreateUnitsClasses(unitsByPropertyName, targetDirectory);
     }
 
-    private static async Task CreateUnitsClass(UnitDto[] units, DirectoryInfo targetDirectory)
+    private static async Task CreateUnitsClasses(List<IGrouping<string, UnitDto>> unitsByPropertyName,
+        DirectoryInfo targetDirectory)
+    {
+        var convertible = new List<UnitContext>();
+        var nonConvertible = new List<UnitContext>();
+
+        foreach (var unitGroup in unitsByPropertyName)
+        {
+            foreach (var unit in unitGroup)
+            {
+                if (unit.IsConvertible)
+                {
+                    convertible.Add(new UnitContext(unit, unitGroup.Count() > 1));
+                }
+                else
+                {
+                    nonConvertible.Add(new UnitContext(unit, unitGroup.Count() > 1));
+                }
+            }
+        }
+
+        await CreateUnits(targetDirectory, nonConvertible);
+        await CreateUnits(targetDirectory, convertible, "Convertible");
+    }
+
+    private static async Task CreateUnits(DirectoryInfo targetDirectory, List<UnitContext> units,
+        string? fileSuffix = null)
     {
         var builder = new StringBuilder();
-        var unitsByPropertyName = units.GroupBy(o => CreatePropertyName(o)).ToList();
 
         AppendNamespace(builder);
         AppendUsing(builder);
 
-        // language=C#
-        builder.Append($$"""
-                         public static class Units {
-                         """);
-        AppendGetByCommonCode(unitsByPropertyName, builder);
-        AppendTryGetConvertibleByCommonCode(unitsByPropertyName, builder);
-        AppendTryGetByCommonCode(unitsByPropertyName, builder);
-        AppendUnits(unitsByPropertyName, builder);
+        AppendUnitsClassStart(builder);
+
+        foreach (var unitToGenerate in units)
+        {
+            AppendUnitStaticInstance(unitToGenerate.Unit, builder, unitToGenerate.HasConflicts);
+        }
+
+        AppendClassEnd(builder);
+
+        await WriteFileAsync(targetDirectory, $"Units{(fileSuffix is null ? null : $".{fileSuffix}")}", builder);
+    }
+
+    private static void AppendClassEnd(StringBuilder builder)
+    {
         builder.Append('}');
-
-        await WriteFileAsync(targetDirectory, $"Units", builder);
     }
 
-    private static void AppendTryGetConvertibleByCommonCode(List<IGrouping<string, UnitDto>> unitsByPropertyName,
-        StringBuilder builder)
+    private static void AppendUnitsClassStart(StringBuilder builder)
     {
         // language=C#
         builder.Append($$"""
-                         public static bool TryGetConvertibleByCommonCode(string commonCode, [NotNullWhen(returnValue: true)] out IConvertibleUnit? convertibleUnit)
-                         {
-                            if (TryGetByCommonCode(commonCode, out var unit)) {
-                                if (unit is IConvertibleUnit typedUnit) {
-                                    convertibleUnit = typedUnit;
-                                    return true;
-                                }
-                            }
-                            convertibleUnit = null;
-                            
-                            return false;
-                         }
+                         public static partial class Units {
                          """);
     }
 
-    private static void AppendGetByCommonCode(List<IGrouping<string, UnitDto>> unitsByPropertyName,
-        StringBuilder builder)
+    private static async Task GenerateUnitsClassWithMethods(List<IGrouping<string, UnitDto>> units,
+        DirectoryInfo targetDirectory)
     {
-        // language=C#
-        builder.Append($$"""
-                         public static IUnit GetByCommonCode(string commonCode)
-                         {
-                            if (!TryGetByCommonCode(commonCode, out var unit)) {
-                                throw new ArgumentException($"Unit with common code '{commonCode}' does not exist.", nameof(commonCode));
-                            }
-                             return unit;
-                         }
-                         """);
+        var builder = new StringBuilder();
+
+        AppendNamespace(builder);
+        AppendUsing(builder);
+
+        AppendUnitsClassStart(builder);
+        AppendTryGetByCommonCode(units, builder);
+        AppendClassEnd(builder);
+
+        await WriteFileAsync(targetDirectory, $"Units.Methods", builder);
     }
 
     private static void AppendTryGetByCommonCode(List<IGrouping<string, UnitDto>> unitsByPropertyName,
@@ -119,7 +141,7 @@ public static class Generator
             foreach (var unit in unitsInGroup)
             {
                 builder.Append(
-                    $"\"{SanitizeInput(unit.CommonCode)}\" => {CreatePropertyName(unit, hasNamingConflicts)},");
+                    $"\"{SanitizeForClassName(unit.CommonCode)}\" => {CreatePropertyName(unit, hasNamingConflicts)},");
             }
         }
 
@@ -135,39 +157,22 @@ public static class Generator
 
     private static async Task WriteFileAsync(DirectoryInfo targetDirectory, string fileName, StringBuilder builder)
     {
-        await using var targetFile = File.OpenWrite($"{targetDirectory.FullName}/{fileName}.g.cs");
+        await using var targetFile = File.Create($"{targetDirectory.FullName}/{fileName}.g.cs");
         await targetFile.WriteAsync(Encoding.UTF8.GetBytes(ParseAndFormat(builder.ToString())));
-    }
-
-    private static void AppendUnits(List<IGrouping<string, UnitDto>> unitsByPropertyName, StringBuilder builder)
-    {
-        builder.AppendLine("#region Units");
-
-        foreach (var unitsGroup in unitsByPropertyName)
-        {
-            var unitsInGroup = unitsGroup.ToList();
-
-            foreach (var unit in unitsInGroup)
-            {
-                AppendUnitStaticInstance(unit, builder, unitsInGroup.Count > 1);
-            }
-        }
-
-        builder.AppendLine("#endregion");
     }
 
     private static void AppendUnitStaticInstance(UnitDto unit, StringBuilder builder, bool hasConflicts)
     {
         // language=C#
         builder.Append($$"""
-                         {{CreateDescription(unit.Description)}}
-                         public static {{GetUnitInterface(unit)}} {{$"{CreatePropertyName(unit, hasConflicts)}"}} = new {{GetUnitClass(unit)}}() {
-                             {{nameof(Unit.Name)}} = "{{Escape(unit.Name)}}",
-                             {{nameof(Unit.Symbol)}} = {{GetNullableStringPropertyValue(unit.Symbol)}},
-                             {{nameof(Unit.CommonCode)}} = "{{Escape(unit.CommonCode)}}",
-                             {{(unit.IsConvertible ? GetConvertibleProperties(unit) : null)}}
-                         };
-                         """);
+                          {{CreateDescription(unit.Description)}}
+                          public static {{GetUnitInterface(unit)}} {{$"{CreatePropertyName(unit, hasConflicts)}"}} { get; } = new {{GetUnitClass(unit)}}() {
+                              {{nameof(IUnit.Name)}} = "{{Sanitize(unit.Name)}}",
+                              {{nameof(IUnit.Symbol)}} = {{GetNullableStringPropertyValue(unit.Symbol)}},
+                              {{nameof(IUnit.CommonCode)}} = "{{Sanitize(unit.CommonCode)}}",
+                              {{(unit.IsConvertible ? GetConvertibleProperties(unit) : null)}}
+                          };
+                          """);
     }
 
     private static string? CreateDescription(string? unitDescription)
@@ -193,7 +198,7 @@ public static class Generator
 
     private static string? GetNullableStringPropertyValue(string? text)
     {
-        return string.IsNullOrEmpty(text) ? "null" : $"\"{Escape(text)}\"";
+        return string.IsNullOrEmpty(text) ? "null" : $"\"{Sanitize(text)}\"";
     }
 
     private static DirectoryInfo GetTargetDirectory(DirectoryInfo? directoryInfo, bool deleteFolderContent)
@@ -226,9 +231,16 @@ public static class Generator
                         """);
     }
 
-    private static string? Escape(string? value)
+    private static string? Sanitize(string? value)
     {
-        return value?.Replace("\"", "\\\"");
+        if (value is null)
+        {
+            return null;
+        }
+
+        WhitespaceRegex().Replace(value, " ");
+
+        return value.Replace("\"", "\\\"");
     }
 
     private static void AppendUsing(StringBuilder builder)
@@ -238,6 +250,7 @@ public static class Generator
                         using System.Diagnostics.CodeAnalysis;
 
                         using UneceUnits;
+                        using UneceUnits.Contract;
 
                         """);
     }
@@ -264,17 +277,17 @@ public static class Generator
         unitName = unitName.Replace("/", " Per ");
 
         var titleCase = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(unitName);
-        var className = SanitizeInput(titleCase);
+        var className = SanitizeForClassName(titleCase);
 
         while (RestrictedClassNames.Contains(className))
         {
             className += "Unece";
         }
 
-        return hasConflicts ? $"{className}{SanitizeInput(unit.CommonCode)}" : className;
+        return hasConflicts ? $"{className}{SanitizeForClassName(unit.CommonCode)}" : className;
     }
 
-    private static string SanitizeInput(string? input) =>
+    private static string SanitizeForClassName(string? input) =>
         input == null
             ? string.Empty
             : string.Concat(input.Where(c => !char.IsWhiteSpace(c) && ClassNameAllowedChars.Contains(c)));
@@ -282,4 +295,9 @@ public static class Generator
     static string ParseAndFormat(string code) =>
         CSharpSyntaxTree.ParseText(SourceText.From(code, Encoding.UTF8)).GetRoot().NormalizeWhitespace().SyntaxTree
             .ToString();
+
+    [GeneratedRegex(@"\s+")]
+    private static partial Regex WhitespaceRegex();
+
+    private record UnitContext(UnitDto Unit, bool HasConflicts);
 }

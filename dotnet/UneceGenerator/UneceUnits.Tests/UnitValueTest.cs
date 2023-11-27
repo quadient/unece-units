@@ -1,4 +1,5 @@
 using FluentAssertions;
+using UneceUnits.Contract;
 
 namespace UneceUnits.Tests;
 
@@ -38,7 +39,7 @@ public class UnitValueTest
             Unit = Units.Bag,
         };
 
-        Assert.Throws<InvalidOperationException>(() => { _ = bag.Convert(Units.Metre); });
+        Assert.Throws<ConversionException>(() => { _ = bag.Convert(Units.Metre); });
     }
 
     [Fact]
@@ -50,7 +51,7 @@ public class UnitValueTest
             Unit = Units.Metre,
         };
 
-        Assert.Throws<InvalidOperationException>(() => { _ = bag.Convert(Units.Litre); });
+        Assert.Throws<ConversionException>(() => { _ = bag.Convert(Units.Litre); });
     }
 
     [Theory]
@@ -60,7 +61,7 @@ public class UnitValueTest
     {
         if (expected == null)
         {
-            Assert.Throws<InvalidOperationException>(() => { _ = a + b; });
+            Assert.Throws<ConversionException>(() => { _ = a + b; });
             return;
         }
 
@@ -76,7 +77,7 @@ public class UnitValueTest
     {
         if (expected == null)
         {
-            Assert.Throws<InvalidOperationException>(() => { _ = a - b; });
+            Assert.Throws<ConversionException>(() => { _ = a - b; });
             return;
         }
 
@@ -86,19 +87,18 @@ public class UnitValueTest
 
     [Theory]
     [MemberData(nameof(DivisionOperatorData))]
-    [MemberData(nameof(ShouldThrowCommonData))]
-    public void OperatorDivision_GivenSameConversionGroup_DoesDivideProperly(UnitValue a, UnitValue b,
+    public void OperatorDivision_GivenSameConversionGroup_DoesDivideProperly(UnitValue a, decimal b,
         UnitValue? expected)
     {
         if (expected == null)
         {
-            if (b.Value == 0.0m)
+            if (b == 0.0m)
             {
                 Assert.Throws<DivideByZeroException>(() => { _ = a / b; });
             }
             else
             {
-                Assert.Throws<InvalidOperationException>(() => { _ = a / b; });
+                Assert.Throws<ConversionException>(() => { _ = a / b; });
             }
 
             return;
@@ -158,20 +158,20 @@ public class UnitValueTest
     }
 
     [Fact]
-    public void OperatorLessAndGreaterThan_GivenDifferentUnit_ThrowsInvalidOperationException()
+    public void OperatorLessAndGreaterThan_GivenDifferentUnit_ThrowsConversionException()
     {
         var metre = new UnitValue {Value = 1, Unit = Units.Metre};
         var bag = new UnitValue {Value = 1, Unit = Units.Bag};
         var activity = new UnitValue {Value = 1, Unit = Units.Activity};
 
-        Assert.Throws<InvalidOperationException>(() => { _ = metre < bag; });
-        Assert.Throws<InvalidOperationException>(() => { _ = bag < metre; });
-        Assert.Throws<InvalidOperationException>(() => { _ = bag < activity; });
-        Assert.Throws<InvalidOperationException>(() => { _ = activity < bag; });
-        Assert.Throws<InvalidOperationException>(() => { _ = metre > bag; });
-        Assert.Throws<InvalidOperationException>(() => { _ = bag > metre; });
-        Assert.Throws<InvalidOperationException>(() => { _ = bag > activity; });
-        Assert.Throws<InvalidOperationException>(() => { _ = activity > bag; });
+        Assert.Throws<ConversionException>(() => { _ = metre < bag; });
+        Assert.Throws<ConversionException>(() => { _ = bag < metre; });
+        Assert.Throws<ConversionException>(() => { _ = bag < activity; });
+        Assert.Throws<ConversionException>(() => { _ = activity < bag; });
+        Assert.Throws<ConversionException>(() => { _ = metre > bag; });
+        Assert.Throws<ConversionException>(() => { _ = bag > metre; });
+        Assert.Throws<ConversionException>(() => { _ = bag > activity; });
+        Assert.Throws<ConversionException>(() => { _ = activity > bag; });
     }
 
 
@@ -439,87 +439,76 @@ public class UnitValueTest
         };
 
     public static IEnumerable<object?[]> DivisionOperatorData =>
-        new List<UnitValue?[]>
+        new List<object?[]>
         {
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = 1m, Unit = Units.Metre},
-                new() {Value = 2m, Unit = Units.Metre},
-                new() {Value = 0.5m, Unit = Units.Metre},
+                new UnitValue {Value = 1m, Unit = Units.Metre},
+                2m,
+                new UnitValue {Value = 0.5m, Unit = Units.Metre},
             },
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = 1e6m, Unit = Units.Metre},
-                new() {Value = 2m, Unit = Units.Centimetre},
-                new() {Value = 50e6m, Unit = Units.Metre},
+                new UnitValue {Value = 106.6m, Unit = Units.Centimetre},
+                1.065m,
+                new UnitValue {Value = 100.093897m, Unit = Units.Centimetre},
             },
-            new UnitValue?[]
+
+            new object?[]
             {
-                new() {Value = 106.6m, Unit = Units.Centimetre},
-                new() {Value = 1.065m, Unit = Units.Metre},
-                new() {Value = 1.00093897m, Unit = Units.Centimetre},
-            },
-            new UnitValue?[]
-            {
-                new() {Value = 1.065m, Unit = Units.Metre},
-                new() {Value = 106.6m, Unit = Units.Centimetre},
-                new() {Value = 0.999061914m, Unit = Units.Metre},
-            },
-            new UnitValue?[]
-            {
-                new() {Value = 0m, Unit = Units.Metre},
-                new() {Value = -106.6m, Unit = Units.Centimetre},
-                new() {Value = 0, Unit = Units.Metre},
+                new UnitValue {Value = 0m, Unit = Units.Metre},
+                -106.6m,
+                new UnitValue {Value = 0, Unit = Units.Metre},
             },
             // Both operands are zero
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = 0m, Unit = Units.Metre},
-                new() {Value = 0m, Unit = Units.Metre},
+                new UnitValue {Value = 0m, Unit = Units.Metre},
+                0,
                 null,
             },
             // Zero division
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = 1m, Unit = Units.Metre},
-                new() {Value = 0m, Unit = Units.Metre},
+                new UnitValue {Value = 1m, Unit = Units.Metre},
+                0,
                 null,
             },
             // One value is negative
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = 1m, Unit = Units.Metre},
-                new() {Value = -2m, Unit = Units.Metre},
-                new() {Value = -0.5m, Unit = Units.Metre}
+                new UnitValue {Value = 1m, Unit = Units.Metre},
+                -2m,
+                new UnitValue {Value = -0.5m, Unit = Units.Metre}
             },
             // Both values are negative
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = -1m, Unit = Units.Metre},
-                new() {Value = -2m, Unit = Units.Metre},
-                new() {Value = 0.5m, Unit = Units.Metre}
+                new UnitValue {Value = -1m, Unit = Units.Metre},
+                -2m,
+                new UnitValue {Value = 0.5m, Unit = Units.Metre}
             },
             // Large numbers
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = 1e6m, Unit = Units.Metre},
-                new() {Value = 2e6m, Unit = Units.Metre},
-                new() {Value = 0.5m, Unit = Units.Metre}
+                new UnitValue {Value = 1e6m, Unit = Units.Metre},
+                2e6m,
+                new UnitValue {Value = 0.5m, Unit = Units.Metre}
             },
 
             // Small numbers
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = 0.000001m, Unit = Units.Metre},
-                new() {Value = 0.000002m, Unit = Units.Metre},
-                new() {Value = 0.5m, Unit = Units.Metre}
+                new UnitValue {Value = 0.000001m, Unit = Units.Metre},
+                0.000002m,
+                new UnitValue {Value = 0.5m, Unit = Units.Metre}
             },
             // Not convertible
-            new UnitValue?[]
+            new object?[]
             {
-                new() {Value = 1, Unit = Units.Bag},
-                new() {Value = 2, Unit = Units.Bag},
-                new() {Value = 0.5m, Unit = Units.Bag}
+                new UnitValue {Value = 1, Unit = Units.Bag},
+                2,
+                new UnitValue {Value = 0.5m, Unit = Units.Bag}
             },
         };
 

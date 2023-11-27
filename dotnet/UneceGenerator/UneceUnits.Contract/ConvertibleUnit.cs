@@ -1,22 +1,4 @@
-﻿namespace UneceUnits;
-
-public interface IUnit
-{
-    /// <summary>
-    /// For example kilogram, meter, liter.
-    /// </summary>
-    public string Name { get; }
-
-    /// <summary>
-    /// Unique identifier defined by UNECE standard, for example KGM, MTR, LTR.
-    /// </summary>
-    public string CommonCode { get; }
-
-    /// <summary>
-    /// Case sensitive defined by standard, for example kg, m, l.
-    /// </summary>
-    public string? Symbol { get; }
-}
+namespace UneceUnits.Contract;
 
 public interface IConvertibleUnit : IUnit
 {
@@ -24,18 +6,11 @@ public interface IConvertibleUnit : IUnit
     /// For example "meter" for "kilometer", "centimeter", ...
     /// </summary>
     public string ConversionGroup { get; }
-    
+
     /// <summary>
     /// For example 1000 for "kilometer", 0.01 for "centimeter", ...
     /// </summary>
     public decimal ConversionFactor { get; }
-}
-
-public record Unit : IUnit
-{
-    public required string Name { get; init; }
-    public required string CommonCode { get; init; }
-    public required string? Symbol { get; init; }
 }
 
 public record ConvertibleUnit : IConvertibleUnit

@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\UneceUnits\UneceUnits.csproj" />
+      <ProjectReference Include="..\UneceUnits.Contract\UneceUnits.Contract.csproj" />
     </ItemGroup>
 
 </Project>
