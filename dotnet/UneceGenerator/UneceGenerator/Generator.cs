@@ -7,7 +7,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using UneceGenerator.Dtos;
-using UneceUnits.Contract;
+using UneceUnits;
 
 namespace UneceGenerator;
 
@@ -15,9 +15,15 @@ public static partial class Generator
 {
     private const string ClassNameAllowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    private static readonly HashSet<State> ExcludedStates = new()
+    private static readonly HashSet<State> ObsoleteStates = new()
     {
         State.Deprecated, State.MarkedAsDeleted,
+    };
+
+
+    private static readonly HashSet<State> ExcludedStates = new()
+    {
+        State.MarkedAsDeleted,
     };
 
     private static readonly HashSet<string> RestrictedClassNames = new()
@@ -36,7 +42,8 @@ public static partial class Generator
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         };
-        serializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.SnakeCaseUpper));
+
+        AddCustomConverters(serializerOptions);
 
         var unitsByPropertyName =
             (await JsonSerializer.DeserializeAsync<UnitDto[]>(fileInfo.OpenRead(), serializerOptions) ??
@@ -48,6 +55,11 @@ public static partial class Generator
 
         await GenerateUnitsClassWithMethods(unitsByPropertyName, targetDirectory);
         await CreateUnitsClasses(unitsByPropertyName, targetDirectory);
+    }
+
+    private static void AddCustomConverters(JsonSerializerOptions serializerOptions)
+    {
+        serializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.SnakeCaseUpper));
     }
 
     private static async Task CreateUnitsClasses(List<IGrouping<string, UnitDto>> unitsByPropertyName,
@@ -165,14 +177,15 @@ public static partial class Generator
     {
         // language=C#
         builder.Append($$"""
-                          {{CreateDescription(unit.Description)}}
-                          public static {{GetUnitInterface(unit)}} {{$"{CreatePropertyName(unit, hasConflicts)}"}} { get; } = new {{GetUnitClass(unit)}}() {
-                              {{nameof(IUnit.Name)}} = "{{Sanitize(unit.Name)}}",
-                              {{nameof(IUnit.Symbol)}} = {{GetNullableStringPropertyValue(unit.Symbol)}},
-                              {{nameof(IUnit.CommonCode)}} = "{{Sanitize(unit.CommonCode)}}",
-                              {{(unit.IsConvertible ? GetConvertibleProperties(unit) : null)}}
-                          };
-                          """);
+                         {{CreateDescription(unit.Description)}}
+                         {{(ObsoleteStates.Contains(unit.State) ? $"[Obsolete(\"{unit.State}\")]" : null)}}
+                         public static {{GetUnitInterface(unit)}} {{$"{CreatePropertyName(unit, hasConflicts)}"}} { get; } = new {{GetUnitClass(unit)}}() {
+                             {{nameof(IUnit.Name)}} = "{{Sanitize(unit.Name)}}",
+                             {{nameof(IUnit.Symbol)}} = {{GetNullableStringPropertyValue(unit.Symbol)}},
+                             {{nameof(IUnit.CommonCode)}} = "{{Sanitize(unit.CommonCode)}}",
+                             {{(unit.IsConvertible ? GetConvertibleProperties(unit) : null)}}
+                         };
+                         """);
     }
 
     private static string? CreateDescription(string? unitDescription)
@@ -250,7 +263,6 @@ public static partial class Generator
                         using System.Diagnostics.CodeAnalysis;
 
                         using UneceUnits;
-                        using UneceUnits.Contract;
 
                         """);
     }

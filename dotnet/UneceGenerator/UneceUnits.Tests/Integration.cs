@@ -26,7 +26,7 @@ public class Integration : IDisposable
             var file2Content = await File.ReadAllLinesAsync(generatedFiles[i]);
 
             file1Content.Should().Equal(file2Content,
-                $"files {alreadyGeneratedFiles[i]} and {generatedFiles[i]} should be equal");
+                $"Changes from the input file must be reflected in the C# classes, run the UneceGenerator.");
         }
     }
 

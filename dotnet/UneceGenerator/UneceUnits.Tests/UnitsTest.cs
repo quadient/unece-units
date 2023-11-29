@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using UneceUnits.Contract;
 
 namespace UneceUnits.Tests;
 

@@ -3,7 +3,6 @@
 namespace UneceUnits;
 using System.Diagnostics.CodeAnalysis;
 using UneceUnits;
-using UneceUnits.Contract;
 
 public static partial class Units
 {
@@ -234,6 +233,62 @@ public static partial class Units
         Name = "freight ton",
         Symbol = null,
         CommonCode = "A75",
+    };
+
+    [Obsolete("Deprecated")]
+    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfDisplacement { get; } = new Unit()
+    {
+        Name = "Gaussian CGS (CentimetreGramSecond system) unit of displacement",
+        Symbol = null,
+        CommonCode = "A77",
+    };
+
+    [Obsolete("Deprecated")]
+    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricCurrent { get; } = new Unit()
+    {
+        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric current",
+        Symbol = null,
+        CommonCode = "A78",
+    };
+
+    [Obsolete("Deprecated")]
+    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricCharge { get; } = new Unit()
+    {
+        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric charge",
+        Symbol = null,
+        CommonCode = "A79",
+    };
+
+    [Obsolete("Deprecated")]
+    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricFieldStrength { get; } = new Unit()
+    {
+        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric field strength",
+        Symbol = null,
+        CommonCode = "A80",
+    };
+
+    [Obsolete("Deprecated")]
+    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricPolarization { get; } = new Unit()
+    {
+        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric polarization",
+        Symbol = null,
+        CommonCode = "A81",
+    };
+
+    [Obsolete("Deprecated")]
+    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricPotential { get; } = new Unit()
+    {
+        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric potential",
+        Symbol = null,
+        CommonCode = "A82",
+    };
+
+    [Obsolete("Deprecated")]
+    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfMagnetization { get; } = new Unit()
+    {
+        Name = "Gaussian CGS (CentimetreGramSecond system) unit of magnetization",
+        Symbol = null,
+        CommonCode = "A83",
     };
     /// <summary>
     /// A unit of quantity expressed as a rate for usage of a facility or service.
@@ -1492,6 +1547,28 @@ public static partial class Units
         Symbol = null,
         CommonCode = "GIP",
     };
+
+    /// <summary>
+    /// A unit of mass equal to the total cubic footage before deductions, where 1 register ton is equal to 100 cubic feet. Refer International Convention on tonnage measurement of ships.
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IUnit GrossRegisterTon { get; } = new Unit()
+    {
+        Name = "gross register ton",
+        Symbol = null,
+        CommonCode = "GRT",
+    };
+
+    /// <summary>
+    /// A unit of mass equal to 2240 pounds. Refer International Convention on Tonnage measurement of Ships.Synonym: ton (UK) or long ton (US) (common code LTN)
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IUnit GrossTon { get; } = new Unit()
+    {
+        Name = "gross ton",
+        Symbol = null,
+        CommonCode = "GT",
+    };
     /// <summary>
     /// A unit of count defining the number of blanks.
     /// </summary>
@@ -2317,6 +2394,17 @@ public static partial class Units
         Symbol = null,
         CommonCode = "NMP",
     };
+
+    /// <summary>
+    /// A unit of count defining the number of pairs (pair: item described by two's).
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IUnit NumberOfPairs { get; } = new Unit()
+    {
+        Name = "number of pairs",
+        Symbol = null,
+        CommonCode = "NPR",
+    };
     /// <summary>
     /// A unit of count defining the number of parts (part: component of a larger entity).
     /// </summary>
@@ -2334,6 +2422,17 @@ public static partial class Units
         Name = "net ton",
         Symbol = null,
         CommonCode = "NT",
+    };
+
+    /// <summary>
+    /// A unit of mass equal to the total cubic footage after deductions, where 1 register ton is equal to 100 cubic feet. Refer International Convention on tonnage measurement of Ships.
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IUnit NetRegisterTon { get; } = new Unit()
+    {
+        Name = "net register ton",
+        Symbol = null,
+        CommonCode = "NTT",
     };
     /// <summary>
     /// A unit of count defining the number of panels (panel: a distinct, usually rectangular, section of a surface).
@@ -2388,6 +2487,17 @@ public static partial class Units
         Name = "overtime hour",
         Symbol = null,
         CommonCode = "OT",
+    };
+
+    /// <summary>
+    /// A unit of measure equal to 1/16 of a pound or about 28.3495 grams (av = avoirdupois). Use ounce (common code ONZ).
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IUnit OunceAv { get; } = new Unit()
+    {
+        Name = "ounce av",
+        Symbol = null,
+        CommonCode = "OZ",
     };
     /// <summary>
     /// A unit of count defining the number of five-packs (five-pack: set of five items packaged together).
@@ -2649,6 +2759,17 @@ public static partial class Units
         Name = "segment",
         Symbol = null,
         CommonCode = "SG",
+    };
+
+    /// <summary>
+    /// A unit of mass defining the number of tons for shipping.
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IUnit ShippingTon { get; } = new Unit()
+    {
+        Name = "shipping ton",
+        Symbol = null,
+        CommonCode = "SHT",
     };
     /// <summary>
     /// A unit of count defining the number of squares (square: rectangular shape).
@@ -2934,6 +3055,17 @@ public static partial class Units
         Name = "working month",
         Symbol = null,
         CommonCode = "WM",
+    };
+
+    /// <summary>
+    /// A unit of volume equal to the number of millilitres of water.
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IUnit MillilitreOfWater { get; } = new Unit()
+    {
+        Name = "millilitre of water",
+        Symbol = null,
+        CommonCode = "WW",
     };
     /// <summary>
     /// A unit of count defining the number of hanging containers.

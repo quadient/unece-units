@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace UneceUnits.Contract;
+namespace UneceUnits;
 
 public record UnitValue
 {

@@ -1,8 +1,13 @@
 # Unece Units
-Unece Units generated structures for working with UNECE rec. 20 and rec. 21 standards
+
+Unece Units generated structures for working with UNECE rec. 20 and rec. 21 standards.
+
+Rec. 21 units have common code prefixed with an "X" to avoid possible conflicts with rec. 20 units.
 
 ## Basic usage
+
 Use Units class and its methods to work with units. For example:
+
 ```
     var meter = Units.GetByCommonCode("MTR");
     
@@ -22,7 +27,9 @@ Use Units class and its methods to work with units. For example:
 ```
 
 ## Operations
+
 Units can be used in operations using the UnitValue class, for example:
+
 ```
         var kilometerDistance = new UnitValue
         {

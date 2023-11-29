@@ -1,4 +1,4 @@
-namespace UneceUnits.Contract;
+namespace UneceUnits;
 
 public class ConversionException : Exception
 {

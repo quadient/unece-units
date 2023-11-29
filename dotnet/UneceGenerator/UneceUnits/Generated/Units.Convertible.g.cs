@@ -3,7 +3,6 @@
 namespace UneceUnits;
 using System.Diagnostics.CodeAnalysis;
 using UneceUnits;
-using UneceUnits.Contract;
 
 public static partial class Units
 {
@@ -120,6 +119,26 @@ public static partial class Units
         ConversionGroup = "dimensionless",
         ConversionFactor = 0.000000001m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit PoundPerSquareInchGauge { get; } = new ConvertibleUnit()
+    {
+        Name = "pound per square inch, gauge",
+        Symbol = null,
+        CommonCode = "64",
+        ConversionGroup = "kilogram / meter ** 2",
+        ConversionFactor = 703.0696m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Oersted { get; } = new ConvertibleUnit()
+    {
+        Name = "oersted",
+        Symbol = "Oe",
+        CommonCode = "66",
+        ConversionGroup = "ampere / meter",
+        ConversionFactor = 79.57747m,
+    };
     public static IConvertibleUnit Millipascal { get; } = new ConvertibleUnit()
     {
         Name = "millipascal",
@@ -128,6 +147,16 @@ public static partial class Units
         ConversionGroup = "pascal",
         ConversionFactor = 0.001m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Gauss { get; } = new ConvertibleUnit()
+    {
+        Name = "gauss",
+        Symbol = "Gs",
+        CommonCode = "76",
+        ConversionGroup = "tesla",
+        ConversionFactor = 0.0001m,
+    };
     public static IConvertibleUnit Milliinch { get; } = new ConvertibleUnit()
     {
         Name = "milliinch",
@@ -135,6 +164,16 @@ public static partial class Units
         CommonCode = "77",
         ConversionGroup = "meter",
         ConversionFactor = 0.000025399999999999997m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Kilogauss { get; } = new ConvertibleUnit()
+    {
+        Name = "kilogauss",
+        Symbol = "kGs",
+        CommonCode = "78",
+        ConversionGroup = "tesla",
+        ConversionFactor = 0.1m,
     };
     public static IConvertibleUnit PoundPerSquareInchAbsolute { get; } = new ConvertibleUnit()
     {
@@ -151,6 +190,19 @@ public static partial class Units
         CommonCode = "81",
         ConversionGroup = "henry",
         ConversionFactor = 1m,
+    };
+
+    /// <summary>
+    /// A unit of pressure defining the number of kilopounds force per square inch.Use kip per square inch (common code N20).
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit KilopoundforcePerSquareInch { get; } = new ConvertibleUnit()
+    {
+        Name = "kilopoundforce per square inch",
+        Symbol = "klbf/in²",
+        CommonCode = "84",
+        ConversionGroup = "pascal",
+        ConversionFactor = 6894757.0m,
     };
     public static IConvertibleUnit FootPoundforce { get; } = new ConvertibleUnit()
     {
@@ -452,6 +504,16 @@ public static partial class Units
         ConversionGroup = "meter ** 3 / second",
         ConversionFactor = 0.00264979m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Unit15CCalorie { get; } = new ConvertibleUnit()
+    {
+        Name = "15 °C calorie",
+        Symbol = "cal₁₅",
+        CommonCode = "A1",
+        ConversionGroup = "joule",
+        ConversionFactor = 4.18846m,
+    };
     public static IConvertibleUnit AmpereSquareMetrePerJouleSecond { get; } = new ConvertibleUnit()
     {
         Name = "ampere square metre per joule second",
@@ -579,6 +641,19 @@ public static partial class Units
         CommonCode = "A24",
         ConversionGroup = "candela / meter ** 2",
         ConversionFactor = 1.0m,
+    };
+
+    /// <summary>
+    /// Synonym: metric horse power
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ChevalVapeur { get; } = new ConvertibleUnit()
+    {
+        Name = "cheval vapeur",
+        Symbol = "CV",
+        CommonCode = "A25",
+        ConversionGroup = "watt",
+        ConversionFactor = 735.4988m,
     };
     public static IConvertibleUnit CoulombMetre { get; } = new ConvertibleUnit()
     {
@@ -778,6 +853,36 @@ public static partial class Units
         ConversionGroup = "ampere * meter ** 2",
         ConversionFactor = 1m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit DyneSecondPerCubicCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "dyne second per cubic centimetre",
+        Symbol = "dyn·s/cm³",
+        CommonCode = "A50",
+        ConversionGroup = "pascal * second / meter",
+        ConversionFactor = 10.0m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit DyneSecondPerCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "dyne second per centimetre",
+        Symbol = "dyn·s/cm",
+        CommonCode = "A51",
+        ConversionGroup = "newton * second / meter",
+        ConversionFactor = 0.001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit DyneSecondPerCentimetreToTheFifthPower { get; } = new ConvertibleUnit()
+    {
+        Name = "dyne second per centimetre to the fifth power",
+        Symbol = "dyn·s/cm⁵",
+        CommonCode = "A52",
+        ConversionGroup = "pascal * second / meter ** 3",
+        ConversionFactor = 100000.0m,
+    };
     public static IConvertibleUnit Electronvolt { get; } = new ConvertibleUnit()
     {
         Name = "electronvolt",
@@ -810,6 +915,26 @@ public static partial class Units
         ConversionGroup = "joule * meter ** 2 / kilogram",
         ConversionFactor = 0.0000000000000000001602176487m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Erg { get; } = new ConvertibleUnit()
+    {
+        Name = "erg",
+        Symbol = "erg",
+        CommonCode = "A57",
+        ConversionGroup = "joule",
+        ConversionFactor = 0.0000001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgPerCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "erg per centimetre",
+        Symbol = "erg/cm",
+        CommonCode = "A58",
+        ConversionGroup = "joule / meter",
+        ConversionFactor = 0.00001m,
+    };
     public static IConvertibleUnit AmperePerSquareMetreKelvinSquared { get; } = new ConvertibleUnit()
     {
         Name = "ampere per square metre kelvin squared",
@@ -817,6 +942,86 @@ public static partial class Units
         CommonCode = "A6",
         ConversionGroup = "ampere / kelvin ** 2 / meter ** 2",
         ConversionFactor = 1.0m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgPerCubicCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "erg per cubic centimetre",
+        Symbol = "erg/cm³",
+        CommonCode = "A60",
+        ConversionGroup = "joule / meter ** 3",
+        ConversionFactor = 0.1m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgPerGram { get; } = new ConvertibleUnit()
+    {
+        Name = "erg per gram",
+        Symbol = "erg/g",
+        CommonCode = "A61",
+        ConversionGroup = "joule / kilogram",
+        ConversionFactor = 0.0001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgPerGramSecond { get; } = new ConvertibleUnit()
+    {
+        Name = "erg per gram second",
+        Symbol = "erg/g·s",
+        CommonCode = "A62",
+        ConversionGroup = "watt / kilogram",
+        ConversionFactor = 0.0001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgPerSecond { get; } = new ConvertibleUnit()
+    {
+        Name = "erg per second",
+        Symbol = "erg/s",
+        CommonCode = "A63",
+        ConversionGroup = "watt",
+        ConversionFactor = 0.0000001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgPerSecondSquareCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "erg per second square centimetre",
+        Symbol = "erg/(s·cm²)",
+        CommonCode = "A64",
+        ConversionGroup = "watt / meter ** 2",
+        ConversionFactor = 0.001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgPerSquareCentimetreSecond { get; } = new ConvertibleUnit()
+    {
+        Name = "erg per square centimetre second",
+        Symbol = "erg/(cm²·s)",
+        CommonCode = "A65",
+        ConversionGroup = "watt / meter ** 2",
+        ConversionFactor = 0.001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgSquareCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "erg square centimetre",
+        Symbol = "erg·cm²",
+        CommonCode = "A66",
+        ConversionGroup = "joule * meter ** 2",
+        ConversionFactor = 0.00000000001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ErgSquareCentimetrePerGram { get; } = new ConvertibleUnit()
+    {
+        Name = "erg square centimetre per gram",
+        Symbol = "erg·cm²/g",
+        CommonCode = "A67",
+        ConversionGroup = "joule * meter ** 2 / kilogram",
+        ConversionFactor = 0.00000001m,
     };
     public static IConvertibleUnit Exajoule { get; } = new ConvertibleUnit()
     {
@@ -1067,6 +1272,19 @@ public static partial class Units
         ConversionGroup = "kilogram",
         ConversionFactor = 0.003110348m,
     };
+
+    /// <summary>
+    /// Synonym: square decametre
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Are { get; } = new ConvertibleUnit()
+    {
+        Name = "are",
+        Symbol = "a",
+        CommonCode = "ARE",
+        ConversionGroup = "meter ** 2",
+        ConversionFactor = 100m,
+    };
     public static IConvertibleUnit StandardAtmosphere { get; } = new ConvertibleUnit()
     {
         Name = "standard atmosphere",
@@ -1074,6 +1292,16 @@ public static partial class Units
         CommonCode = "ATM",
         ConversionGroup = "pascal",
         ConversionFactor = 101325m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit TechnicalAtmosphere { get; } = new ConvertibleUnit()
+    {
+        Name = "technical atmosphere",
+        Symbol = "at",
+        CommonCode = "ATT",
+        ConversionGroup = "pascal",
+        ConversionFactor = 98066.5m,
     };
     public static IConvertibleUnit BritishThermalUnitInternationalTablePerPound { get; } = new ConvertibleUnit()
     {
@@ -1270,6 +1498,56 @@ public static partial class Units
         ConversionGroup = "kilogram / meter ** 3",
         ConversionFactor = 1000.0m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieThermochemicalPerGram { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (thermochemical) per gram",
+        Symbol = "calth/g",
+        CommonCode = "B36",
+        ConversionGroup = "joule / kilogram",
+        ConversionFactor = 4184.0m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Kilogramforce { get; } = new ConvertibleUnit()
+    {
+        Name = "kilogramforce",
+        Symbol = "kgf",
+        CommonCode = "B37",
+        ConversionGroup = "newton",
+        ConversionFactor = 9.80665m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit KilogramforceMetre { get; } = new ConvertibleUnit()
+    {
+        Name = "kilogramforce metre",
+        Symbol = "kgf·m",
+        CommonCode = "B38",
+        ConversionGroup = "meter * newton",
+        ConversionFactor = 9.80665m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit KilogramforceMetrePerSecond { get; } = new ConvertibleUnit()
+    {
+        Name = "kilogramforce metre per second",
+        Symbol = "kgf·m/s",
+        CommonCode = "B39",
+        ConversionGroup = "watt",
+        ConversionFactor = 9.80665m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit KilogramforcePerSquareMetre { get; } = new ConvertibleUnit()
+    {
+        Name = "kilogramforce per square metre",
+        Symbol = "kgf/m²",
+        CommonCode = "B40",
+        ConversionGroup = "pascal",
+        ConversionFactor = 9.80665m,
+    };
     public static IConvertibleUnit KilojoulePerKelvin { get; } = new ConvertibleUnit()
     {
         Name = "kilojoule per kelvin",
@@ -1349,6 +1627,19 @@ public static partial class Units
         CommonCode = "B50",
         ConversionGroup = "meter * ohm",
         ConversionFactor = 1000m,
+    };
+
+    /// <summary>
+    /// Synonym: kilogram-force
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Kilopond { get; } = new ConvertibleUnit()
+    {
+        Name = "kilopond",
+        Symbol = "kp",
+        CommonCode = "B51",
+        ConversionGroup = "newton",
+        ConversionFactor = 9.80665m,
     };
     public static IConvertibleUnit Kilosecond { get; } = new ConvertibleUnit()
     {
@@ -1456,6 +1747,16 @@ public static partial class Units
         CommonCode = "B64",
         ConversionGroup = "candela * second * steradian / meter ** 2",
         ConversionFactor = 1.0m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Maxwell { get; } = new ConvertibleUnit()
+    {
+        Name = "maxwell",
+        Symbol = "Mx",
+        CommonCode = "B65",
+        ConversionGroup = "weber",
+        ConversionFactor = 0.00000001m,
     };
     public static IConvertibleUnit MegaamperePerSquareMetre { get; } = new ConvertibleUnit()
     {
@@ -2799,6 +3100,46 @@ public static partial class Units
         ConversionGroup = "kilogram / meter",
         ConversionFactor = 0.000001m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieThermochemical { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (thermochemical)",
+        Symbol = "calth",
+        CommonCode = "D35",
+        ConversionGroup = "joule",
+        ConversionFactor = 4.184m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieThermochemicalPerGramKelvin { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (thermochemical) per gram kelvin",
+        Symbol = "calth/(g·K)",
+        CommonCode = "D37",
+        ConversionGroup = "joule / kelvin / kilogram",
+        ConversionFactor = 4184.0m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieThermochemicalPerSecondCentimetreKelvin { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (thermochemical) per second centimetre kelvin",
+        Symbol = "calth/(s·cm·K)",
+        CommonCode = "D38",
+        ConversionGroup = "watt / kelvin / meter",
+        ConversionFactor = 418.4m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieThermochemicalPerSecondSquareCentimetreKelvin { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (thermochemical) per second square centimetre kelvin",
+        Symbol = "calth/(s·cm²·K)",
+        CommonCode = "D39",
+        ConversionGroup = "watt / kelvin / meter ** 2",
+        ConversionFactor = 41840.0m,
+    };
     public static IConvertibleUnit TonnePerCubicMetre { get; } = new ConvertibleUnit()
     {
         Name = "tonne per cubic metre",
@@ -3002,6 +3343,36 @@ public static partial class Units
         ConversionGroup = "meter ** 4",
         ConversionFactor = 0.0000004162314m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieInternationalTable { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (international table)",
+        Symbol = "calIT",
+        CommonCode = "D70",
+        ConversionGroup = "joule",
+        ConversionFactor = 4.1868m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieInternationalTablePerSecondCentimetreKelvin { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (international table) per second centimetre kelvin",
+        Symbol = "calIT/(s·cm·K)",
+        CommonCode = "D71",
+        ConversionGroup = "watt / kelvin / meter",
+        ConversionFactor = 418.68m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieInternationalTablePerSecondSquareCentimetreKelvin { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (international table) per second square centimetre kelvin",
+        Symbol = "calIT/(s·cm²·K)",
+        CommonCode = "D72",
+        ConversionGroup = "watt / kelvin / meter ** 2",
+        ConversionFactor = 41868.0m,
+    };
     public static IConvertibleUnit JouleSquareMetre { get; } = new ConvertibleUnit()
     {
         Name = "joule square metre",
@@ -3017,6 +3388,26 @@ public static partial class Units
         CommonCode = "D74",
         ConversionGroup = "kilogram / mole",
         ConversionFactor = 1.0m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieInternationalTablePerGram { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (international table) per gram",
+        Symbol = "calIT/g",
+        CommonCode = "D75",
+        ConversionGroup = "joule / kilogram",
+        ConversionFactor = 4186.8m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CalorieInternationalTablePerGramKelvin { get; } = new ConvertibleUnit()
+    {
+        Name = "calorie (international table) per gram kelvin",
+        Symbol = "calIT/(g·K)",
+        CommonCode = "D76",
+        ConversionGroup = "joule / kelvin / kilogram",
+        ConversionFactor = 4186.8m,
     };
     public static IConvertibleUnit Megacoulomb { get; } = new ConvertibleUnit()
     {
@@ -3097,6 +3488,16 @@ public static partial class Units
         CommonCode = "D89",
         ConversionGroup = "coulomb / meter ** 2",
         ConversionFactor = 0.001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit DynePerSquareCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "dyne per square centimetre",
+        Symbol = "dyn/cm²",
+        CommonCode = "D9",
+        ConversionGroup = "pascal",
+        ConversionFactor = 0.1m,
     };
     public static IConvertibleUnit Rem { get; } = new ConvertibleUnit()
     {
@@ -3251,6 +3652,16 @@ public static partial class Units
         ConversionGroup = "kilogram",
         ConversionFactor = 100m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Dyne { get; } = new ConvertibleUnit()
+    {
+        Name = "dyne",
+        Symbol = "dyn",
+        CommonCode = "DU",
+        ConversionGroup = "newton",
+        ConversionFactor = 0.00001m,
+    };
     public static IConvertibleUnit Pennyweight { get; } = new ConvertibleUnit()
     {
         Name = "pennyweight",
@@ -3258,6 +3669,16 @@ public static partial class Units
         CommonCode = "DWT",
         ConversionGroup = "gram",
         ConversionFactor = 1.555174m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit DynePerCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "dyne per centimetre",
+        Symbol = "dyn/cm",
+        CommonCode = "DX",
+        ConversionGroup = "newton / meter",
+        ConversionFactor = 0.001m,
     };
     /// <summary>
     /// A unit of count defining the number of units in multiples of 12.
@@ -3291,6 +3712,19 @@ public static partial class Units
         CommonCode = "E09",
         ConversionGroup = "coulomb",
         ConversionFactor = 3.6m,
+    };
+
+    /// <summary>
+    /// A unit of heat energy equal to one thousand million calories.
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Gigacalorie { get; } = new ConvertibleUnit()
+    {
+        Name = "gigacalorie",
+        Symbol = null,
+        CommonCode = "E11",
+        ConversionGroup = "calorie",
+        ConversionFactor = 1000000000m,
     };
     /// <summary>
     /// A unit of heat energy equal to one thousand calories.
@@ -5927,6 +6361,16 @@ public static partial class Units
         ConversionGroup = "kilogram / meter",
         ConversionFactor = 10.0m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ConventionalCentimetreOfWater { get; } = new ConvertibleUnit()
+    {
+        Name = "conventional centimetre of water",
+        Symbol = "cm H₂O",
+        CommonCode = "H78",
+        ConversionGroup = "pascal",
+        ConversionFactor = 98.06649999999999m,
+    };
     /// <summary>
     /// A unit of distance used for measuring the diameter of small tubes such as urological instruments and catheters.Synonym: French, Charrière, Charrière gauge
     /// </summary>
@@ -6110,6 +6554,19 @@ public static partial class Units
         ConversionGroup = "1 / meter",
         ConversionFactor = 0.01m,
     };
+
+    /// <summary>
+    /// Synonym: square hectometre
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Hectare { get; } = new ConvertibleUnit()
+    {
+        Name = "hectare",
+        Symbol = "ha",
+        CommonCode = "HAR",
+        ConversionGroup = "meter ** 2",
+        ConversionFactor = 10000m,
+    };
     public static IConvertibleUnit Hectobar { get; } = new ConvertibleUnit()
     {
         Name = "hectobar",
@@ -6125,6 +6582,16 @@ public static partial class Units
         CommonCode = "HGM",
         ConversionGroup = "kilogram",
         ConversionFactor = 0.1m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit MetricHorsePower { get; } = new ConvertibleUnit()
+    {
+        Name = "metric horse power",
+        Symbol = "metric hp",
+        CommonCode = "HJ",
+        ConversionGroup = "watt",
+        ConversionFactor = 735.49875m,
     };
     public static IConvertibleUnit Hectolitre { get; } = new ConvertibleUnit()
     {
@@ -6149,6 +6616,26 @@ public static partial class Units
         CommonCode = "HMT",
         ConversionGroup = "meter",
         ConversionFactor = 100m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ConventionalMillimetreOfMercury { get; } = new ConvertibleUnit()
+    {
+        Name = "conventional millimetre of mercury",
+        Symbol = "mm Hg",
+        CommonCode = "HN",
+        ConversionGroup = "pascal",
+        ConversionFactor = 133.3224m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit ConventionalMillimetreOfWater { get; } = new ConvertibleUnit()
+    {
+        Name = "conventional millimetre of water",
+        Symbol = "mm H₂O",
+        CommonCode = "HP",
+        ConversionGroup = "pascal",
+        ConversionFactor = 9.80665m,
     };
     public static IConvertibleUnit Hertz { get; } = new ConvertibleUnit()
     {
@@ -6746,6 +7233,16 @@ public static partial class Units
         ConversionGroup = "dimensionless",
         ConversionFactor = 0.000001m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit CentimetreOfMercury { get; } = new ConvertibleUnit()
+    {
+        Name = "centimetre of mercury",
+        Symbol = "cm Hg",
+        CommonCode = "J89",
+        ConversionGroup = "pascal",
+        ConversionFactor = 1333.224m,
+    };
     public static IConvertibleUnit CubicDecimetrePerDay { get; } = new ConvertibleUnit()
     {
         Name = "cubic decimetre per day",
@@ -6777,6 +7274,16 @@ public static partial class Units
         CommonCode = "J93",
         ConversionGroup = "meter ** 3 / second",
         ConversionFactor = 0.001m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit DyneCentimetre { get; } = new ConvertibleUnit()
+    {
+        Name = "dyne centimetre",
+        Symbol = "dyn·cm",
+        CommonCode = "J94",
+        ConversionGroup = "meter * newton",
+        ConversionFactor = 0.0000001m,
     };
     public static IConvertibleUnit OunceUKFluidPerDay { get; } = new ConvertibleUnit()
     {
@@ -6962,6 +7469,26 @@ public static partial class Units
         ConversionGroup = "meter ** 3 / pascal",
         ConversionFactor = 0.000004107012m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit FootOfWater { get; } = new ConvertibleUnit()
+    {
+        Name = "foot of water",
+        Symbol = "ft H₂O",
+        CommonCode = "K24",
+        ConversionGroup = "pascal",
+        ConversionFactor = 2989.067m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit FootOfMercury { get; } = new ConvertibleUnit()
+    {
+        Name = "foot of mercury",
+        Symbol = "ft Hg",
+        CommonCode = "K25",
+        ConversionGroup = "pascal",
+        ConversionFactor = 40636.659999999996m,
+    };
     public static IConvertibleUnit GallonUKPerDay { get; } = new ConvertibleUnit()
     {
         Name = "gallon (UK) per day",
@@ -7137,6 +7664,19 @@ public static partial class Units
         CommonCode = "K49",
         ConversionGroup = "1 / meter ** 3",
         ConversionFactor = 61023.759000000005m,
+    };
+
+    /// <summary>
+    /// Use kilovar (common code KVR)
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit KilovoltAmpereReactive { get; } = new ConvertibleUnit()
+    {
+        Name = "kilovolt ampere (reactive)",
+        Symbol = "kvar",
+        CommonCode = "K5",
+        ConversionGroup = "ampere * volt",
+        ConversionFactor = 1000m,
     };
     /// <summary>
     /// A unit of signal transmission speed equal to 10³ (1000) signaling events per second.
@@ -10676,6 +11216,26 @@ public static partial class Units
         ConversionGroup = "meter",
         ConversionFactor = 1852m,
     };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Mho { get; } = new ConvertibleUnit()
+    {
+        Name = "mho",
+        Symbol = null,
+        CommonCode = "NQ",
+        ConversionGroup = "siemens",
+        ConversionFactor = 1m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Micromho { get; } = new ConvertibleUnit()
+    {
+        Name = "micromho",
+        Symbol = null,
+        CommonCode = "NR",
+        ConversionGroup = "siemens",
+        ConversionFactor = 0.000001m,
+    };
     public static IConvertibleUnit NewtonMetre { get; } = new ConvertibleUnit()
     {
         Name = "newton metre",
@@ -11768,6 +12328,19 @@ public static partial class Units
         ConversionGroup = "pascal",
         ConversionFactor = 6894.7570000000005m,
     };
+
+    /// <summary>
+    /// Use liquid pint (common code PTL)
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit PintUS { get; } = new ConvertibleUnit()
+    {
+        Name = "pint (US)",
+        Symbol = "pt (US)",
+        CommonCode = "PT",
+        ConversionGroup = "meter ** 3",
+        ConversionFactor = 0.00047317600000000007m,
+    };
     public static IConvertibleUnit DryPintUS { get; } = new ConvertibleUnit()
     {
         Name = "dry pint (US)",
@@ -12088,6 +12661,19 @@ public static partial class Units
         ConversionGroup = "meter ** 3 / second",
         ConversionFactor = 0.000277778m,
     };
+
+    /// <summary>
+    /// Use liquid quart (common code QTL)
+    /// </summary>
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit QuartUS { get; } = new ConvertibleUnit()
+    {
+        Name = "quart (US)",
+        Symbol = "qt (US)",
+        CommonCode = "QT",
+        ConversionGroup = "meter ** 3",
+        ConversionFactor = 0.0009463529000000001m,
+    };
     public static IConvertibleUnit DryQuartUS { get; } = new ConvertibleUnit()
     {
         Name = "dry quart (US)",
@@ -12321,6 +12907,16 @@ public static partial class Units
         CommonCode = "TRL",
         ConversionGroup = "dimensionless",
         ConversionFactor = 1000000000000000000m,
+    };
+
+    [Obsolete("Deprecated")]
+    public static IConvertibleUnit Torr { get; } = new ConvertibleUnit()
+    {
+        Name = "torr",
+        Symbol = "Torr",
+        CommonCode = "UA",
+        ConversionGroup = "pascal",
+        ConversionFactor = 133.3224m,
     };
     public static IConvertibleUnit VoltAmperePerKilogram { get; } = new ConvertibleUnit()
     {

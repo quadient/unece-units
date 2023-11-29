@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using UneceUnits.Contract;
 
 namespace UneceUnits;
 

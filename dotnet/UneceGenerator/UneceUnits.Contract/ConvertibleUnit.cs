@@ -1,4 +1,4 @@
-namespace UneceUnits.Contract;
+namespace UneceUnits;
 
 public interface IConvertibleUnit : IUnit
 {
