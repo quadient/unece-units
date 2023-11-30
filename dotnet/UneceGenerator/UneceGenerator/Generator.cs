@@ -19,7 +19,7 @@ public static partial class Generator
     {
         State.MarkedAsDeleted,
     };
-    
+
     private static readonly HashSet<State> ObsoleteStates = new(ExcludedStates)
     {
         State.Deprecated,
@@ -44,16 +44,18 @@ public static partial class Generator
 
         AddCustomConverters(serializerOptions);
 
-        var unitsByPropertyName =
+        var units =
             (await JsonSerializer.DeserializeAsync<UnitDto[]>(fileInfo.OpenRead(), serializerOptions) ??
              throw new InvalidOperationException($"Failed to deserialize JSON on {fileInfo.FullName}."))
             .Where(o => !ExcludedStates.Contains(o.State))
-            .GroupBy(CreatePropertyName).ToList();
+            .GroupBy(CreatePropertyName)
+            .SelectMany(g => g.Select(unit => new UnitContext(unit, g.Count() > 1)))
+            .ToList();
 
         var targetDirectory = GetTargetDirectory(outputDirectory, deleteFolderContent);
 
-        await GenerateUnitsClassWithMethods(unitsByPropertyName, targetDirectory);
-        await CreateUnitsClasses(unitsByPropertyName, targetDirectory);
+        await GenerateUnitsClassWithMethods(units, targetDirectory);
+        await CreateUnitsClasses(units, targetDirectory);
     }
 
     private static void AddCustomConverters(JsonSerializerOptions serializerOptions)
@@ -61,25 +63,23 @@ public static partial class Generator
         serializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.SnakeCaseUpper));
     }
 
-    // TODO[j.semerak]: Move UnitContext up
-    private static async Task CreateUnitsClasses(List<IGrouping<string, UnitDto>> unitsByPropertyName,
+    private static async Task CreateUnitsClasses(List<UnitContext> units,
         DirectoryInfo targetDirectory)
     {
         var convertible = new List<UnitContext>();
         var nonConvertible = new List<UnitContext>();
 
-        foreach (var unitGroup in unitsByPropertyName)
+        foreach (var unitContext in units)
         {
-            foreach (var unit in unitGroup)
+            var unit = unitContext.Unit;
+            
+            if (unit.IsConvertible)
             {
-                if (unit.IsConvertible)
-                {
-                    convertible.Add(new UnitContext(unit, unitGroup.Count() > 1));
-                }
-                else
-                {
-                    nonConvertible.Add(new UnitContext(unit, unitGroup.Count() > 1));
-                }
+                convertible.Add(unitContext);
+            }
+            else
+            {
+                nonConvertible.Add(unitContext);
             }
         }
 
@@ -119,7 +119,7 @@ public static partial class Generator
                          """);
     }
 
-    private static async Task GenerateUnitsClassWithMethods(List<IGrouping<string, UnitDto>> units,
+    private static async Task GenerateUnitsClassWithMethods(List<UnitContext> units,
         DirectoryInfo targetDirectory)
     {
         var builder = new StringBuilder();
@@ -134,7 +134,7 @@ public static partial class Generator
         await WriteFileAsync(targetDirectory, $"Units.Methods", builder);
     }
 
-    private static void AppendTryGetByCommonCode(List<IGrouping<string, UnitDto>> unitsByPropertyName,
+    private static void AppendTryGetByCommonCode(List<UnitContext> units,
         StringBuilder builder)
     {
         // language=C#
@@ -144,17 +144,12 @@ public static partial class Generator
                              unit = commonCode switch
                              {
                          """);
-        foreach (var unitsGroup in unitsByPropertyName)
-        {
-            var unitsInGroup = unitsGroup.ToList();
-            var hasNamingConflicts = unitsInGroup.Count > 1;
 
-            foreach (var unit in unitsInGroup)
-            {
-                // language=C#
-                builder.Append(
-                    $"\"{SanitizeForClassName(unit.CommonCode)}\" => {(hasNamingConflicts ? CreatePropertyNameWithConflict(unit) : CreatePropertyName(unit))},");
-            }
+        foreach (var (unit, hasConflicts) in units)
+        {
+            // language=C#
+            builder.Append(
+                $"\"{SanitizeForClassName(unit.CommonCode)}\" => {(hasConflicts ? CreatePropertyNameWithConflict(unit) : CreatePropertyName(unit))},");
         }
 
         // language=C#
