@@ -4,7 +4,6 @@ namespace UneceUnits;
 
 public record UnitValue
 {
-    // TODO[j.semerak]: Precision?
     public required decimal Value { get; init; }
 
     public required IUnit Unit { get; init; }

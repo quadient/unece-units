@@ -15,15 +15,14 @@ public static partial class Generator
 {
     private const string ClassNameAllowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    private static readonly HashSet<State> ObsoleteStates = new()
-    {
-        State.Deprecated, State.MarkedAsDeleted,
-    };
-
-
     private static readonly HashSet<State> ExcludedStates = new()
     {
         State.MarkedAsDeleted,
+    };
+    
+    private static readonly HashSet<State> ObsoleteStates = new(ExcludedStates)
+    {
+        State.Deprecated,
     };
 
     private static readonly HashSet<string> RestrictedClassNames = new()
@@ -49,7 +48,7 @@ public static partial class Generator
             (await JsonSerializer.DeserializeAsync<UnitDto[]>(fileInfo.OpenRead(), serializerOptions) ??
              throw new InvalidOperationException($"Failed to deserialize JSON on {fileInfo.FullName}."))
             .Where(o => !ExcludedStates.Contains(o.State))
-            .GroupBy(o => CreatePropertyName(o)).ToList();
+            .GroupBy(CreatePropertyName).ToList();
 
         var targetDirectory = GetTargetDirectory(outputDirectory, deleteFolderContent);
 
@@ -62,6 +61,7 @@ public static partial class Generator
         serializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.SnakeCaseUpper));
     }
 
+    // TODO[j.semerak]: Move UnitContext up
     private static async Task CreateUnitsClasses(List<IGrouping<string, UnitDto>> unitsByPropertyName,
         DirectoryInfo targetDirectory)
     {
@@ -83,12 +83,11 @@ public static partial class Generator
             }
         }
 
-        await CreateUnits(targetDirectory, nonConvertible);
-        await CreateUnits(targetDirectory, convertible, "Convertible");
+        await CreateUnits(targetDirectory, nonConvertible, "Units");
+        await CreateUnits(targetDirectory, convertible, "Units.Convertible");
     }
 
-    private static async Task CreateUnits(DirectoryInfo targetDirectory, List<UnitContext> units,
-        string? fileSuffix = null)
+    private static async Task CreateUnits(DirectoryInfo targetDirectory, List<UnitContext> units, string fileName)
     {
         var builder = new StringBuilder();
 
@@ -97,14 +96,14 @@ public static partial class Generator
 
         AppendUnitsClassStart(builder);
 
-        foreach (var unitToGenerate in units)
+        foreach (var unitContext in units)
         {
-            AppendUnitStaticInstance(unitToGenerate.Unit, builder, unitToGenerate.HasConflicts);
+            AppendUnitStaticInstance(unitContext, builder);
         }
 
         AppendClassEnd(builder);
 
-        await WriteFileAsync(targetDirectory, $"Units{(fileSuffix is null ? null : $".{fileSuffix}")}", builder);
+        await WriteFileAsync(targetDirectory, fileName, builder);
     }
 
     private static void AppendClassEnd(StringBuilder builder)
@@ -152,8 +151,9 @@ public static partial class Generator
 
             foreach (var unit in unitsInGroup)
             {
+                // language=C#
                 builder.Append(
-                    $"\"{SanitizeForClassName(unit.CommonCode)}\" => {CreatePropertyName(unit, hasNamingConflicts)},");
+                    $"\"{SanitizeForClassName(unit.CommonCode)}\" => {(hasNamingConflicts ? CreatePropertyNameWithConflict(unit) : CreatePropertyName(unit))},");
             }
         }
 
@@ -173,13 +173,14 @@ public static partial class Generator
         await targetFile.WriteAsync(Encoding.UTF8.GetBytes(ParseAndFormat(builder.ToString())));
     }
 
-    private static void AppendUnitStaticInstance(UnitDto unit, StringBuilder builder, bool hasConflicts)
+    private static void AppendUnitStaticInstance(UnitContext unitContext, StringBuilder builder)
     {
+        var unit = unitContext.Unit;
         // language=C#
         builder.Append($$"""
                          {{CreateDescription(unit.Description)}}
                          {{(ObsoleteStates.Contains(unit.State) ? $"[Obsolete(\"{unit.State}\")]" : null)}}
-                         public static {{GetUnitInterface(unit)}} {{$"{CreatePropertyName(unit, hasConflicts)}"}} { get; } = new {{GetUnitClass(unit)}}() {
+                         public static {{GetUnitInterface(unit)}} {{$"{(unitContext.HasConflicts ? CreatePropertyNameWithConflict(unit) : CreatePropertyName(unit))}"}} { get; } = new {{GetUnitClass(unit)}}() {
                              {{nameof(IUnit.Name)}} = "{{Sanitize(unit.Name)}}",
                              {{nameof(IUnit.Symbol)}} = {{GetNullableStringPropertyValue(unit.Symbol)}},
                              {{nameof(IUnit.CommonCode)}} = "{{Sanitize(unit.CommonCode)}}",
@@ -261,7 +262,6 @@ public static partial class Generator
         // language=C#
         builder.Append($"""
                         using System.Diagnostics.CodeAnalysis;
-
                         using UneceUnits;
 
                         """);
@@ -277,7 +277,7 @@ public static partial class Generator
                 """;
     }
 
-    private static string CreatePropertyName(UnitDto unit, bool hasConflicts = false)
+    private static string CreatePropertyName(UnitDto unit)
     {
         var unitName = unit.Name;
 
@@ -296,8 +296,11 @@ public static partial class Generator
             className += "Unece";
         }
 
-        return hasConflicts ? $"{className}{SanitizeForClassName(unit.CommonCode)}" : className;
+        return className;
     }
+
+    private static string CreatePropertyNameWithConflict(UnitDto unit) =>
+        $"{CreatePropertyName(unit)}{SanitizeForClassName(unit.CommonCode)}";
 
     private static string SanitizeForClassName(string? input) =>
         input == null
