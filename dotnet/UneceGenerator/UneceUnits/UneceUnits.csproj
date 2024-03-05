@@ -1,30 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        
         <Title>UneceUnits</Title>
         <PackageId>UneceUnits</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/quadient/unece-units</PackageProjectUrl>
         <Copyright>https://www.quadient.com</Copyright>
         <RepositoryUrl>https://github.com/quadient/unece-units</RepositoryUrl>
-        <Authors>jakubsemerak, yardee</Authors>
+        <Authors>Quadient, jakubsemerak, yardee</Authors>
         <PackageTags>UNECE; units; rec. 20; rec.21</PackageTags>
         <Description>
             UNECE Units generated structures for working with UNECE rec. 20 and rec. 21 standards.
         </Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        
+
         <!-- Generate XML documentation -->
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <!-- Include XML documentation in the package -->
-        <IncludePackageMetadataInSymbolsPackage>true</IncludePackageMetadataInSymbolsPackage>
-        <!-- Generate symbol package (*.snupkg) -->
-        <IncludeSymbols>true</IncludeSymbols>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <NoWarn>CS0618,CS1591</NoWarn>
+        <PackageIcon>quadient.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -39,5 +32,6 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath=""/>
+        <None Include="quadient.png" Pack="true" PackagePath=""/>
     </ItemGroup>
 </Project>
