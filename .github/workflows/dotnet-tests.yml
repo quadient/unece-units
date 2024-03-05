@@ -10,7 +10,7 @@ on:
       
       configuration:
         required: false
-        default: "Debug"
+        default: "Release"
         type: string
 
 
