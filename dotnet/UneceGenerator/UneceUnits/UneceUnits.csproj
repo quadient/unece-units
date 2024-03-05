@@ -12,6 +12,7 @@
         <Description>UNECE Units generated structures for working with UNECE rec. 20 and rec. 21 standards.
 
         </Description>
+        <PackageLicenseUrl>https://github.com/quadient/unece-units/blob/main/LICENSE</PackageLicenseUrl>
     </PropertyGroup>
 
     <ItemGroup>
