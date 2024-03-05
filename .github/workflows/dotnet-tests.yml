@@ -8,9 +8,11 @@ on:
         required: true
         type: string
       
-      dotnet-version:
-        required: true
+      configuration:
+        required: false
+        default: "Debug"
         type: string
+
 
 jobs:
   dotnet-tests:
@@ -19,14 +21,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install .NET Core
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: ${{ inputs.dotnet-version }}
+        uses: actions/setup-dotnet@v4
+
       - name: Build whole solution
         working-directory: ${{ inputs.working-directory }}
         run: |
-          dotnet build
+          dotnet build --configuration ${{ inputs.configuration }}
+
       - name: Test with dotnet test
         working-directory: ${{ inputs.working-directory }}
         run: |
-          dotnet test --no-restore
+          dotnet test --no-restore --configuration ${{ inputs.configuration }}

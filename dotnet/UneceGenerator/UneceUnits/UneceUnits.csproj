@@ -4,10 +4,25 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Title>UneceUnits</Title>
+        <Copyright>https://www.quadient.com</Copyright>
+        <PackageProjectUrl>https://github.com/quadient/unece-units</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/quadient/unece-units</RepositoryUrl>
+        <Authors>jakubsemerak,yardee</Authors>
+        <Description>UNECE Units generated structures for working with UNECE rec. 20 and rec. 21 standards.
+
+        </Description>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\UneceUnits.Contract\UneceUnits.Contract.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MinVer" Version="5.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
 </Project>

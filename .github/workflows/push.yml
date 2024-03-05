@@ -3,7 +3,7 @@ name: Push actions
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   python-tests:
@@ -15,4 +15,3 @@ jobs:
     uses: ./.github/workflows/dotnet-tests.yml
     with:
       working-directory: "dotnet/UneceGenerator"
-      dotnet-version: "8.0.100"
