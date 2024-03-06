@@ -1,8 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
+        <Title>UneceUnits.Contract</Title>
         <RootNamespace>UneceUnits</RootNamespace>
-        <IsPackable>false</IsPackable>
+        <PackageId>UneceUnits.Contract</PackageId>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/quadient/unece-units</PackageProjectUrl>
+        <Copyright>https://www.quadient.com</Copyright>
+        <RepositoryUrl>https://github.com/quadient/unece-units</RepositoryUrl>
+        <Authors>Quadient, jakubsemerak, yardee</Authors>
+        <PackageTags>UNECE; contract; units; rec. 20; rec.21</PackageTags>
+        <Description>
+            UNECE Units Contract package for UneceUnits package for working with UNECE rec. 20 and rec. 21 standards.
+        </Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageReleaseNotes>https://github.com/quadient/unece-units/releases/</PackageReleaseNotes>
+
+        <!-- Generate XML documentation -->
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>CS1591</NoWarn>
+        <PackageIcon>quadient.png</PackageIcon>
+        <EnablePackageValidation>true</EnablePackageValidation>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="MinVer" Version="5.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="../quadient.png" Pack="true" PackagePath=""/>
+        <None Include="README.md" Pack="true" PackagePath=""/>
+    </ItemGroup>
 </Project>
