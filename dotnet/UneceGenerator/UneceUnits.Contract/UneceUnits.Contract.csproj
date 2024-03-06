@@ -8,7 +8,7 @@
         <Copyright>https://www.quadient.com</Copyright>
         <RepositoryUrl>https://github.com/quadient/unece-units</RepositoryUrl>
         <Authors>Quadient, jakubsemerak, yardee</Authors>
-        <PackageTags>UNECE; contract; units; rec. 20; rec.21</PackageTags>
+        <PackageTags>UNECE; contract; units; rec.20; rec.21</PackageTags>
         <Description>
             UNECE Units Contract package for UneceUnits package for working with UNECE rec. 20 and rec. 21 standards.
         </Description>
