@@ -1,6 +1,6 @@
 # Unece Units
 
-Unece Units generated structures for working with UNECE rec. 20 and rec. 21 standards.
+UNECE Units generated structures for working with UNECE rec. 20 and rec. 21 standards.
 
 Rec. 21 units have common code prefixed with an "X" to avoid possible conflicts with rec. 20 units.
 
