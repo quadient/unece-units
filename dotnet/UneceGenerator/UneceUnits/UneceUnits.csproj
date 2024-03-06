@@ -13,7 +13,8 @@
             UNECE Units generated structures for working with UNECE rec. 20 and rec. 21 standards.
         </Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-
+        <PackageReleaseNotes>https://github.com/quadient/unece-units/releases/</PackageReleaseNotes>
+        
         <!-- Generate XML documentation -->
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <NoWarn>CS0618,CS1591</NoWarn>
