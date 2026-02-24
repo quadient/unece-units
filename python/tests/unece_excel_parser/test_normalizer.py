@@ -31,9 +31,9 @@ def test_normalize_value_converts_to_string():
     assert normalized == "1"
 
 
-def test_normalize_unit_name_does_replace_minus_sign():
+def test_normalize_unit_name_does_preserve_minus_sign():
     normalized = Normalizer.normalize_unit_name(" a-test ")
-    assert normalized == "atest"
+    assert normalized == "a-test"
 
 
 @pytest.mark.parametrize(
