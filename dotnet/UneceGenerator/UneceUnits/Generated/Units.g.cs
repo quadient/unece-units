@@ -219,9 +219,9 @@ public static partial class Units
     /// <summary>
     /// A unit of count defining the number of eighth-parts as a measure of the celestial dome cloud coverage.Synonym: OKTA , OCTA
     /// </summary>
-    public static IUnit Unit8partCloudCover { get; } = new Unit()
+    public static IUnit Unit8PartCloudCover { get; } = new Unit()
     {
-        Name = "8part cloud cover",
+        Name = "8-part cloud cover",
         Symbol = null,
         CommonCode = "A59",
     };
@@ -236,57 +236,57 @@ public static partial class Units
     };
 
     [Obsolete("Deprecated")]
-    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfDisplacement { get; } = new Unit()
+    public static IUnit GaussianCGSCentimetreGramSecondSystemUnitOfDisplacement { get; } = new Unit()
     {
-        Name = "Gaussian CGS (CentimetreGramSecond system) unit of displacement",
+        Name = "Gaussian CGS (Centimetre-Gram-Second system) unit of displacement",
         Symbol = null,
         CommonCode = "A77",
     };
 
     [Obsolete("Deprecated")]
-    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricCurrent { get; } = new Unit()
+    public static IUnit GaussianCGSCentimetreGramSecondSystemUnitOfElectricCurrent { get; } = new Unit()
     {
-        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric current",
+        Name = "Gaussian CGS (Centimetre-Gram-Second system) unit of electric current",
         Symbol = null,
         CommonCode = "A78",
     };
 
     [Obsolete("Deprecated")]
-    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricCharge { get; } = new Unit()
+    public static IUnit GaussianCGSCentimetreGramSecondSystemUnitOfElectricCharge { get; } = new Unit()
     {
-        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric charge",
+        Name = "Gaussian CGS (Centimetre-Gram-Second system) unit of electric charge",
         Symbol = null,
         CommonCode = "A79",
     };
 
     [Obsolete("Deprecated")]
-    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricFieldStrength { get; } = new Unit()
+    public static IUnit GaussianCGSCentimetreGramSecondSystemUnitOfElectricFieldStrength { get; } = new Unit()
     {
-        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric field strength",
+        Name = "Gaussian CGS (Centimetre-Gram-Second system) unit of electric field strength",
         Symbol = null,
         CommonCode = "A80",
     };
 
     [Obsolete("Deprecated")]
-    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricPolarization { get; } = new Unit()
+    public static IUnit GaussianCGSCentimetreGramSecondSystemUnitOfElectricPolarization { get; } = new Unit()
     {
-        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric polarization",
+        Name = "Gaussian CGS (Centimetre-Gram-Second system) unit of electric polarization",
         Symbol = null,
         CommonCode = "A81",
     };
 
     [Obsolete("Deprecated")]
-    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfElectricPotential { get; } = new Unit()
+    public static IUnit GaussianCGSCentimetreGramSecondSystemUnitOfElectricPotential { get; } = new Unit()
     {
-        Name = "Gaussian CGS (CentimetreGramSecond system) unit of electric potential",
+        Name = "Gaussian CGS (Centimetre-Gram-Second system) unit of electric potential",
         Symbol = null,
         CommonCode = "A82",
     };
 
     [Obsolete("Deprecated")]
-    public static IUnit GaussianCGSCentimetregramsecondSystemUnitOfMagnetization { get; } = new Unit()
+    public static IUnit GaussianCGSCentimetreGramSecondSystemUnitOfMagnetization { get; } = new Unit()
     {
-        Name = "Gaussian CGS (CentimetreGramSecond system) unit of magnetization",
+        Name = "Gaussian CGS (Centimetre-Gram-Second system) unit of magnetization",
         Symbol = null,
         CommonCode = "A83",
     };
@@ -383,9 +383,9 @@ public static partial class Units
     /// <summary>
     /// A unit of measure for blood potency (US).
     /// </summary>
-    public static IUnit AntihemophilicFactorAHFUnit { get; } = new Unit()
+    public static IUnit AntiHemophilicFactorAHFUnit { get; } = new Unit()
     {
-        Name = "antihemophilic factor (AHF) unit",
+        Name = "anti-hemophilic factor (AHF) unit",
         Symbol = null,
         CommonCode = "AQ",
     };
@@ -1055,9 +1055,9 @@ public static partial class Units
     /// <summary>
     /// A unit of torsion defining the torque kilogram-force metre per square centimetre.
     /// </summary>
-    public static IUnit KilogramforceMetrePerSquareCentimetre { get; } = new Unit()
+    public static IUnit KilogramForceMetrePerSquareCentimetre { get; } = new Unit()
     {
-        Name = "kilogramforce metre per square centimetre",
+        Name = "kilogram-force metre per square centimetre",
         Symbol = "kgf·m/cm²",
         CommonCode = "E44",
     };
@@ -2657,7 +2657,7 @@ public static partial class Units
     /// </summary>
     public static IUnit PageFacsimile { get; } = new Unit()
     {
-        Name = "page  facsimile",
+        Name = "page - facsimile",
         Symbol = null,
         CommonCode = "QA",
     };
@@ -2675,7 +2675,7 @@ public static partial class Units
     /// </summary>
     public static IUnit PageHardcopy { get; } = new Unit()
     {
-        Name = "page  hardcopy",
+        Name = "page - hardcopy",
         Symbol = null,
         CommonCode = "QB",
     };
@@ -3220,9 +3220,9 @@ public static partial class Units
     /// <summary>
     /// dBm (sometimes dBmW or decibel-milliwatts) is unit of level used to indicate that a power ratio is expressed in decibels (dB) with reference to one milliwatt (mW).
     /// </summary>
-    public static IUnit Decibelmilliwatts { get; } = new Unit()
+    public static IUnit DecibelMilliwatts { get; } = new Unit()
     {
-        Name = "Decibelmilliwatts",
+        Name = "Decibel-milliwatts",
         Symbol = "dBm",
         CommonCode = "DBM",
     };
@@ -3517,9 +3517,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XAJ",
     };
-    public static IUnit AmpouleNonprotected { get; } = new Unit()
+    public static IUnit AmpouleNonProtected { get; } = new Unit()
     {
-        Name = "Ampoule, nonprotected",
+        Name = "Ampoule, non-protected",
         Symbol = null,
         CommonCode = "XAM",
     };
@@ -3580,9 +3580,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XBE",
     };
-    public static IUnit BalloonNonprotected { get; } = new Unit()
+    public static IUnit BalloonNonProtected { get; } = new Unit()
     {
-        Name = "Balloon, nonprotected",
+        Name = "Balloon, non-protected",
         Symbol = null,
         CommonCode = "XBF",
     };
@@ -3631,18 +3631,18 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XBM",
     };
-    public static IUnit BaleNoncompressed { get; } = new Unit()
+    public static IUnit BaleNonCompressed { get; } = new Unit()
     {
-        Name = "Bale, noncompressed",
+        Name = "Bale, non-compressed",
         Symbol = null,
         CommonCode = "XBN",
     };
     /// <summary>
     /// A narrow-necked cylindrical shaped vessel without external protective packing material.
     /// </summary>
-    public static IUnit BottleNonprotectedCylindrical { get; } = new Unit()
+    public static IUnit BottleNonProtectedCylindrical { get; } = new Unit()
     {
-        Name = "Bottle, nonprotected, cylindrical",
+        Name = "Bottle, non-protected, cylindrical",
         Symbol = null,
         CommonCode = "XBO",
     };
@@ -3670,9 +3670,9 @@ public static partial class Units
     /// <summary>
     /// A narrow-necked bulb shaped vessel without external protective packing material.
     /// </summary>
-    public static IUnit BottleNonprotectedBulbous { get; } = new Unit()
+    public static IUnit BottleNonProtectedBulbous { get; } = new Unit()
     {
-        Name = "Bottle, nonprotected, bulbous",
+        Name = "Bottle, non-protected, bulbous",
         Symbol = null,
         CommonCode = "XBS",
     };
@@ -3799,9 +3799,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XCN",
     };
-    public static IUnit CarboyNonprotected { get; } = new Unit()
+    public static IUnit CarboyNonProtected { get; } = new Unit()
     {
-        Name = "Carboy, nonprotected",
+        Name = "Carboy, non-protected",
         Symbol = null,
         CommonCode = "XCO",
     };
@@ -3894,7 +3894,7 @@ public static partial class Units
     };
     public static IUnit CageCommonwealthHandlingEquipmentPoolCHEP { get; } = new Unit()
     {
-        Name = "Cage, Commonwealth Handling Equipment Pool  (CHEP)",
+        Name = "Cage, Commonwealth Handling Equipment Pool (CHEP)",
         Symbol = null,
         CommonCode = "XDG",
     };
@@ -3913,9 +3913,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XDI",
     };
-    public static IUnit DemijohnNonprotected { get; } = new Unit()
+    public static IUnit DemijohnNonProtected { get; } = new Unit()
     {
-        Name = "Demijohn, nonprotected",
+        Name = "Demijohn, non-protected",
         Symbol = null,
         CommonCode = "XDJ",
     };
@@ -4276,9 +4276,9 @@ public static partial class Units
     /// <summary>
     /// Packaging material made out of cardboard that facilitates the separation of individual glass or plastic bottles.
     /// </summary>
-    public static IUnit PackageCardboardWithBottleGripholes { get; } = new Unit()
+    public static IUnit PackageCardboardWithBottleGripHoles { get; } = new Unit()
     {
-        Name = "Package, cardboard, with bottle gripholes",
+        Name = "Package, cardboard, with bottle grip-holes",
         Symbol = null,
         CommonCode = "XIK",
     };
@@ -4432,9 +4432,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XMR",
     };
-    public static IUnit SackMultiwall { get; } = new Unit()
+    public static IUnit SackMultiWall { get; } = new Unit()
     {
-        Name = "Sack, multiwall",
+        Name = "Sack, multi-wall",
         Symbol = null,
         CommonCode = "XMS",
     };
@@ -4539,7 +4539,7 @@ public static partial class Units
     /// </summary>
     public static IUnit PalletAS40681993 { get; } = new Unit()
     {
-        Name = "Pallet, AS 40681993",
+        Name = "Pallet, AS 4068-1993",
         Symbol = null,
         CommonCode = "XOD",
     };
@@ -4593,7 +4593,7 @@ public static partial class Units
     /// </summary>
     public static IUnit PalletISO01Per2EUROPallet { get; } = new Unit()
     {
-        Name = "Pallet ISO 0  1/2 EURO Pallet",
+        Name = "Pallet ISO 0 - 1/2 EURO Pallet",
         Symbol = null,
         CommonCode = "XOG",
     };
@@ -4602,7 +4602,7 @@ public static partial class Units
     /// </summary>
     public static IUnit PalletISO11Per1EUROPallet { get; } = new Unit()
     {
-        Name = "Pallet ISO 1  1/1 EURO Pallet",
+        Name = "Pallet ISO 1 - 1/1 EURO Pallet",
         Symbol = null,
         CommonCode = "XOH",
     };
@@ -4755,7 +4755,7 @@ public static partial class Units
     /// </summary>
     public static IUnit OnewayPalletISO01Per2EUROPallet { get; } = new Unit()
     {
-        Name = "Oneway pallet ISO 0  1/2 EURO Pallet",
+        Name = "Oneway pallet ISO 0 - 1/2 EURO Pallet",
         Symbol = null,
         CommonCode = "XO3",
     };
@@ -4764,7 +4764,7 @@ public static partial class Units
     /// </summary>
     public static IUnit OnewayPalletISO11Per1EUROPallet { get; } = new Unit()
     {
-        Name = "Oneway pallet ISO 1  1/1 EURO Pallet",
+        Name = "Oneway pallet ISO 1 - 1/1 EURO Pallet",
         Symbol = null,
         CommonCode = "XO4",
     };
@@ -4773,7 +4773,7 @@ public static partial class Units
     /// </summary>
     public static IUnit OnewayPalletISO22Per1EUROPallet { get; } = new Unit()
     {
-        Name = "Oneway pallet ISO 2  2/1 EURO Pallet",
+        Name = "Oneway pallet ISO 2 - 2/1 EURO Pallet",
         Symbol = null,
         CommonCode = "XO5",
     };
@@ -4791,7 +4791,7 @@ public static partial class Units
     /// </summary>
     public static IUnit WoodenPallet40CmX80Cm { get; } = new Unit()
     {
-        Name = "Wooden pallet  40 cm x 80 cm",
+        Name = "Wooden pallet 40 cm x 80 cm",
         Symbol = null,
         CommonCode = "XO7",
     };
@@ -4858,9 +4858,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XPA",
     };
-    public static IUnit PalletBoxCombinedOpenendedBoxAndPallet { get; } = new Unit()
+    public static IUnit PalletBoxCombinedOpenEndedBoxAndPallet { get; } = new Unit()
     {
-        Name = "Pallet, box Combined openended box and pallet",
+        Name = "Pallet, box Combined open-ended box and pallet",
         Symbol = null,
         CommonCode = "XPB",
     };
@@ -4996,9 +4996,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XPZ",
     };
-    public static IUnit DrumSteelNonremovableHead { get; } = new Unit()
+    public static IUnit DrumSteelNonRemovableHead { get; } = new Unit()
     {
-        Name = "Drum, steel, nonremovable head",
+        Name = "Drum, steel, non-removable head",
         Symbol = null,
         CommonCode = "XQA",
     };
@@ -5008,9 +5008,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XQB",
     };
-    public static IUnit DrumAluminiumNonremovableHead { get; } = new Unit()
+    public static IUnit DrumAluminiumNonRemovableHead { get; } = new Unit()
     {
-        Name = "Drum, aluminium, nonremovable head",
+        Name = "Drum, aluminium, non-removable head",
         Symbol = null,
         CommonCode = "XQC",
     };
@@ -5020,9 +5020,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XQD",
     };
-    public static IUnit DrumPlasticNonremovableHead { get; } = new Unit()
+    public static IUnit DrumPlasticNonRemovableHead { get; } = new Unit()
     {
-        Name = "Drum, plastic, nonremovable head",
+        Name = "Drum, plastic, non-removable head",
         Symbol = null,
         CommonCode = "XQF",
     };
@@ -5044,9 +5044,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XQJ",
     };
-    public static IUnit JerricanSteelNonremovableHead { get; } = new Unit()
+    public static IUnit JerricanSteelNonRemovableHead { get; } = new Unit()
     {
-        Name = "Jerrican, steel, nonremovable head",
+        Name = "Jerrican, steel, non-removable head",
         Symbol = null,
         CommonCode = "XQK",
     };
@@ -5056,9 +5056,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XQL",
     };
-    public static IUnit JerricanPlasticNonremovableHead { get; } = new Unit()
+    public static IUnit JerricanPlasticNonRemovableHead { get; } = new Unit()
     {
-        Name = "Jerrican, plastic, nonremovable head",
+        Name = "Jerrican, plastic, non-removable head",
         Symbol = null,
         CommonCode = "XQM",
     };
@@ -5170,9 +5170,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XSD",
     };
-    public static IUnit Seachest { get; } = new Unit()
+    public static IUnit SeaChest { get; } = new Unit()
     {
-        Name = "Seachest",
+        Name = "Sea-chest",
         Symbol = null,
         CommonCode = "XSE",
     };
@@ -5278,9 +5278,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XTB",
     };
-    public static IUnit Teachest { get; } = new Unit()
+    public static IUnit TeaChest { get; } = new Unit()
     {
-        Name = "Teachest",
+        Name = "Tea-chest",
         Symbol = null,
         CommonCode = "XTC",
     };
@@ -5440,9 +5440,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XVO",
     };
-    public static IUnit Vacuumpacked { get; } = new Unit()
+    public static IUnit VacuumPacked { get; } = new Unit()
     {
-        Name = "Vacuumpacked",
+        Name = "Vacuum-packed",
         Symbol = null,
         CommonCode = "XVP",
     };
@@ -5665,15 +5665,15 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XXH",
     };
-    public static IUnit BagPaperMultiwall { get; } = new Unit()
+    public static IUnit BagPaperMultiWall { get; } = new Unit()
     {
-        Name = "Bag, paper, multiwall",
+        Name = "Bag, paper, multi-wall",
         Symbol = null,
         CommonCode = "XXJ",
     };
-    public static IUnit BagPaperMultiwallWaterResistant { get; } = new Unit()
+    public static IUnit BagPaperMultiWallWaterResistant { get; } = new Unit()
     {
-        Name = "Bag, paper, multiwall, water resistant",
+        Name = "Bag, paper, multi-wall, water resistant",
         Symbol = null,
         CommonCode = "XXK",
     };
@@ -5809,9 +5809,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XYZ",
     };
-    public static IUnit IntermediateBulkContainerPaperMultiwall { get; } = new Unit()
+    public static IUnit IntermediateBulkContainerPaperMultiWall { get; } = new Unit()
     {
-        Name = "Intermediate bulk container, paper, multiwall",
+        Name = "Intermediate bulk container, paper, multi-wall",
         Symbol = null,
         CommonCode = "XZA",
     };
@@ -5821,9 +5821,9 @@ public static partial class Units
         Symbol = null,
         CommonCode = "XZB",
     };
-    public static IUnit IntermediateBulkContainerPaperMultiwallWaterResistant { get; } = new Unit()
+    public static IUnit IntermediateBulkContainerPaperMultiWallWaterResistant { get; } = new Unit()
     {
-        Name = "Intermediate bulk container, paper, multiwall, water resistant",
+        Name = "Intermediate bulk container, paper, multi-wall, water resistant",
         Symbol = null,
         CommonCode = "XZC",
     };

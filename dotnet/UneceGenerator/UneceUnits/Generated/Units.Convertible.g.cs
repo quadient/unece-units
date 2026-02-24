@@ -157,9 +157,9 @@ public static partial class Units
         ConversionGroup = "tesla",
         ConversionFactor = 0.0001m,
     };
-    public static IConvertibleUnit Milliinch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit MilliInch { get; } = new ConvertibleUnit()
     {
-        Name = "milliinch",
+        Name = "milli-inch",
         Symbol = "mil",
         CommonCode = "77",
         ConversionGroup = "meter",
@@ -196,17 +196,17 @@ public static partial class Units
     /// A unit of pressure defining the number of kilopounds force per square inch.Use kip per square inch (common code N20).
     /// </summary>
     [Obsolete("Deprecated")]
-    public static IConvertibleUnit KilopoundforcePerSquareInch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit KilopoundForcePerSquareInch { get; } = new ConvertibleUnit()
     {
-        Name = "kilopoundforce per square inch",
+        Name = "kilopound-force per square inch",
         Symbol = "klbf/in²",
         CommonCode = "84",
         ConversionGroup = "pascal",
         ConversionFactor = 6894757.0m,
     };
-    public static IConvertibleUnit FootPoundforce { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit FootPoundForce { get; } = new ConvertibleUnit()
     {
-        Name = "foot poundforce",
+        Name = "foot pound-force",
         Symbol = "ft·lbf",
         CommonCode = "85",
         ConversionGroup = "joule",
@@ -1071,9 +1071,9 @@ public static partial class Units
         ConversionGroup = "meter / second ** 2",
         ConversionFactor = 0.3048m,
     };
-    public static IConvertibleUnit FootPoundforcePerSecond { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit FootPoundForcePerSecond { get; } = new ConvertibleUnit()
     {
-        Name = "foot poundforce per second",
+        Name = "foot pound-force per second",
         Symbol = "ft·lbf/s",
         CommonCode = "A74",
         ConversionGroup = "watt",
@@ -1314,7 +1314,7 @@ public static partial class Units
     public static IConvertibleUnit BarrelUSPerDay { get; } = new ConvertibleUnit()
     {
         Name = "barrel (US) per day",
-        Symbol = "barrel (US)/d",
+        Symbol = "barrel (US)/d",
         CommonCode = "B1",
         ConversionGroup = "meter ** 3 / second",
         ConversionFactor = 0.00000184013m,
@@ -1510,9 +1510,9 @@ public static partial class Units
     };
 
     [Obsolete("Deprecated")]
-    public static IConvertibleUnit Kilogramforce { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit KilogramForce { get; } = new ConvertibleUnit()
     {
-        Name = "kilogramforce",
+        Name = "kilogram-force",
         Symbol = "kgf",
         CommonCode = "B37",
         ConversionGroup = "newton",
@@ -1520,9 +1520,9 @@ public static partial class Units
     };
 
     [Obsolete("Deprecated")]
-    public static IConvertibleUnit KilogramforceMetre { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit KilogramForceMetre { get; } = new ConvertibleUnit()
     {
-        Name = "kilogramforce metre",
+        Name = "kilogram-force metre",
         Symbol = "kgf·m",
         CommonCode = "B38",
         ConversionGroup = "meter * newton",
@@ -1530,9 +1530,9 @@ public static partial class Units
     };
 
     [Obsolete("Deprecated")]
-    public static IConvertibleUnit KilogramforceMetrePerSecond { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit KilogramForceMetrePerSecond { get; } = new ConvertibleUnit()
     {
-        Name = "kilogramforce metre per second",
+        Name = "kilogram-force metre per second",
         Symbol = "kgf·m/s",
         CommonCode = "B39",
         ConversionGroup = "watt",
@@ -1540,9 +1540,9 @@ public static partial class Units
     };
 
     [Obsolete("Deprecated")]
-    public static IConvertibleUnit KilogramforcePerSquareMetre { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit KilogramForcePerSquareMetre { get; } = new ConvertibleUnit()
     {
-        Name = "kilogramforce per square metre",
+        Name = "kilogram-force per square metre",
         Symbol = "kgf/m²",
         CommonCode = "B40",
         ConversionGroup = "pascal",
@@ -2618,9 +2618,9 @@ public static partial class Units
         ConversionGroup = "watt / meter ** 2",
         ConversionFactor = 0.000000000001m,
     };
-    public static IConvertibleUnit Poundforce { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForce { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce",
+        Name = "pound-force",
         Symbol = "lbf",
         CommonCode = "C78",
         ConversionGroup = "newton",
@@ -3185,7 +3185,7 @@ public static partial class Units
     };
     public static IConvertibleUnit VoltAmpere { get; } = new ConvertibleUnit()
     {
-        Name = "volt  ampere",
+        Name = "volt - ampere",
         Symbol = "V·A",
         CommonCode = "D46",
         ConversionGroup = "watt",
@@ -3828,9 +3828,9 @@ public static partial class Units
     /// <summary>
     /// A unit of pressure defining the number of kilograms force per square millimetre.
     /// </summary>
-    public static IConvertibleUnit KilogramforcePerSquareMillimetre { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit KilogramForcePerSquareMillimetre { get; } = new ConvertibleUnit()
     {
-        Name = "kilogramforce per square millimetre",
+        Name = "kilogram-force per square millimetre",
         Symbol = "kgf/mm²",
         CommonCode = "E41",
         ConversionGroup = "pascal",
@@ -3839,9 +3839,9 @@ public static partial class Units
     /// <summary>
     /// A unit of pressure defining the number of kilograms force per square centimetre.
     /// </summary>
-    public static IConvertibleUnit KilogramforcePerSquareCentimetre { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit KilogramForcePerSquareCentimetre { get; } = new ConvertibleUnit()
     {
-        Name = "kilogramforce per square centimetre",
+        Name = "kilogram-force per square centimetre",
         Symbol = "kgf/cm²",
         CommonCode = "E42",
         ConversionGroup = "pascal",
@@ -4083,9 +4083,9 @@ public static partial class Units
         ConversionGroup = "kilogram / kelvin",
         ConversionFactor = 0.000001m,
     };
-    public static IConvertibleUnit PoundforcePerFoot { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForcePerFoot { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce per foot",
+        Name = "pound-force per foot",
         Symbol = "lbf/ft",
         CommonCode = "F17",
         ConversionGroup = "kilogram / second ** 2",
@@ -4115,17 +4115,17 @@ public static partial class Units
         ConversionGroup = "kilogram * meter ** 2",
         ConversionFactor = 0.00029263970000000005m,
     };
-    public static IConvertibleUnit PoundforceInch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForceInch { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce inch",
+        Name = "pound-force inch",
         Symbol = "lbf·in",
         CommonCode = "F21",
         ConversionGroup = "kilogram * meter ** 2 / second ** 2",
         ConversionFactor = 0.112985m,
     };
-    public static IConvertibleUnit PoundforceFootPerAmpere { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForceFootPerAmpere { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce foot per ampere",
+        Name = "pound-force foot per ampere",
         Symbol = "lbf·ft/A",
         CommonCode = "F22",
         ConversionGroup = "kilogram * meter ** 2 / ampere / second ** 2",
@@ -4331,9 +4331,9 @@ public static partial class Units
         ConversionGroup = "kilogram / second ** 2",
         ConversionFactor = 1000.0m,
     };
-    public static IConvertibleUnit PoundforcePerInch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForcePerInch { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce per inch",
+        Name = "pound-force per inch",
         Symbol = "lbf/in",
         CommonCode = "F48",
         ConversionGroup = "kilogram / second ** 2",
@@ -4406,9 +4406,9 @@ public static partial class Units
         ConversionGroup = "ohm / meter",
         ConversionFactor = 0.001m,
     };
-    public static IConvertibleUnit MilliamperePerPoundforcePerSquareInch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit MilliamperePerPoundForcePerSquareInch { get; } = new ConvertibleUnit()
     {
-        Name = "milliampere per poundforce per square inch",
+        Name = "milliampere per pound-force per square inch",
         Symbol = "mA/(lbf/in²)",
         CommonCode = "F57",
         ConversionGroup = "ampere * meter * second ** 2 / kilogram",
@@ -4975,9 +4975,9 @@ public static partial class Units
         ConversionGroup = "meter ** 3 / second",
         ConversionFactor = 0.00006309020000000001m,
     };
-    public static IConvertibleUnit PoundforceFootPerPound { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForceFootPerPound { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce foot per pound",
+        Name = "pound-force foot per pound",
         Symbol = "lbf·ft/lb",
         CommonCode = "G20",
         ConversionGroup = "meter ** 2 / second ** 2",
@@ -5931,9 +5931,9 @@ public static partial class Units
         ConversionGroup = "meter ** 3",
         ConversionFactor = 1000000000m,
     };
-    public static IConvertibleUnit VoltSquareInchPerPoundforce { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit VoltSquareInchPerPoundForce { get; } = new ConvertibleUnit()
     {
-        Name = "volt square inch per poundforce",
+        Name = "volt square inch per pound-force",
         Symbol = "V/(lbf/in²)",
         CommonCode = "H22",
         ConversionGroup = "meter ** 3 / ampere / second",
@@ -6872,7 +6872,7 @@ public static partial class Units
     };
     public static IConvertibleUnit BritishThermalUnitInternationalTableFootPerHourSquareFootDegreeFahrenheit { get; } = new ConvertibleUnit()
     {
-        Name = "British thermal unit (international table) foot per hour square foot degree Fahrenheit",
+        Name = "British thermal unit (international table) foot per hour square foot degree Fahrenheit",
         Symbol = "BtuIT·ft/(h·ft²·°F)",
         CommonCode = "J40",
         ConversionGroup = "watt / kelvin / meter",
@@ -6880,7 +6880,7 @@ public static partial class Units
     };
     public static IConvertibleUnit BritishThermalUnitInternationalTableInchPerHourSquareFootDegreeFahrenheit { get; } = new ConvertibleUnit()
     {
-        Name = "British thermal unit (international table) inch per hour square foot degree Fahrenheit",
+        Name = "British thermal unit (international table) inch per hour square foot degree Fahrenheit",
         Symbol = "BtuIT·in/(h·ft²·°F)",
         CommonCode = "J41",
         ConversionGroup = "watt / kelvin / meter",
@@ -6888,7 +6888,7 @@ public static partial class Units
     };
     public static IConvertibleUnit BritishThermalUnitInternationalTableInchPerSecondSquareFootDegreeFahrenheit { get; } = new ConvertibleUnit()
     {
-        Name = "British thermal unit (international table) inch per second square foot degree Fahrenheit",
+        Name = "British thermal unit (international table) inch per second square foot degree Fahrenheit",
         Symbol = "BtuIT·in/(s·ft²·°F)",
         CommonCode = "J42",
         ConversionGroup = "watt / kelvin / meter",
@@ -6920,7 +6920,7 @@ public static partial class Units
     };
     public static IConvertibleUnit BritishThermalUnitThermochemicalFootPerHourSquareFootDegreeFahrenheit { get; } = new ConvertibleUnit()
     {
-        Name = "British thermal unit (thermochemical) foot per hour square foot degree Fahrenheit",
+        Name = "British thermal unit (thermochemical) foot per hour square foot degree Fahrenheit",
         Symbol = "Btuth·ft/(h·ft²·°F)",
         CommonCode = "J46",
         ConversionGroup = "watt / kelvin / meter",
@@ -6936,7 +6936,7 @@ public static partial class Units
     };
     public static IConvertibleUnit BritishThermalUnitThermochemicalInchPerHourSquareFootDegreeFahrenheit { get; } = new ConvertibleUnit()
     {
-        Name = "British thermal unit (thermochemical) inch per hour square foot degree Fahrenheit",
+        Name = "British thermal unit (thermochemical) inch per hour square foot degree Fahrenheit",
         Symbol = "Btuth·in/(h·ft²·°F)",
         CommonCode = "J48",
         ConversionGroup = "watt / kelvin / meter",
@@ -6944,7 +6944,7 @@ public static partial class Units
     };
     public static IConvertibleUnit BritishThermalUnitThermochemicalInchPerSecondSquareFootDegreeFahrenheit { get; } = new ConvertibleUnit()
     {
-        Name = "British thermal unit (thermochemical) inch per second square foot degree Fahrenheit",
+        Name = "British thermal unit (thermochemical) inch per second square foot degree Fahrenheit",
         Symbol = "Btuth·in/(s·ft²·°F)",
         CommonCode = "J49",
         ConversionGroup = "watt / kelvin / meter",
@@ -7397,17 +7397,17 @@ public static partial class Units
         ConversionGroup = "meter / second",
         ConversionFactor = 0.00008466667m,
     };
-    public static IConvertibleUnit FootPoundforcePerHour { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit FootPoundForcePerHour { get; } = new ConvertibleUnit()
     {
-        Name = "foot poundforce per hour",
+        Name = "foot pound-force per hour",
         Symbol = "ft·lbf/h",
         CommonCode = "K15",
         ConversionGroup = "watt",
         ConversionFactor = 0.0003766161m,
     };
-    public static IConvertibleUnit FootPoundforcePerMinute { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit FootPoundForcePerMinute { get; } = new ConvertibleUnit()
     {
-        Name = "foot poundforce per minute",
+        Name = "foot pound-force per minute",
         Symbol = "ft·lbf/min",
         CommonCode = "K16",
         ConversionGroup = "watt",
@@ -7521,9 +7521,9 @@ public static partial class Units
         ConversionGroup = "meter ** 3 / second",
         ConversionFactor = 0.003785412m,
     };
-    public static IConvertibleUnit GramforcePerSquareCentimetre { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit GramForcePerSquareCentimetre { get; } = new ConvertibleUnit()
     {
-        Name = "gramforce per square centimetre",
+        Name = "gram-force per square centimetre",
         Symbol = "gf/cm²",
         CommonCode = "K31",
         ConversionGroup = "pascal",
@@ -7945,17 +7945,17 @@ public static partial class Units
         ConversionGroup = "kilogram / meter ** 3",
         ConversionFactor = 0.5932764m,
     };
-    public static IConvertibleUnit PoundforcePerSquareFoot { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForcePerSquareFoot { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce per square foot",
+        Name = "pound-force per square foot",
         Symbol = "lbf/ft²",
         CommonCode = "K85",
         ConversionGroup = "pascal",
         ConversionFactor = 47.88026m,
     };
-    public static IConvertibleUnit PoundforcePerSquareInchDegreeFahrenheit { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForcePerSquareInchDegreeFahrenheit { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce per square inch degree Fahrenheit",
+        Name = "pound-force per square inch degree Fahrenheit",
         Symbol = "psi/°F",
         CommonCode = "K86",
         ConversionGroup = "pascal / kelvin",
@@ -7993,17 +7993,17 @@ public static partial class Units
         ConversionGroup = "meter ** 3 * pascal / second",
         ConversionFactor = 5271.42m,
     };
-    public static IConvertibleUnit PoundforceSecondPerSquareFoot { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForceSecondPerSquareFoot { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce second per square foot",
+        Name = "pound-force second per square foot",
         Symbol = "lbf·s/ft²",
         CommonCode = "K91",
         ConversionGroup = "pascal * second",
         ConversionFactor = 47.88026m,
     };
-    public static IConvertibleUnit PoundforceSecondPerSquareInch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForceSecondPerSquareInch { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce second per square inch",
+        Name = "pound-force second per square inch",
         Symbol = "lbf·s/in²",
         CommonCode = "K92",
         ConversionGroup = "pascal * second",
@@ -8237,7 +8237,7 @@ public static partial class Units
     };
     public static IConvertibleUnit KilovoltAmpere { get; } = new ConvertibleUnit()
     {
-        Name = "kilovolt  ampere",
+        Name = "kilovolt - ampere",
         Symbol = "kV·A",
         CommonCode = "KVA",
         ConversionGroup = "ampere * volt",
@@ -8533,7 +8533,7 @@ public static partial class Units
     };
     public static IConvertibleUnit OunceAvoirdupoisForce { get; } = new ConvertibleUnit()
     {
-        Name = "ounce (avoirdupois)force",
+        Name = "ounce (avoirdupois)-force",
         Symbol = "ozf",
         CommonCode = "L40",
         ConversionGroup = "newton",
@@ -8541,7 +8541,7 @@ public static partial class Units
     };
     public static IConvertibleUnit OunceAvoirdupoisForceInch { get; } = new ConvertibleUnit()
     {
-        Name = "ounce (avoirdupois)force inch",
+        Name = "ounce (avoirdupois)-force inch",
         Symbol = "ozf·in",
         CommonCode = "L41",
         ConversionGroup = "meter * newton",
@@ -8947,9 +8947,9 @@ public static partial class Units
         ConversionGroup = "kilogram / meter ** 3",
         ConversionFactor = 1186.5529999999999m,
     };
-    public static IConvertibleUnit TonforceUSShort { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit TonForceUSShort { get; } = new ConvertibleUnit()
     {
-        Name = "tonforce (US short)",
+        Name = "ton-force (US short)",
         Symbol = "ton.sh-force",
         CommonCode = "L94",
         ConversionGroup = "newton",
@@ -9144,7 +9144,7 @@ public static partial class Units
     };
     public static IConvertibleUnit ReciprocalKilovoltAmpereReciprocalHour { get; } = new ConvertibleUnit()
     {
-        Name = "reciprocal kilovolt  ampere reciprocal hour",
+        Name = "reciprocal kilovolt - ampere reciprocal hour",
         Symbol = "1/kVAh",
         CommonCode = "M21",
         ConversionGroup = "1 / ampere / second / volt",
@@ -9200,7 +9200,7 @@ public static partial class Units
     };
     public static IConvertibleUnit ReciprocalVoltAmpereReciprocalSecond { get; } = new ConvertibleUnit()
     {
-        Name = "reciprocal volt  ampere reciprocal second",
+        Name = "reciprocal volt - ampere reciprocal second",
         Symbol = "1/(V·A·s)",
         CommonCode = "M30",
         ConversionGroup = "1 / ampere / second / volt",
@@ -9240,7 +9240,7 @@ public static partial class Units
     };
     public static IConvertibleUnit MillivoltAmpere { get; } = new ConvertibleUnit()
     {
-        Name = "millivolt  ampere",
+        Name = "millivolt - ampere",
         Symbol = "mV·A",
         CommonCode = "M35",
         ConversionGroup = "ampere * volt",
@@ -9249,9 +9249,9 @@ public static partial class Units
     /// <summary>
     /// A unit of count defining the number of months expressed in multiples of 30 days, one day equals 24 hours.
     /// </summary>
-    public static IConvertibleUnit Unit30dayMonth { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit Unit30DayMonth { get; } = new ConvertibleUnit()
     {
-        Name = "30day month",
+        Name = "30-day month",
         Symbol = "mo (30 days)",
         CommonCode = "M36",
         ConversionGroup = "second",
@@ -9587,9 +9587,9 @@ public static partial class Units
     /// <summary>
     /// Unit of the volume, which is used in the United States to measure/gauge the capacity of reservoirs.
     /// </summary>
-    public static IConvertibleUnit AcrefootBasedOnUSSurveyFoot { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit AcreFootBasedOnUSSurveyFoot { get; } = new ConvertibleUnit()
     {
-        Name = "acrefoot (based on U.S. survey foot)",
+        Name = "acre-foot (based on U.S. survey foot)",
         Symbol = "acre-ft (US survey)",
         CommonCode = "M67",
         ConversionGroup = "meter ** 3",
@@ -9617,9 +9617,9 @@ public static partial class Units
         ConversionGroup = "meter ** 3",
         ConversionFactor = 4168182000.0m,
     };
-    public static IConvertibleUnit Microinch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit MicroInch { get; } = new ConvertibleUnit()
     {
-        Name = "microinch",
+        Name = "micro-inch",
         Symbol = "µin",
         CommonCode = "M7",
         ConversionGroup = "meter",
@@ -9683,9 +9683,9 @@ public static partial class Units
     /// <summary>
     /// 1000-fold of the unit of the force pound-force (lbf) according to the Anglo-American system of units with the relationship.
     /// </summary>
-    public static IConvertibleUnit Kilopoundforce { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit KilopoundForce { get; } = new ConvertibleUnit()
     {
-        Name = "kilopoundforce",
+        Name = "kilopound-force",
         Symbol = "kip",
         CommonCode = "M75",
         ConversionGroup = "newton",
@@ -9859,9 +9859,9 @@ public static partial class Units
     /// <summary>
     /// Product of the unit pound-force according to the Anglo-American system of units and the unit foot according to the Anglo-American and the Imperial system of units.
     /// </summary>
-    public static IConvertibleUnit PoundforceFoot { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForceFoot { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce foot",
+        Name = "pound-force foot",
         Symbol = "lbf·ft",
         CommonCode = "M92",
         ConversionGroup = "meter * newton",
@@ -10166,7 +10166,7 @@ public static partial class Units
     };
     public static IConvertibleUnit MegavoltAmpere { get; } = new ConvertibleUnit()
     {
-        Name = "megavolt  ampere",
+        Name = "megavolt - ampere",
         Symbol = "MV·A",
         CommonCode = "MVA",
         ConversionGroup = "ampere * volt",
@@ -10177,7 +10177,7 @@ public static partial class Units
     /// </summary>
     public static IConvertibleUnit MegawattHour1000KwH { get; } = new ConvertibleUnit()
     {
-        Name = "megawatt hour (1000 kW.h)",
+        Name = "megawatt hour (1000 kW.h)",
         Symbol = "MW·h",
         CommonCode = "MWH",
         ConversionGroup = "joule",
@@ -10447,9 +10447,9 @@ public static partial class Units
     /// <summary>
     /// Unit of force per unit length based on the Anglo-American system of units.
     /// </summary>
-    public static IConvertibleUnit PoundforcePerYard { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForcePerYard { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce per yard",
+        Name = "pound-force per yard",
         Symbol = "lbf/yd",
         CommonCode = "N33",
         ConversionGroup = "newton / meter",
@@ -11471,9 +11471,9 @@ public static partial class Units
     /// <summary>
     /// Unit of resistivity.
     /// </summary>
-    public static IConvertibleUnit OhmCircularmilPerFoot { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit OhmCircularMilPerFoot { get; } = new ConvertibleUnit()
     {
-        Name = "ohm circularmil per foot",
+        Name = "ohm circular-mil per foot",
         Symbol = "Ω·cmil/ft",
         CommonCode = "P23",
         ConversionGroup = "meter * ohm",
@@ -11603,9 +11603,9 @@ public static partial class Units
     /// <summary>
     /// Obsolete, non-legal unit of the power in Germany relating to DIN 1301-3:1979: 1 HK = 0,903 cd.
     /// </summary>
-    public static IConvertibleUnit Hefnerkerze { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit HefnerKerze { get; } = new ConvertibleUnit()
     {
-        Name = "HefnerKerze",
+        Name = "Hefner-Kerze",
         Symbol = "HK",
         CommonCode = "P35",
         ConversionGroup = "candela",
@@ -12197,9 +12197,9 @@ public static partial class Units
     /// <summary>
     /// Unit for length-related rotational moment according to the Anglo-American and Imperial system of units.
     /// </summary>
-    public static IConvertibleUnit PoundforceFootPerInch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForceFootPerInch { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce foot per inch",
+        Name = "pound-force foot per inch",
         Symbol = "lbf·ft/in",
         CommonCode = "P89",
         ConversionGroup = "kilogram * meter / second ** 2",
@@ -12208,9 +12208,9 @@ public static partial class Units
     /// <summary>
     /// Unit for length-related rotational moment according to the Anglo-American and Imperial system of units.
     /// </summary>
-    public static IConvertibleUnit PoundforceInchPerInch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForceInchPerInch { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce inch per inch",
+        Name = "pound-force inch per inch",
         Symbol = "lbf·in/in",
         CommonCode = "P90",
         ConversionGroup = "kilogram * meter / second ** 2",
@@ -12320,9 +12320,9 @@ public static partial class Units
         ConversionGroup = "dimensionless",
         ConversionFactor = 2m,
     };
-    public static IConvertibleUnit PoundforcePerSquareInch { get; } = new ConvertibleUnit()
+    public static IConvertibleUnit PoundForcePerSquareInch { get; } = new ConvertibleUnit()
     {
-        Name = "poundforce per square inch",
+        Name = "pound-force per square inch",
         Symbol = "lbf/in²",
         CommonCode = "PS",
         ConversionGroup = "pascal",
@@ -12920,7 +12920,7 @@ public static partial class Units
     };
     public static IConvertibleUnit VoltAmperePerKilogram { get; } = new ConvertibleUnit()
     {
-        Name = "volt  ampere per kilogram",
+        Name = "volt - ampere per kilogram",
         Symbol = "V·A / kg",
         CommonCode = "VA",
         ConversionGroup = "ampere * volt / kilogram",

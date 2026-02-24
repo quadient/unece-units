@@ -25,12 +25,7 @@ class Normalizer:
 
     @staticmethod
     def normalize_unit_name(name) -> str | None:
-        normalized_name = Normalizer.normalize_value(name)
-        if normalized_name is None:
-            return None
-
-        # - breaks the pint unit parsing mechanism with error TypeError: unsupported operand type(s) for -
-        return normalized_name.replace("-", "")
+        return Normalizer.normalize_value(name)
 
     @staticmethod
     def normalize_unit(unit_expression: str) -> str | None:

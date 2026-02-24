@@ -247,7 +247,7 @@ public static partial class Generator
             return null;
         }
 
-        WhitespaceRegex().Replace(value, " ");
+        value = WhitespaceRegex().Replace(value, " ");
 
         return value.Replace("\"", "\\\"");
     }

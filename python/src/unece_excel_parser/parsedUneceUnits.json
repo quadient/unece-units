@@ -665,7 +665,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "77",
-    "name": "milliinch",
+    "name": "milli-inch",
     "description": null,
     "symbol": "mil",
     "conversionFactor": {
@@ -727,7 +727,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "84",
-    "name": "kilopoundforce per square inch",
+    "name": "kilopound-force per square inch",
     "description": "A unit of pressure defining the number of kilopounds force per square inch.\nUse kip per square inch (common code N20).",
     "symbol": "klbf/in\u00b2",
     "conversionFactor": {
@@ -743,7 +743,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "85",
-    "name": "foot poundforce",
+    "name": "foot pound-force",
     "description": null,
     "symbol": "ft\u00b7lbf",
     "conversionFactor": {
@@ -2597,7 +2597,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "A59",
-    "name": "8part cloud cover",
+    "name": "8-part cloud cover",
     "description": "A unit of count defining the number of eighth-parts as a measure of the celestial dome cloud coverage.\nSynonym: OKTA , OCTA",
     "symbol": null,
     "conversionFactor": null,
@@ -2843,7 +2843,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "A74",
-    "name": "foot poundforce per second",
+    "name": "foot pound-force per second",
     "description": null,
     "symbol": "ft\u00b7lbf/s",
     "conversionFactor": {
@@ -2885,7 +2885,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "A77",
-    "name": "Gaussian CGS (CentimetreGramSecond system) unit of displacement",
+    "name": "Gaussian CGS (Centimetre-Gram-Second system) unit of displacement",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -2895,7 +2895,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "A78",
-    "name": "Gaussian CGS (CentimetreGramSecond system) unit of electric current",
+    "name": "Gaussian CGS (Centimetre-Gram-Second system) unit of electric current",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -2905,7 +2905,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "A79",
-    "name": "Gaussian CGS (CentimetreGramSecond system) unit of electric charge",
+    "name": "Gaussian CGS (Centimetre-Gram-Second system) unit of electric charge",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -2931,7 +2931,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "A80",
-    "name": "Gaussian CGS (CentimetreGramSecond system) unit of electric field strength",
+    "name": "Gaussian CGS (Centimetre-Gram-Second system) unit of electric field strength",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -2941,7 +2941,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "A81",
-    "name": "Gaussian CGS (CentimetreGramSecond system) unit of electric polarization",
+    "name": "Gaussian CGS (Centimetre-Gram-Second system) unit of electric polarization",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -2951,7 +2951,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "A82",
-    "name": "Gaussian CGS (CentimetreGramSecond system) unit of electric potential",
+    "name": "Gaussian CGS (Centimetre-Gram-Second system) unit of electric potential",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -2961,7 +2961,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "A83",
-    "name": "Gaussian CGS (CentimetreGramSecond system) unit of magnetization",
+    "name": "Gaussian CGS (Centimetre-Gram-Second system) unit of magnetization",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -3418,7 +3418,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "AQ",
-    "name": "antihemophilic factor (AHF) unit",
+    "name": "anti-hemophilic factor (AHF) unit",
     "description": "A unit of measure for blood potency (US).",
     "symbol": null,
     "conversionFactor": null,
@@ -4002,7 +4002,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "B37",
-    "name": "kilogramforce",
+    "name": "kilogram-force",
     "description": null,
     "symbol": "kgf",
     "conversionFactor": {
@@ -4019,7 +4019,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "B38",
-    "name": "kilogramforce metre",
+    "name": "kilogram-force metre",
     "description": null,
     "symbol": "kgf\u00b7m",
     "conversionFactor": {
@@ -4035,7 +4035,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "B39",
-    "name": "kilogramforce metre per second",
+    "name": "kilogram-force metre per second",
     "description": null,
     "symbol": "kgf\u00b7m/s",
     "conversionFactor": {
@@ -4061,7 +4061,7 @@
   {
     "state": "DEPRECATED",
     "commonCode": "B40",
-    "name": "kilogramforce per square metre",
+    "name": "kilogram-force per square metre",
     "description": null,
     "symbol": "kgf/m\u00b2",
     "conversionFactor": {
@@ -6488,7 +6488,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "C78",
-    "name": "poundforce",
+    "name": "pound-force",
     "description": null,
     "symbol": "lbf",
     "conversionFactor": {
@@ -7834,7 +7834,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "D46",
-    "name": "volt  ampere",
+    "name": "volt - ampere",
     "description": null,
     "symbol": "V\u00b7A",
     "conversionFactor": {
@@ -9528,7 +9528,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "E41",
-    "name": "kilogramforce per square millimetre",
+    "name": "kilogram-force per square millimetre",
     "description": "A unit of pressure defining the number of kilograms force per square millimetre.",
     "symbol": "kgf/mm\u00b2",
     "conversionFactor": {
@@ -9544,7 +9544,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "E42",
-    "name": "kilogramforce per square centimetre",
+    "name": "kilogram-force per square centimetre",
     "description": "A unit of pressure defining the number of kilograms force per square centimetre.",
     "symbol": "kgf/cm\u00b2",
     "conversionFactor": {
@@ -9576,7 +9576,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "E44",
-    "name": "kilogramforce metre per square centimetre",
+    "name": "kilogram-force metre per square centimetre",
     "description": "A unit of torsion defining the torque kilogram-force metre per square centimetre.",
     "symbol": "kgf\u00b7m/cm\u00b2",
     "conversionFactor": null,
@@ -10509,7 +10509,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "F17",
-    "name": "poundforce per foot",
+    "name": "pound-force per foot",
     "description": null,
     "symbol": "lbf/ft",
     "conversionFactor": {
@@ -10571,7 +10571,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "F21",
-    "name": "poundforce inch",
+    "name": "pound-force inch",
     "description": null,
     "symbol": "lbf\u00b7in",
     "conversionFactor": {
@@ -10585,7 +10585,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "F22",
-    "name": "poundforce foot per ampere",
+    "name": "pound-force foot per ampere",
     "description": null,
     "symbol": "lbf\u00b7ft/A",
     "conversionFactor": {
@@ -10993,7 +10993,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "F48",
-    "name": "poundforce per inch",
+    "name": "pound-force per inch",
     "description": null,
     "symbol": "lbf/in",
     "conversionFactor": {
@@ -11133,7 +11133,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "F57",
-    "name": "milliampere per poundforce per square inch",
+    "name": "milliampere per pound-force per square inch",
     "description": null,
     "symbol": "mA/(lbf/in\u00b2)",
     "conversionFactor": {
@@ -12243,7 +12243,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "G20",
-    "name": "poundforce foot per pound",
+    "name": "pound-force foot per pound",
     "description": null,
     "symbol": "lbf\u00b7ft/lb",
     "conversionFactor": {
@@ -14251,7 +14251,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "H22",
-    "name": "volt square inch per poundforce",
+    "name": "volt square inch per pound-force",
     "description": null,
     "symbol": "V/(lbf/in\u00b2)",
     "conversionFactor": {
@@ -17473,7 +17473,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "K15",
-    "name": "foot poundforce per hour",
+    "name": "foot pound-force per hour",
     "description": null,
     "symbol": "ft\u00b7lbf/h",
     "conversionFactor": {
@@ -17489,7 +17489,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "K16",
-    "name": "foot poundforce per minute",
+    "name": "foot pound-force per minute",
     "description": null,
     "symbol": "ft\u00b7lbf/min",
     "conversionFactor": {
@@ -17733,7 +17733,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "K31",
-    "name": "gramforce per square centimetre",
+    "name": "gram-force per square centimetre",
     "description": null,
     "symbol": "gf/cm\u00b2",
     "conversionFactor": {
@@ -18559,7 +18559,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "K85",
-    "name": "poundforce per square foot",
+    "name": "pound-force per square foot",
     "description": null,
     "symbol": "lbf/ft\u00b2",
     "conversionFactor": {
@@ -18575,7 +18575,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "K86",
-    "name": "poundforce per square inch degree Fahrenheit",
+    "name": "pound-force per square inch degree Fahrenheit",
     "description": null,
     "symbol": "psi/\u00b0F",
     "conversionFactor": {
@@ -18655,7 +18655,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "K91",
-    "name": "poundforce second per square foot",
+    "name": "pound-force second per square foot",
     "description": null,
     "symbol": "lbf\u00b7s/ft\u00b2",
     "conversionFactor": {
@@ -18671,7 +18671,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "K92",
-    "name": "poundforce second per square inch",
+    "name": "pound-force second per square inch",
     "description": null,
     "symbol": "lbf\u00b7s/in\u00b2",
     "conversionFactor": {
@@ -19349,7 +19349,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "KVA",
-    "name": "kilovolt  ampere",
+    "name": "kilovolt - ampere",
     "description": null,
     "symbol": "kV\u00b7A",
     "conversionFactor": {
@@ -19969,7 +19969,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "L40",
-    "name": "ounce (avoirdupois)force",
+    "name": "ounce (avoirdupois)-force",
     "description": null,
     "symbol": "ozf",
     "conversionFactor": {
@@ -19986,7 +19986,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "L41",
-    "name": "ounce (avoirdupois)force inch",
+    "name": "ounce (avoirdupois)-force inch",
     "description": null,
     "symbol": "ozf\u00b7in",
     "conversionFactor": {
@@ -20828,7 +20828,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "L94",
-    "name": "tonforce (US short)",
+    "name": "ton-force (US short)",
     "description": null,
     "symbol": "ton.sh-force",
     "conversionFactor": {
@@ -21419,7 +21419,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "M21",
-    "name": "reciprocal kilovolt  ampere reciprocal hour",
+    "name": "reciprocal kilovolt - ampere reciprocal hour",
     "description": null,
     "symbol": "1/kVAh",
     "conversionFactor": {
@@ -21541,7 +21541,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "M30",
-    "name": "reciprocal volt  ampere reciprocal second",
+    "name": "reciprocal volt - ampere reciprocal second",
     "description": null,
     "symbol": "1/(V\u00b7A\u00b7s)",
     "conversionFactor": {
@@ -21619,7 +21619,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "M35",
-    "name": "millivolt  ampere",
+    "name": "millivolt - ampere",
     "description": null,
     "symbol": "mV\u00b7A",
     "conversionFactor": {
@@ -21635,7 +21635,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "M36",
-    "name": "30day month",
+    "name": "30-day month",
     "description": "A unit of count defining the number of months expressed in multiples of 30 days, one day equals 24 hours.",
     "symbol": "mo (30 days)",
     "conversionFactor": {
@@ -22146,7 +22146,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "M67",
-    "name": "acrefoot (based on U.S. survey foot)",
+    "name": "acre-foot (based on U.S. survey foot)",
     "description": "Unit of the volume, which is used in the United States to measure/gauge the capacity of reservoirs.",
     "symbol": "acre-ft (US survey)",
     "conversionFactor": {
@@ -22194,7 +22194,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "M7",
-    "name": "microinch",
+    "name": "micro-inch",
     "description": null,
     "symbol": "\u00b5in",
     "conversionFactor": {
@@ -22284,7 +22284,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "M75",
-    "name": "kilopoundforce",
+    "name": "kilopound-force",
     "description": "1000-fold of the unit of the force pound-force (lbf) according to the Anglo-American system of units with the relationship.",
     "symbol": "kip",
     "conversionFactor": {
@@ -22559,7 +22559,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "M92",
-    "name": "poundforce foot",
+    "name": "pound-force foot",
     "description": "Product of the unit pound-force according to the Anglo-American system of units and the unit foot according to the Anglo-American and the Imperial system of units.",
     "symbol": "lbf\u00b7ft",
     "conversionFactor": {
@@ -23219,7 +23219,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "MVA",
-    "name": "megavolt  ampere",
+    "name": "megavolt - ampere",
     "description": null,
     "symbol": "MV\u00b7A",
     "conversionFactor": {
@@ -23657,7 +23657,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "N33",
-    "name": "poundforce per yard",
+    "name": "pound-force per yard",
     "description": "Unit of force per unit length based on the Anglo-American system of units.",
     "symbol": "lbf/yd",
     "conversionFactor": {
@@ -25266,7 +25266,7 @@
   {
     "state": "MARKED_AS_DELETED",
     "commonCode": "P0",
-    "name": "page  electronic",
+    "name": "page - electronic",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -25512,7 +25512,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "P23",
-    "name": "ohm circularmil per foot",
+    "name": "ohm circular-mil per foot",
     "description": "Unit of resistivity.",
     "symbol": "\u03a9\u00b7cmil/ft",
     "conversionFactor": {
@@ -25708,7 +25708,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "P35",
-    "name": "HefnerKerze",
+    "name": "Hefner-Kerze",
     "description": "Obsolete, non-legal unit of the power in Germany relating to DIN 1301-3:1979: 1 HK = 0,903 cd.",
     "symbol": "HK",
     "conversionFactor": {
@@ -26590,7 +26590,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "P89",
-    "name": "poundforce foot per inch",
+    "name": "pound-force foot per inch",
     "description": "Unit for length-related rotational moment according to the Anglo-American and Imperial system of units.",
     "symbol": "lbf\u00b7ft/in",
     "conversionFactor": {
@@ -26616,7 +26616,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "P90",
-    "name": "poundforce inch per inch",
+    "name": "pound-force inch per inch",
     "description": "Unit for length-related rotational moment according to the Anglo-American and Imperial system of units.",
     "symbol": "lbf\u00b7in/in",
     "conversionFactor": {
@@ -26952,7 +26952,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "PS",
-    "name": "poundforce per square inch",
+    "name": "pound-force per square inch",
     "description": null,
     "symbol": "lbf/in\u00b2",
     "conversionFactor": {
@@ -27588,7 +27588,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "QA",
-    "name": "page  facsimile",
+    "name": "page - facsimile",
     "description": "A unit of count defining the number of facsimile pages.",
     "symbol": null,
     "conversionFactor": null,
@@ -27608,7 +27608,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "QB",
-    "name": "page  hardcopy",
+    "name": "page - hardcopy",
     "description": "A unit of count defining the number of hardcopy pages (hardcopy page: a page rendered as printed or written output on paper, film, or other permanent medium).",
     "symbol": null,
     "conversionFactor": null,
@@ -29017,7 +29017,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "VA",
-    "name": "volt  ampere per kilogram",
+    "name": "volt - ampere per kilogram",
     "description": null,
     "symbol": "V\u00b7A / kg",
     "conversionFactor": {
@@ -29608,7 +29608,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "DBM",
-    "name": "Decibelmilliwatts",
+    "name": "Decibel-milliwatts",
     "description": "dBm (sometimes dBmW or decibel-milliwatts) is unit of level used to indicate that a power ratio is expressed in decibels (dB) with reference to one milliwatt (mW).",
     "symbol": "dBm",
     "conversionFactor": null,
@@ -30060,7 +30060,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XAM",
-    "name": "Ampoule, nonprotected",
+    "name": "Ampoule, non-protected",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -30160,7 +30160,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XBF",
-    "name": "Balloon, nonprotected",
+    "name": "Balloon, non-protected",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -30240,7 +30240,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XBN",
-    "name": "Bale, noncompressed",
+    "name": "Bale, non-compressed",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -30250,7 +30250,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XBO",
-    "name": "Bottle, nonprotected, cylindrical",
+    "name": "Bottle, non-protected, cylindrical",
     "description": "A narrow-necked cylindrical shaped vessel without external protective packing material.",
     "symbol": null,
     "conversionFactor": null,
@@ -30290,7 +30290,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XBS",
-    "name": "Bottle, nonprotected, bulbous",
+    "name": "Bottle, non-protected, bulbous",
     "description": "A narrow-necked bulb shaped vessel without external protective packing material.",
     "symbol": null,
     "conversionFactor": null,
@@ -30510,7 +30510,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XCO",
-    "name": "Carboy, nonprotected",
+    "name": "Carboy, non-protected",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -30690,7 +30690,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XDJ",
-    "name": "Demijohn, nonprotected",
+    "name": "Demijohn, non-protected",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -31240,7 +31240,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XIK",
-    "name": "Package, cardboard, with bottle gripholes",
+    "name": "Package, cardboard, with bottle grip-holes",
     "description": "Packaging material made out of cardboard that facilitates the separation of individual glass or plastic bottles.",
     "symbol": null,
     "conversionFactor": null,
@@ -31470,7 +31470,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XMS",
-    "name": "Sack, multiwall",
+    "name": "Sack, multi-wall",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -31620,7 +31620,7 @@
   {
     "state": "CHANGED_CHARACTERISTICS",
     "commonCode": "XOD",
-    "name": "Pallet, AS 40681993",
+    "name": "Pallet, AS 4068-1993",
     "description": "Australian standard pallet of dimensions 116.5 centimeters x 116.5 centimeters.",
     "symbol": null,
     "conversionFactor": null,
@@ -31680,7 +31680,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XOG",
-    "name": "Pallet ISO 0  1/2 EURO Pallet",
+    "name": "Pallet ISO 0 - 1/2 EURO Pallet",
     "description": "Standard pallet with dimensions 80 X 60 cm.",
     "symbol": null,
     "conversionFactor": null,
@@ -31690,7 +31690,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XOH",
-    "name": "Pallet ISO 1  1/1 EURO Pallet",
+    "name": "Pallet ISO 1 - 1/1 EURO Pallet",
     "description": "Standard pallet with dimensions 80 X 120 cm.",
     "symbol": null,
     "conversionFactor": null,
@@ -31860,7 +31860,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XO3",
-    "name": "Oneway pallet ISO 0  1/2 EURO Pallet",
+    "name": "Oneway pallet ISO 0 - 1/2 EURO Pallet",
     "description": "Oneway pallet with dimensions 80 X 60 cm.",
     "symbol": null,
     "conversionFactor": null,
@@ -31870,7 +31870,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XO4",
-    "name": "Oneway pallet ISO 1  1/1 EURO Pallet",
+    "name": "Oneway pallet ISO 1 - 1/1 EURO Pallet",
     "description": "Oneway pallet with dimensions 80 X 120 cm.",
     "symbol": null,
     "conversionFactor": null,
@@ -31880,7 +31880,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XO5",
-    "name": "Oneway pallet ISO 2  2/1 EURO Pallet",
+    "name": "Oneway pallet ISO 2 - 2/1 EURO Pallet",
     "description": "Oneway pallet with dimensions 100 X 120 cm.",
     "symbol": null,
     "conversionFactor": null,
@@ -31980,7 +31980,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XPB",
-    "name": "Pallet, box Combined openended box and pallet",
+    "name": "Pallet, box Combined open-ended box and pallet",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -32190,7 +32190,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XQA",
-    "name": "Drum, steel, nonremovable head",
+    "name": "Drum, steel, non-removable head",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -32210,7 +32210,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XQC",
-    "name": "Drum, aluminium, nonremovable head",
+    "name": "Drum, aluminium, non-removable head",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -32230,7 +32230,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XQF",
-    "name": "Drum, plastic, nonremovable head",
+    "name": "Drum, plastic, non-removable head",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -32270,7 +32270,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XQK",
-    "name": "Jerrican, steel, nonremovable head",
+    "name": "Jerrican, steel, non-removable head",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -32290,7 +32290,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XQM",
-    "name": "Jerrican, plastic, nonremovable head",
+    "name": "Jerrican, plastic, non-removable head",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -32470,7 +32470,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XSE",
-    "name": "Seachest",
+    "name": "Sea-chest",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -32650,7 +32650,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XTC",
-    "name": "Teachest",
+    "name": "Tea-chest",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -32900,7 +32900,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XVP",
-    "name": "Vacuumpacked",
+    "name": "Vacuum-packed",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -33260,7 +33260,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XXJ",
-    "name": "Bag, paper, multiwall",
+    "name": "Bag, paper, multi-wall",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -33270,7 +33270,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XXK",
-    "name": "Bag, paper, multiwall, water resistant",
+    "name": "Bag, paper, multi-wall, water resistant",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -33500,7 +33500,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XZA",
-    "name": "Intermediate bulk container, paper, multiwall",
+    "name": "Intermediate bulk container, paper, multi-wall",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
@@ -33520,7 +33520,7 @@
   {
     "state": "ACTIVE",
     "commonCode": "XZC",
-    "name": "Intermediate bulk container, paper, multiwall, water resistant",
+    "name": "Intermediate bulk container, paper, multi-wall, water resistant",
     "description": null,
     "symbol": null,
     "conversionFactor": null,
